@@ -1,0 +1,46 @@
+<% title t(".title") %>
+
+<% content_for :container_title do %>
+  <h1>Assessoria jurídica gratuita</h1>
+<% end %>
+
+<% content_for :sidebar do %>
+  <h2>Últimas perguntas</h2>
+<% end %>
+
+<h2>Últimas perguntas</h2>
+
+<ul id='questions'>
+  <% 10.times do %>
+    <li>
+      <div class='answers'>
+        <div class='count'>
+          <span>1</span>
+          resposta
+        </div>
+        <a class='lawyer' href='/'><img alt="" height="16" src="http://graph.facebook.com/100003922746457/picture?type=square" width="16" />Roberto</a>
+      </div>
+      <p class='requester'>
+        <strong>duarte</strong>
+        perguntou:
+      </p>
+      <h3><a href="/">enganado na compra de um terreno pelo advogado</a></h3>
+      <p class='sent-at'>Enviada em: 11/06/2012, 17:37h</p>
+    </li>
+  <% end %>
+</ul>
+
+
+<!-- Messages
+<p class="alert">
+  nenhuma pergunta encontrada
+</p>
+
+<p class="error">
+  nenhuma pergunta encontrada
+</p>
+
+<p class="notice">
+  nenhuma pergunta encontrada
+</p>
+<!-- -->

@@ -13,7 +13,8 @@ if defined?(Bundler)
 end
 
 module Alik
-  class Application < Rails::Applicationconfig.time_zone = "Brasilia"
+  class Application < Rails::Application
+    config.time_zone = "Brasilia"
     config.i18n.load_path += Dir[Rails.root.join("config/locales/**/*.yml").to_s]
     config.i18n.default_locale = :"pt-BR"
     config.encoding = "utf-8"
