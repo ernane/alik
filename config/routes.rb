@@ -1,3 +1,3 @@
 Alik::Application.routes.draw do
-  root :to => "site#index"
+  root :to => "questions#index"
 end
