@@ -2,6 +2,7 @@ source :rubygems
 
 gem "rails", "3.2.6"
 gem "jquery-rails"
+gem "will_paginate"
 gem "pg"
 
 group :assets do
@@ -19,8 +20,6 @@ end
 group :development, :test do
   gem "rspec-rails"
   gem "capybara"
-  gem "capybara-webkit"
-  gem "selenium-webdriver"
 end
 
 group :test do

@@ -14,10 +14,14 @@
 ActiveRecord::Schema.define(:version => 20120613205201) do
 
   create_table "questions", :force => true do |t|
-    t.string   "title",       :null => false
-    t.text     "description", :null => false
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "title",                                  :null => false
+    t.text     "description",                            :null => false
+    t.string   "requester_name",                         :null => false
+    t.string   "requester_email",                        :null => false
+    t.string   "requester_phone_area_code", :limit => 2, :null => false
+    t.string   "requester_phone_number",    :limit => 8, :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
 end
