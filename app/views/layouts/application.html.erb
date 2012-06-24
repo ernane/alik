@@ -25,6 +25,7 @@
     <div id="wrap">
       <%= render("shared/header") %>
       <div id="container" class="has_sidebar">
+        
         <% if content_for?(:container_title) %>
           <div id='container-title'>
             <%= yield(:container_title) %>
@@ -32,6 +33,7 @@
         <% end %>
 
         <aside>
+          
           <%= yield(:sidebar) %>
         </aside>
 

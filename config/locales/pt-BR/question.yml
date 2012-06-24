@@ -3,5 +3,7 @@ pt-BR:
     index:
       container_title: "Últimas perguntas"
       title: "Home"
+      
+    published_at: "Enviada em: %{time}"
 
 

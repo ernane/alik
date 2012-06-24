@@ -1,5 +1,6 @@
 pt-BR:
   site:
-    index:
-      title: "Home"
+    about:
+      container_title: "Quem Somos"
+      title: "Quem Somos"
 
