@@ -18,6 +18,7 @@ group :development do
 end
 
 group :development, :test do
+  gem "capistrano"
   gem "rspec-rails"
   gem "capybara"
 end

@@ -2,17 +2,9 @@ default: &defaults
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: postgres
+  username: alik
   password:
   host: localhost
-
-development:
-  <<: *defaults
-  database: alik_development
-
-test:
-  <<: *defaults
-  database: alik_test
 
 production:
   <<: *defaults
