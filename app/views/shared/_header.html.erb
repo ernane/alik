@@ -2,7 +2,7 @@
   <div id='masthead'>
     <div id='sign-in'>
       Você é advogado?
-      <a href="/auth/facebook">acesse com facebook</a>
+      <%= link_to "Faça seu cadastro gratuitamente", nil, :class => "btn-large btn-success" %>
     </div>
   </div>
   <div id='logo'><a href="http://0.0.0.0:4000/">Alik</a></div>
@@ -49,5 +49,11 @@
   background: linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
   color: #666;
    
+}
+footer p{
+  margin: 1.4em 0;
+  line-height: 1.4;
+  font-size: 14px;
+  text-align: justify;
 }
 </style>

@@ -145,13 +145,12 @@ header {
       a {
         width: 155px;
         height: 20px;
-        display: block;
-        background: transparent image-url("acesse-com-facebook.png") no-repeat 0 0;
         text-indent: -9999px;
         opacity: 1 !important;
 
         &:hover {
           opacity: .9 !important;
+					text-decoration: none;
         }
       }
     }

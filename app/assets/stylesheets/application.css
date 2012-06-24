@@ -3,4 +3,6 @@
  *= require reset
  *= require style
  *= require pagination
+ *= require buttons
+ *= require profile
  */

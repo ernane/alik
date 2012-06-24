@@ -5,7 +5,38 @@
 <% end %>
 
 <% content_for :sidebar do %>
-  <h2>Últimas perguntas</h2>
+<h2>Destaques</h2>
+ <div id="profile">
+   <img alt="" src="http://graph.facebook.com/100001994980755/picture?type=square" width="50" class="avatar" /> <span class="name">Daniel Feio</span>
+   <dl>
+     <dt>Username:</dt>
+     <dd></dd>
+     <dt>Member Since:</dt>
+     <dd></dd>
+     <dt>Website:</dt>
+     <dd></dd>
+     <dt>Twitter:</dt>
+     <dd></dd>
+     <dt>Bio:</dt>
+     <dd></dd>
+   </dl>
+ </div>
+ 
+ <div id="profile">
+    <img alt="" src="http://graph.facebook.com/100001994980755/picture?type=square" width="50" class="avatar" /> <span class="name">Daniel Feio</span>
+    <dl>
+      <dt>Username:</dt>
+      <dd></dd>
+      <dt>Member Since:</dt>
+      <dd></dd>
+      <dt>Website:</dt>
+      <dd></dd>
+      <dt>Twitter:</dt>
+      <dd></dd>
+      <dt>Bio:</dt>
+      <dd></dd>
+    </dl>
+  </div>
 <% end %>
 
 <h2><%= t(".container_title") %></h2>
@@ -29,6 +60,18 @@ body#site p{
   line-height: 1.4;
   font-size: 14px;
   text-align: justify;
+}
+section.profile img{
+  border: 1px solid #CCC;
+  padding: 1px;
+  background-color: white;
+}
+span.name{
+  font-size: 20px;
+  padding-top: 2px;
+  position: relative;
+  bottom: 20px;
+  padding-left: 10px;
 }
 </style>
 
