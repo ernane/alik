@@ -1,4 +1,7 @@
 #profile {
+	margin-bottom: 35px;
+	margin-top: 25px;
+	
   .avatar {
     border: solid 1px #999;
   }
@@ -9,17 +12,18 @@
     a { color: #000; }
   }
 
-  dl {
-    clear: both;
-  }
-
   dt {
-    font-weight: bold;
+    
     width: 160px;
+		
+		span{
+			font-weight: bold;
+		}
+		
   }
 
   dd {
-    margin-left: 175px;
+    margin-left: 5px;
   }
 
   dd p:first-child {
