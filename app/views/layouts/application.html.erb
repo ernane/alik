@@ -25,7 +25,7 @@
     <div id="wrap">
       <%= render("shared/header") %>
       <div id="container" class="has_sidebar">
-        
+
         <% if content_for?(:container_title) %>
           <div id='container-title'>
             <%= yield(:container_title) %>
@@ -33,11 +33,14 @@
         <% end %>
 
         <aside>
-          
+
           <%= yield(:sidebar) %>
         </aside>
 
         <section role="main">
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, id: "flash_#{name}" %>
+          <% end %>
           <%= yield %>
         </section>
       </div>

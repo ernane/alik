@@ -3,6 +3,7 @@ source :rubygems
 gem "rails", "3.2.6"
 gem "jquery-rails"
 gem "will_paginate"
+gem "mail_form"
 gem "pg"
 
 group :assets do
@@ -12,6 +13,7 @@ group :assets do
 end
 
 group :development do
+  gem "mailcatcher"
   gem "thin"
   gem "pry",            :require => false
   gem "awesome_print",  :require => false
