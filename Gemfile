@@ -4,6 +4,7 @@ gem "rails", "3.2.6"
 gem "jquery-rails"
 gem "will_paginate"
 gem "mail_form"
+gem "delayed_job_active_record"
 gem "pg"
 
 group :assets do
