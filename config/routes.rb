@@ -2,7 +2,7 @@ Alik::Application.routes.draw do
 
   root :to => "questions#index"
 
-  resources :contacts
+  resources :contacts, :path => "contato"
   resources :questions, :path => "perguntas" do
     get 'pagina/:page', :action => :index, :on => :collection
   end

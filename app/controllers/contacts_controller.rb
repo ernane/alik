@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
 
     if @contact.valid?
       @contact.deliver_background
-      redirect_to root_path, notice: 'Article was successfully created.'
+      redirect_to root_path, notice: t("flash.sendmail.notice")
     else
       render "new"
     end

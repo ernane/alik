@@ -10,7 +10,7 @@
     <ul>
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Quem Somos", about_path %></li>
-      <li><%= link_to "Contato", nil %></li>
+      <li><%= link_to "Contato", new_contact_path %></li>
     </ul>
   </nav>
 </header>
@@ -38,7 +38,7 @@
 .navigation ul li { margin: 0 5px; padding: 5px 0 5px 2px; float: left; position: relative; list-style: none;}
 .navigation ul li a {
     text-decoration: none; display: block; padding:  8px 15px; margin: 0; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -webkit-transition: all .3s linear;
-    	
+
 }
 .navigation ul li a:hover {
   background: -moz-linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
@@ -48,7 +48,7 @@
   background: -ms-linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
   background: linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
   color: #666;
-   
+
 }
 footer p{
   margin: 1.4em 0;

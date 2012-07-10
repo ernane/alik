@@ -1,0 +1,4 @@
+pt-BR:
+  flash:
+    sendmail:
+      notice: "Sua mensagem foi enviada com sucesso"
