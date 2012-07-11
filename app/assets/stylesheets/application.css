@@ -5,9 +5,10 @@
  *= require pagination
  *= require buttons
  *= require profile
+ *= require simple_form
  */
 
-#flash_notice, #flash_error, #flash_alert {
+#flash_notice, #flash_error, #flash_alert, .alert-error {
   margin: 10px 0;
   padding: 10px;
   text-align: center;
@@ -28,4 +29,8 @@ border-radius: 4px;}
 }
 #flash_alert{
   background-color: #FFFEDF;
+}
+
+.alert-error{
+  background-color: #F5E3E3;
 }
