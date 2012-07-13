@@ -6,6 +6,9 @@ gem "will_paginate"
 gem "mail_form"
 gem "simple_form"
 gem "delayed_job_active_record"
+gem "delayed_job_web"
+#gem "daemons"
+gem "thin"
 gem "pg"
 
 group :assets do
@@ -14,9 +17,12 @@ group :assets do
   gem "uglifier",     ">= 1.0.3"
 end
 
+group :production do
+  gem "therubyracer", :platform => :ruby
+end
+
 group :development do
   gem "mailcatcher"
-  gem "thin"
   gem "pry",            :require => false
   gem "awesome_print",  :require => false
 end

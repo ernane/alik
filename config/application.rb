@@ -21,6 +21,7 @@ module Alik
     config.filter_parameters += [:password]
     config.active_record.whitelist_attributes = true
     config.assets.enabled = true
+    config.assets.initialize_on_precompile = false
     config.assets.version = '1.0'
     config.active_support.escape_html_entities_in_json = true
 
