@@ -7,7 +7,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(params[:contact])
 
     if @contact.valid?
-      @contact.deliver
+      @contact.deliver_background
       redirect_to root_path, notice: t("flash.sendmail.notice")
     else
       render "new"
