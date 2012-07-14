@@ -4,13 +4,16 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(params[:contact])
-
-    if @contact.valid?
-      @contact.deliver_background
-      redirect_to root_path, notice: t("flash.sendmail.notice")
-    else
-      render "new"
+    begin
+      @contact = Contact.new(params[:contact])
+      @contact.request = request
+      if @contact.deliver
+        redirect_to root_path, notice: t("flash.sendmail.notice")
+      else
+        render "new"
+      end
+    rescue ScriptError
+      flash[:error] = 'Sorry, something was wrong'
     end
   end
 end
