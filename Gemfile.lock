@@ -115,6 +115,9 @@ GEM
       net-ssh (>= 1.99.1)
     nokogiri (1.5.4)
     pg (0.13.2)
+    pg_search (0.5)
+      activerecord (>= 3)
+      activesupport (>= 3)
     polyglot (0.3.3)
     pry (0.9.9.6)
       coderay (~> 1.0.5)
@@ -224,6 +227,7 @@ DEPENDENCIES
   mail_form
   mailcatcher
   pg
+  pg_search
   pry
   rails (= 3.2.6)
   rspec-rails

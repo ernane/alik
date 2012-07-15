@@ -12,4 +12,8 @@ Alik::Application.routes.draw do
   controller :site do
     get "/quem-somos", :action => :about, :as => :about
   end
+  
+  controller :questions do
+    get "/questions/search", :action => :search, :as => :search_questions
+  end
 end

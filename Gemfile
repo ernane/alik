@@ -10,6 +10,7 @@ gem "delayed_job_web"
 gem "daemons"
 gem "thin"
 gem "pg"
+gem "pg_search"
 
 group :assets do
   gem "sass-rails",   "~> 3.2.3"
