@@ -142,6 +142,20 @@
 .btn-large [class^="icon-"] {
   margin-top: 1px;
 }
+
+.btn-big {
+  padding: 14px 18px;
+  font-size: 16px;
+  line-height: normal;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+	margin-bottom: 10px;
+}
+.btn-big [class^="icon-"] {
+  margin-top: 1px;
+}
+
 .btn-small {
   padding: 5px 9px;
   font-size: 11px;
@@ -369,6 +383,12 @@ input[type="submit"].btn::-moz-focus-inner {
 button.btn.btn-large,
 input[type="submit"].btn.btn-large {
   *padding-top: 7px;
+  *padding-bottom: 7px;
+}
+
+button.btn.btn-big,
+input[type="submit"].btn.btn-big {
+  *padding-top: 5px;
   *padding-bottom: 7px;
 }
 button.btn.btn-small,

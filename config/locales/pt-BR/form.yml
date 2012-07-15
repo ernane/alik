@@ -1,4 +1,8 @@
 pt-BR:
+  
+  form:
+    buttons:
+      search: "Fazer busca"
 
   helpers:
     submit:

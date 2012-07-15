@@ -8,7 +8,6 @@ gem "simple_form"
 gem "delayed_job_active_record"
 gem "delayed_job_web"
 gem "daemons"
-gem "psych", "~> 1.3.3"
 gem "thin"
 gem "pg"
 
