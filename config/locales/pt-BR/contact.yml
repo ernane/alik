@@ -11,7 +11,7 @@ pt-BR:
 
   mail_form:
     models:
-      contact: "Your site contact form"
+      contact: "Formulário de contaco"
     attributes:
       contact:
         name: "Nome"

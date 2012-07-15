@@ -3,6 +3,9 @@ pt-BR:
     index:
       container_title: "Últimas perguntas"
       title: "Home"
+    search:
+      container_title: "Sua Buca"
+      title: "Busca"
       
     published_at: "Enviada em: %{time}"
 

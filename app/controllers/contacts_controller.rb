@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
         render "new"
       end
     rescue ScriptError
-      flash[:error] = 'Sorry, something was wrong'
+      flash[:error] = t("flash.sendmail.error")
     end
   end
 end

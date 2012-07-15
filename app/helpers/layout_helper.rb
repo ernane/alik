@@ -2,6 +2,12 @@ module LayoutHelper
   def favicon
     "<link rel=\"shortcut icon\" href=\"/favicon.png\" />".html_safe
   end
+  
+  def flash_messages
+    flash.collect do |name, msg|
+      content_tag :div, msg, id: "flash_#{name}"
+    end.join.html_safe
+  end
 
   def title(page_title, show_title = true)
     content_for(:title) { h(page_title.to_s) }

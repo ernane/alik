@@ -1,0 +1,9 @@
+<h1>Assessoria jurídica gratuita</h1>
+<%= form_tag search_questions_path, :method => :get, :class => "home-search" do %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag t("form.buttons.search"), :class => "btn btn-big btn-success" %>
+<% end %>
+<ul class="buttons-home">
+  <li><%= link_to "Fazer pergunta", nil, :class => "btn btn-large" %></li>
+  <li><%= link_to "Procurar um advogado", nil, :class => "btn btn-large" %></li>
+</ul>

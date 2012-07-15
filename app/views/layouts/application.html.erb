@@ -25,24 +25,19 @@
     <div id="wrap">
       <%= render("shared/header") %>
       <div id="container" class="has_sidebar">
-
-        <% if content_for?(:container_title) %>
-          <div id='container-title'>
-            <%= yield(:container_title) %>
-          </div>
-        <% end %>
+        <div id='container-title'>
+          <%= render("shared/main_header") %>
+        </div>
 
         <aside>
-
           <%= yield(:sidebar) %>
         </aside>
 
         <section role="main">
-          <% flash.each do |name, msg| %>
-            <%= content_tag :div, msg, id: "flash_#{name}" %>
-          <% end %>
+          <%= flash_messages %>
           <%= yield %>
         </section>
+        
       </div>
       <%= render("shared/footer") %>
     </div>

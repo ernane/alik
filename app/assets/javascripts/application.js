@@ -13,3 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function(){
+  setTimeout(hideFlashes, 5000);
+});
+
+var hideFlashes = function() {
+  $('#flash_notice, #flash_alert, #flash_error').fadeOut(3000);
+}
