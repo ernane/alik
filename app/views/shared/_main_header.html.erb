@@ -1,9 +1,40 @@
 <h1>Assessoria jurídica gratuita</h1>
 <%= form_tag search_questions_path, :method => :get, :class => "home-search" do %>
-  <%= text_field_tag :query, params[:query] %>
-  <%= submit_tag t("form.buttons.search"), :class => "btn btn-big btn-success" %>
+  <%= text_field_tag :query, params[:query], placeholder: "Faça uma busca em nosso site" %>
+  <%= submit_tag t("form.buttons.search"), :class => "btn btn-large btn-success" %>
 <% end %>
 <ul class="buttons-home">
-  <li><%= link_to "Fazer pergunta", nil, :class => "btn btn-large" %></li>
+  <li><%= link_to "Fazer pergunta", "#new_question", "data-toggle" => "modal", :class => "btn btn-large" %></li>
   <li><%= link_to "Procurar um advogado", nil, :class => "btn btn-large" %></li>
 </ul>
+
+
+<div class="modal fade" id="new_question">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">X</button>
+    <h3>Criar uma nova pergunta</h3>
+  </div>
+  
+    <%= simple_form_for Question.new, :html => { :class => 'form-horizontal' } do |f| %>
+      
+        <%= f.input :title %>
+        <%= f.input :requester_name%>
+        <%= f.input :requester_email %>
+        <%= f.input :requester_phone_area_code %>
+        <%= f.input :requester_phone_number %>
+        <%= f.input :description, :as => :text %>
+      
+      <div class="form-actions">
+        <%= f.button :submit, :class => "btn btn-primary" %>
+        <a href="#" class="btn" data-dismiss="modal">Cancelar</a>
+      </div>
+    <% end %>
+  
+</div>
+
+<style>
+#new_question{
+  width: 800px;
+  
+}
+</style>
