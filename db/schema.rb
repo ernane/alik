@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120710192855) do
+ActiveRecord::Schema.define(:version => 20120719223018) do
+
+  create_table "cities", :force => true do |t|
+    t.string   "name"
+    t.string   "state"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -30,14 +37,49 @@ ActiveRecord::Schema.define(:version => 20120710192855) do
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "questions", :force => true do |t|
-    t.string   "title",                                  :null => false
-    t.text     "description",                            :null => false
-    t.string   "requester_name",                         :null => false
-    t.string   "requester_email",                        :null => false
-    t.string   "requester_phone_area_code", :limit => 2, :null => false
-    t.string   "requester_phone_number",    :limit => 8, :null => false
+    t.string   "title",                         :null => false
+    t.text     "description",                   :null => false
+    t.string   "requester_name",                :null => false
+    t.string   "requester_email",               :null => false
+    t.integer  "city_id"
+    t.string   "requester_phone", :limit => 14, :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "username"
+    t.integer  "city_id"
+    t.string   "fields"
+    t.string   "portifolio_of_oab"
+    t.string   "phone"
+    t.text     "about"
+    t.string   "avatar_url"
+    t.integer  "teaching",               :default => 0
+    t.integer  "professional",           :default => 0
+    t.integer  "books_published",        :default => 0
+    t.integer  "articles_published",     :default => 0
+    t.boolean  "postgraduate"
+    t.boolean  "doctorate_in_law"
+    t.boolean  "master_of_law"
+    t.boolean  "postgraduate_in_law"
+    t.boolean  "foreign_laguage"
+    t.boolean  "terms_of_use"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

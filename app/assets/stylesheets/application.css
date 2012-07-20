@@ -5,7 +5,6 @@
  *= require style
  *= require pagination
  *= require profile
- *= require simple_form
  */
 
 #flash_notice, #flash_error, #flash_alert, .alert-error {
@@ -116,4 +115,27 @@ footer p{
   line-height: 1.4;
   font-size: 14px;
   text-align: justify;
+}
+
+/**
+ * SEARCH
+ */
+.home-search {
+  margin-left: 20px;
+}
+
+.home-search input[type=text] {
+	font-size: 1.4em;
+	padding: 10px 20px;
+	width: 750px;
+}
+
+.home-search p{
+	text-indent:50px;
+}
+
+.search input[type=search] {
+	padding:10px;
+  width: 180px;
+  font-size: 16px;
 }
