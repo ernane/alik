@@ -1,0 +1,56 @@
+<h1 class="devise">Efetue o seu cadastro</h1>
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f| %>
+<%= f.error_notification %>
+
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><%= link_to "Informações de Segurança", "#tab1", :"data-toggle" => "tab"%></li>
+    <li><%= link_to "Informações Pessoais", "#tab2", :"data-toggle" => "tab"%></li>
+    <li><%= link_to "Informações Acadêmicas", "#tab3", :"data-toggle" => "tab"%></li>
+
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <fieldset>
+        <legend>Informações de Segurança</legend>
+        <%= f.input :username,					:required => true ,:autofocus => true, input_html: {:class => "span3"}%>
+        <%= f.input :email, 					  :required => true, input_html: {:class => "span3"} %>
+        <%= f.input :password,					:required => true, input_html: {:class => "span3"} %>
+        <%= f.input :password_confirmation,		:required => true, input_html: {:class => "span3"} %>
+      </fieldset>
+    </div>
+
+    <div class="tab-pane" id="tab2">
+      <fieldset>
+        <legend>Informações Pessoais</legend>
+        <%= f.input :city_name, input_html: {data: {autocomplete_source: City.order(:name).map(&:name)}, :class => "span3"} %>
+        <%= f.input :avatar_url, input_html: {:class => "span3"} %>
+        <%= f.input :phone, :as => :string, input_html: {:class => "span3"} %>
+        <%= f.input :teaching,            :collection => 1..5%>
+        <%= f.input :professional,        :collection => 1..5%>
+        <%= f.input :books_published,     :collection => 1..5 %>
+        <%= f.input :articles_published,  :collection => 1..5 %>
+      </fieldset>
+    </div>
+
+    <div class="tab-pane" id="tab3">
+      <fieldset>
+        <legend>Informações Acadêmicas e de Experiências</legend>
+        <%= f.input :postgraduate,        :as => :boolean %>
+        <%= f.input :doctorate_in_law,    :as => :boolean %>
+        <%= f.input :master_of_law,       :as => :boolean %>
+
+        <%= f.input :postgraduate_in_law, :as => :boolean %>
+        <%= f.input :foreign_laguage,     :as => :boolean%>
+        <%= f.input :terms_of_use,        :as => :boolean %>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
+<div class="form-actions">
+  <%= f.button :submit, "Registrar", :class => "btn-large btn-primary" %>
+</div>
+<% end %>
+<%= render :partial => "devise/shared/links" %>

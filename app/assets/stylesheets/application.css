@@ -6,7 +6,9 @@
  *= require pagination
  *= require profile
  */
-
+h1{ padding: 10px 10px 15px 0}
+h1.contato{margin-bottom:50px}
+h1.devise{margin-bottom:50px}
 #flash_notice, #flash_error, #flash_alert, .alert-error {
   margin: 10px 0;
   padding: 10px;
