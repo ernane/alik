@@ -24,7 +24,15 @@
     <div class="tab-pane" id="tab2">
       <fieldset>
         <legend>Informações Pessoais</legend>
-        <%= f.input :city_name, input_html: {data: {autocomplete_source: City.order(:name).map(&:name)}, :class => "span3"} %>
+        
+        <%= f.input :state_id do %>
+          <%= f.collection_select :state_id, State.order(:name), :id, :name, include_blank: true %>
+        <% end %>
+        
+        <%= f.input :city_id do %>
+          <%= f.grouped_collection_select :city_id, State.order(:name), :cities, :name, :id, :name, include_blank: true %>
+        <% end %>
+        
         <%= f.input :avatar_url, input_html: {:class => "span3"} %>
         <%= f.input :phone, :as => :string, input_html: {:class => "span3"} %>
         <%= f.input :teaching,            :collection => 1..5%>

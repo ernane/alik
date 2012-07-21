@@ -8,6 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Personal data
       t.string :username             #Nome
       t.integer :city_id             #cidade
+      t.integer :state_id             #Estado
       t.string  :fields              #area de atuação
       t.string  :portifolio_of_oab   #carteira da OAB
       t.string  :phone               #telefone
@@ -62,7 +63,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.timestamps
     end
-
+    
+    add_index :users, :city_id
+    add_index :users, :state_id
+    
     add_index :users, :email,                :unique => true
     add_index :users, :reset_password_token, :unique => true
     # add_index :users, :confirmation_token,   :unique => true

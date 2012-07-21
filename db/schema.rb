@@ -11,14 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719223018) do
+ActiveRecord::Schema.define(:version => 20120721145507) do
+
+  create_table "answers", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.string   "evaluation"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
+  add_index "answers", ["user_id"], :name => "index_answers_on_user_id"
 
   create_table "cities", :force => true do |t|
     t.string   "name"
-    t.string   "state"
+    t.integer  "state_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "cities", ["state_id"], :name => "index_cities_on_state_id"
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -41,10 +54,21 @@ ActiveRecord::Schema.define(:version => 20120719223018) do
     t.text     "description",                   :null => false
     t.string   "requester_name",                :null => false
     t.string   "requester_email",               :null => false
-    t.integer  "city_id"
+    t.integer  "city_id",                       :null => false
+    t.integer  "state_id",                      :null => false
     t.string   "requester_phone", :limit => 14, :null => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "questions", ["city_id"], :name => "index_questions_on_city_id"
+  add_index "questions", ["state_id"], :name => "index_questions_on_state_id"
+
+  create_table "states", :force => true do |t|
+    t.string   "symbol"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -52,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20120719223018) do
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "username"
     t.integer  "city_id"
+    t.integer  "state_id"
     t.string   "fields"
     t.string   "portifolio_of_oab"
     t.string   "phone"
@@ -79,7 +104,9 @@ ActiveRecord::Schema.define(:version => 20120719223018) do
     t.datetime "updated_at",                             :null => false
   end
 
+  add_index "users", ["city_id"], :name => "index_users_on_city_id"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["state_id"], :name => "index_users_on_state_id"
 
 end

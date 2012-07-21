@@ -1,7 +1,7 @@
 # encoding: UTF-8
 
 Question.delete_all
-City.delete_all
+# City.delete_all
 
 90.times do |i|
   Question.create(
@@ -13,12 +13,12 @@ City.delete_all
   )
 end
 
-if City.count.zero?
-  require 'csv'
-  CSV.foreach(Rails.root.join('db','cities.csv')) do |row|
-    City.create!({
-      :state => row[0],
-      :name => row[1],
-      })
-    end
-  end
+# if City.count.zero?
+#   require 'csv'
+#   CSV.foreach(Rails.root.join('db','cities.csv')) do |row|
+#     City.create!({
+#       :state => row[0],
+#       :name => row[1],
+#       })
+#     end
+#   end

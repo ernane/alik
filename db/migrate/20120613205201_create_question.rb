@@ -5,11 +5,14 @@ class CreateQuestion < ActiveRecord::Migration
       t.text    :description,               :null => false
       t.string  :requester_name,            :null => false
       t.string  :requester_email,           :null => false
-      t.integer :city_id
+      t.integer :city_id,                   :null => false
+      t.integer :state_id,                  :null => false
       t.string  :requester_phone,           :null => false, :limit => 14
       
       t.timestamps
     end
+    add_index :questions, :city_id
+    add_index :questions, :state_id
   end
 
   def down
