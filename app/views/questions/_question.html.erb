@@ -1,15 +1,31 @@
 <li>
   <div class='answers'>
     <div class='count'>
-      <span>1</span>
-      resposta
+      <% if question.answers_count.zero? %>
+      <p>Nenhuma resposta</p>
+      <% else %>
+      <span><%= question.answers_count %></span>
+      <%= t(".answer", count: question.answers_count) %>
+      <% end %>
     </div>
-    <a class='lawyer' href='/'><img alt="" height="16" src="http://graph.facebook.com/100003922746457/picture?type=square" width="16" />Roberto</a>
+    
+    <% question.answers.each do |answer|%>
+    <div class="lawyer">
+      <%= link_to image_tag avatar_url(answer.user, 18) %>
+      <%= answer.user.username %>
+    </div>
+    <% end %>
+
   </div>
   <p class='requester'>
-    <strong>Carlos Eduardo</strong>
+    <strong><%= question.requester_name %></strong>
+    <% if question.state %>
+    <%= "de #{question.city.name}-#{question.state.name}, " %>
+    <% end %>
     perguntou:
   </p>
-  <h3><%= question.title %></h3>
-  <p class='sent-at'><%= t("questions.published_at", :time => l(question.created_at, :format => :short)) %></p>
+  <h3><%= link_to question.title, question %></h3>
+  <p class='sent-at'>
+    <%= t("questions.published_at", :time => l(question.created_at, :format => :short)) %>
+  </p>
 </li>

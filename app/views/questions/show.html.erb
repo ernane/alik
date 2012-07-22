@@ -1,0 +1,19 @@
+<div id="details">
+  <p id="requester">
+    <strong><%= @question.requester_name %></strong>
+    <%= t("questions.send", :time => l(@question.created_at, :format => :short)) %>
+  </p>
+  <div id="content">
+    <%= simple_format(@question.description) %>
+  </div>
+  <% if @question.answers.any? %>
+    <h2><%= "#{@question.answers.count} #{t(".answers", count: @question.answers.count)}" %></h2>
+  <% else %>
+    <h2>Respostas</h2>
+    <p>
+      <strong>Nenhuma resposta encontrada</strong>
+    </p>
+  <% end %>
+</div>
+
+<%= render "answers/form" %>

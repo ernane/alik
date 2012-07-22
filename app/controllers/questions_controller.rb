@@ -1,7 +1,11 @@
 class QuestionsController < ApplicationController
   def index
     @questions = Question.paginate(:page => params[:page], :per_page => 5)
-    @question = Question.new
+  end
+  
+  def show
+    @question = Question.find(params[:id])
+    @answer = Answer.new
   end
   
   def search

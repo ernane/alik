@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(:version => 20120721145507) do
     t.integer  "user_id"
     t.integer  "question_id"
     t.string   "evaluation"
+    t.text     "description"
+    t.string   "hashed_code"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -50,15 +52,18 @@ ActiveRecord::Schema.define(:version => 20120721145507) do
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "questions", :force => true do |t|
-    t.string   "title",                         :null => false
-    t.text     "description",                   :null => false
-    t.string   "requester_name",                :null => false
-    t.string   "requester_email",               :null => false
-    t.integer  "city_id",                       :null => false
-    t.integer  "state_id",                      :null => false
-    t.string   "requester_phone", :limit => 14, :null => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.string   "title",                                           :null => false
+    t.text     "description",                                     :null => false
+    t.string   "requester_name",                                  :null => false
+    t.string   "requester_email",                                 :null => false
+    t.integer  "city_id",                                         :null => false
+    t.integer  "state_id",                                        :null => false
+    t.string   "requester_phone", :limit => 14,                   :null => false
+    t.string   "hashed_code"
+    t.integer  "answers_count",                 :default => 0
+    t.boolean  "available",                     :default => true
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
   end
 
   add_index "questions", ["city_id"], :name => "index_questions_on_city_id"

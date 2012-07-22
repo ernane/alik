@@ -1,9 +1,8 @@
 <header>
   <div id='masthead'>
     <% if user_signed_in? %>
-    <%=image_tag avatar_url(current_user) , :class =>"image-profile"%>
-
-    Logado como <strong><%= current_user.username %></strong>.<br />
+    Logado como <strong><%= current_user.username %></strong>.
+    <%= image_tag avatar_url(current_user, 32) , :class =>"image-profile" %>
     <%= link_to 'Editar perfil', edit_user_registration_path %> | 
     <%= link_to "Sair", destroy_user_session_path, method: :delete %>
     <% else %>

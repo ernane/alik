@@ -8,5 +8,15 @@ pt-BR:
       title: "Busca"
       
     published_at: "Enviada em: %{time}"
+    send: "Perguntou em: %{time}"
+    
+    show:
+      answers:
+        one: advogado respondeu
+        other: advogados responderam
+    question:
+      answer:
+        one: resposta
+        other: respostas
 
 

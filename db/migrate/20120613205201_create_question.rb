@@ -8,6 +8,9 @@ class CreateQuestion < ActiveRecord::Migration
       t.integer :city_id,                   :null => false
       t.integer :state_id,                  :null => false
       t.string  :requester_phone,           :null => false, :limit => 14
+      t.string  :hashed_code
+      t.integer :answers_count,             :default => 0
+      t.boolean :available,                 :default => true
       
       t.timestamps
     end
