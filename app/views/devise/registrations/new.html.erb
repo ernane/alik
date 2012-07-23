@@ -5,7 +5,7 @@
 <div class="tabbable">
   <ul class="nav nav-tabs">
     <li class="active"><%= link_to "Informações de Segurança", "#tab1", :"data-toggle" => "tab"%></li>
-    <li><%= link_to "Informações Pessoais", "#tab2", :"data-toggle" => "tab"%></li>
+    <li><%= link_to "Informações Profissionais", "#tab2", :"data-toggle" => "tab"%></li>
     <li><%= link_to "Informações Acadêmicas", "#tab3", :"data-toggle" => "tab"%></li>
   </ul>
 
@@ -17,12 +17,13 @@
         <%= f.input :email %>
         <%= f.input :password %>
         <%= f.input :password_confirmation %>
+        <%= f.input :about, input_html: {class: "span4"} %>
       </fieldset>
     </div><!-- tab1 -->
 
     <div class="tab-pane" id="tab2">
       <fieldset>
-        <legend>Informações Pessoais</legend>
+        <legend>Informações Profissionais</legend>
         <%= f.input :state_id do %>
           <%= f.collection_select :state_id, State.order(:name), :id, :name, include_blank: true %>
         <% end %>
@@ -30,6 +31,8 @@
           <%= f.grouped_collection_select :city_id, State.order(:name), :cities, :name, :id, :name, include_blank: true %>
         <% end %>
         <%= f.input :avatar_url, input_html: {:class => "span3"} %>
+        <%= f.input :portifolio_of_oab, input_html: {:class => "span3"} %>
+        <%= f.input :fields, input_html: {:class => "span3"} %>
         <%= f.input :phone, :as => :string, input_html: {:class => "span3"} %>
         <%= f.input :teaching,            :collection => 1..5%>
         <%= f.input :professional,        :collection => 1..5%>
@@ -45,8 +48,7 @@
         <%= f.input :doctorate_in_law,    :as => :boolean %>
         <%= f.input :master_of_law,       :as => :boolean %>
         <%= f.input :postgraduate_in_law, :as => :boolean %>
-        <%= f.input :foreign_laguage,     :as => :boolean%>
-        <%= f.input :terms_of_use,        :as => :boolean %>
+        <%= f.input :foreign_laguage,     :as => :boolean %>
       </fieldset>
     </div><!-- tab3 -->
 

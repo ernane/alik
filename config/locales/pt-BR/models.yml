@@ -1,0 +1,51 @@
+pt-BR:
+  activerecord:
+    required: Campo Obrigatório
+    
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+      question:
+        one: Pergunta
+        other: Perguntas
+      answer:
+        one: Respota
+        other: Respostas
+        
+    attributes:
+      answer:
+        description: Descrição
+      question:
+        title: Título
+        description: Descrição
+        requester_name: Nome
+        requester_email: E-mail
+        requester_phone: Telefone
+        state_id: Estado
+        city_id: Cidade
+      user:
+        username: Nome
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirmar Senha
+        current_password: Senha Atual
+        portifolio_of_oab: Carteira OAB
+        state_id: Estado
+        city_id: Cidade
+        phone: Telefone
+        teaching: Anos de Magistério
+        professional: Anos de Exercício Profissional
+        books_published: Livros publicados
+        articles_published: Artigos publicados
+        postgraduate: Pós Doutorado
+        doctorate_in_law: Doutorado
+        master_of_law: Mestrado
+        postgraduate_in_law: Graduado
+        foreign_laguage: Domínio de Lingua Estrangeira
+        terms_of_use: Termos de Uso
+        fields: Áreas de atuação
+        about: Sobre mim
+        
+        
+        

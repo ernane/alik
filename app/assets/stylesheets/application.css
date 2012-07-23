@@ -146,6 +146,11 @@ footer p{
 	height:36px;
 }
 
+.avatar-question{
+	width: 18px;
+	height:18px;
+}
+
 .lawyer{
   display: block;
   margin: 4px 0 4px 4px;
