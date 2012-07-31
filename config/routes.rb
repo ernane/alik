@@ -14,7 +14,19 @@ Alik::Application.routes.draw do
 
   resources :questions, :path => "perguntas" do
     get 'pagina/:page', :action => :index, :on => :collection
-    resources :answers
+    resources :answers do
+      member do
+        get :useful
+        get :useless
+      end
+    end
+  end
+  
+  resources :answers, path: 'respostas', only: [:new, :create], path_names: {new: 'nova'} do
+    member do
+      get :useful
+      get :useless
+    end
   end
 
   controller :site do
