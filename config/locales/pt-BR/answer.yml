@@ -1,3 +1,9 @@
 pt-BR:
+  answers:
+    form:
+      title: Respostas
+    answer:
+      useful: Resposta útil
+      useless: Não ajudou
   answer:
     published_at: "Respondida em: %{time}"

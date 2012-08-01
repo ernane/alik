@@ -11,14 +11,45 @@ class User < ActiveRecord::Base
   belongs_to :city
   belongs_to :state
   has_many :answers, dependent: :destroy
+  
+  
 
-  def send_on_create_confirmation_instructions
-    Devise::Mailer.delay.confirmation_instructions(self)
+  after_initialize :set_defaults
+
+  def human_alik_rate
+    rate = alik_rate/3
+    if rate >= 8
+      "Excelente"
+    elsif rate >= 6
+      "Otimo"
+    elsif rate >= 4
+      "Muito bom"
+    elsif rate >= 2
+      "Bom"
+    else
+      "Regular"
+    end
   end
-  def send_reset_password_instructions
-    Devise::Mailer.delay.reset_password_instructions(self)
+
+  def alik_rate
+    value = 0
+    value += teaching * 0.5
+    value += professional * 2
+    value += books_published * 0.5
+    value += articles_published * 0.25
+    value += 4 if doctorate_in_law?
+    value += 4 if postgraduate_in_law?
+    value += 4 if master_of_law?
+    value += 4 if postgraduate?
+    value += 1 if foreign_laguage?
+    value
   end
-  def send_unlock_instructions
-    Devise::Mailer.delay.unlock_instructions(self)
+
+  private
+  def set_defaults
+    self.teaching ||= 0
+    self.professional ||= 0
+    self.books_published ||= 0
+    self.articles_published ||= 0
   end
 end

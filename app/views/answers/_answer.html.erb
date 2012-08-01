@@ -1,6 +1,8 @@
 <div class="answers">
   <% if answer.evaluation.nil? %>
     <span class="no-rated">Não avaliada</span>
+  <% else %>
+		<span class="<%= answer.evaluation %>"><%= t(".#{answer.evaluation}") %></span>
   <% end %>
 
   <div class="answer-profile">

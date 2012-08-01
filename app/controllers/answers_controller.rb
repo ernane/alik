@@ -19,7 +19,7 @@ class AnswersController < ApplicationController
     @answer = @question.answers.build(params[:answer].merge!(:user => current_user))
 
     if @answer.save
-      flash[:notice] = t("create_sucess")
+      flash[:notice] = t("flash.answer.create.notice")
       redirect_to @question
     else
       render :action => "new"

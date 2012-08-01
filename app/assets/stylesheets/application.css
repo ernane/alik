@@ -170,3 +170,21 @@ footer p{
   background: linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
 
 }
+
+span.useful {
+  float:right;
+  padding: 4px 0 4px 20px;
+  color: #000;
+  font-weight: bold;
+  background-image: url("success.png");
+  background-repeat: no-repeat;
+}
+
+span.useless {
+  float:right;
+  padding: 4px 0 4px 20px;
+  color: #000;
+  font-weight: bold;
+  background-image: url("warning.png");
+  background-repeat: no-repeat;
+}

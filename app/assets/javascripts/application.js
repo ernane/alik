@@ -16,6 +16,11 @@
 //= require twitter/bootstrap
 //= require_tree .
 
+jQuery(function($){
+   $("#question_requester_phone").mask("(99) 9999-9999");
+   $("#user_phone").mask("(99) 9999-9999");
+});
+
 $(document).ready(function(){
   setTimeout(hideFlashes, 5000);
 });

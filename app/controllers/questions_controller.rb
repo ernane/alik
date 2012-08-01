@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.paginate(:page => params[:page], :per_page => 5)
+    @questions = Question.latest_four.paginate(:page => params[:page], :per_page => 5)
   end
   
   def show

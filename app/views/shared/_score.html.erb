@@ -1,0 +1,26 @@
+<div id="score">
+  <div id="average">
+
+    <div class="column alik">
+      <%=image_tag('alik-logo-small.png')%>
+      <br>índice
+    </div>
+
+    <div class="column">
+      <span id="score-info">
+        <%= current_user.human_alik_rate %>
+      </span><br>
+
+      <strong>
+        <%=number_with_precision(current_user.alik_rate/3, precision: 1)%>
+      </strong>
+    </div>
+
+  </div>
+
+  <p id="counter">
+    <strong id="useful"> <%="#{current_user.answers.useful.count}" %></strong> resposta(s) positiva(s)<br>
+    <strong id="useless"><%="#{current_user.answers.useless.count}"%></strong> resposta(s) negativa(s)
+  </p>
+
+</div>

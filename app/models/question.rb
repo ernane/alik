@@ -9,6 +9,8 @@ class Question < ActiveRecord::Base
   belongs_to :state
   has_many :answers, dependent: :destroy
   
+  scope :latest_four, order("created_at DESC")
+  
   def to_param
     "#{id}-#{title.parameterize}"
   end
@@ -28,6 +30,4 @@ class Question < ActiveRecord::Base
       scoped
     end
   end
-  
-  
 end
