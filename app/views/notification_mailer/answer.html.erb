@@ -1,0 +1,14 @@
+
+<h2>Sua pergunta recebeu uma nova resposta</h2>
+
+
+<p>Prezado <%= @question.requester_name%>, Sua pergunta <%= @question.title %> recebeu uma resposta de <strong><%= @answer.user.username%></strong>:
+	<%= simple_format(@answer.description) %>
+
+<p><%= link_to "ESSA RESPOSTA ME AJUDOU", useful_answer_url(@answer.hashed_code) %></p>
+<p><%= link_to "NÃO GOSTEI DA RESPOSTA", useless_answer_url(@answer.hashed_code) %></p>
+
+<p>
+	<strong>Equipe Alik</strong><br>
+	<%= link_to "www.alik.com.br", "http://www.alik.com.br/" %>
+</p>

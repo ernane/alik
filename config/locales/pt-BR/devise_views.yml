@@ -7,6 +7,9 @@ pt-BR:
       link: Não recebeu instruções de confirmação?
     passwords:
       edit:
+        label:
+          password: Nova senha
+          password_confirmation: Confirmar nova senha
         title: Mudar sua senha
         submit: Mudar minha senha
       new:
