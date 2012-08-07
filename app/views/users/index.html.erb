@@ -1,0 +1,9 @@
+<h1>Lista de usuários</h1>
+
+<% User.all.each do |user| %>
+	<p>
+		<%=image_tag avatar_url(user,0)%>
+		<%= link_to show_user_helper(user), user_path(user.id) %>	
+	</p>
+
+<% end %>

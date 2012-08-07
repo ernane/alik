@@ -36,4 +36,9 @@ Alik::Application.routes.draw do
   controller :questions do
     get "/questions/search", :action => :search, :as => :search_questions
   end
+  
+  controller :users do
+    get "/users/index", :action => :index, :as =>:users
+    get "/users/:id",  :action => :show, :as =>:user
+  end
 end

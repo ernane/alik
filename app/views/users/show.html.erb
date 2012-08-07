@@ -1,0 +1,9 @@
+<h1>Detalhes do Usuário</h1>
+
+<%=render "shared/score_public" %>
+
+<p>
+	<%=image_tag avatar_url(@user,0)%>
+	<%=link_to show_user_helper(@user), user_path(@user.id) %>	
+</p>
+
