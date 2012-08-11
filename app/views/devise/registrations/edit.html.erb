@@ -33,7 +33,7 @@
         <%= f.input :city_id do %>
           <%= f.grouped_collection_select :city_id, State.order(:name), :cities, :name, :id, :name, include_blank: true %>
         <% end %>
-        <%= f.input :avatar_url, input_html: {:class => "span3"} %>
+        <%= f.input :avatar_url, input_html: {:class => "span3"}, :hint => "Use o #{link_to "gravatar", "https://pt.gravatar.com/site/login/"} para obter sua url" %>
         <%= f.input :portifolio_of_oab, input_html: {:class => "span3"} %>
         <%= f.input :fields, input_html: {:class => "span3"} %>
         <%= f.input :phone, :as => :string, input_html: {:class => "span3"} %>
