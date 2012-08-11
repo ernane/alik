@@ -12,6 +12,9 @@ gem "daemons"
 gem "thin"
 gem "pg"
 gem "pg_search"
+gem "activeadmin"
+gem "meta_search"
+gem "kaminari"
 
 group :assets do
   gem "sass-rails",   "~> 3.2.3"
