@@ -2,7 +2,6 @@
  *= require_self
  *= require bootstrap_and_overrides
  *= require reset
- *= require style
  *= require layout
  *= require general
  *= require forms
