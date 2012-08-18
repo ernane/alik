@@ -17,7 +17,7 @@ pt-BR:
         submit: Me enviar instruções para reiniciar minha senha
     registrations:
       edit:
-        title: Editar {resource}
+        title: Editar meus dados
         update: Atualizar
         cancel:
           title: Cancelar minha conta

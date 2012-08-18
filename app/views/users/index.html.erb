@@ -1,9 +1,9 @@
-<h1>Lista de usuários</h1>
+<h1>Conheça os advogados que já se cadastraram</h1>
 
-<% User.all.each do |user| %>
-	<p>
-		<%=image_tag avatar_url(user,0)%>
-		<%= link_to show_user_helper(user), user_path(user.id) %>	
-	</p>
-
-<% end %>
+<ul class="users">
+	<% @users.each do |user| %>
+	<li>
+		<%= profile_link user %>
+	</li>
+	<% end %>
+</ul>

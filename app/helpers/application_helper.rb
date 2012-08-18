@@ -8,15 +8,19 @@ module ApplicationHelper
       "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{CGI.escape(default_url)}"
     end
   end
-
-  def show_user_helper(user)
-    content =  "<p>"
-    content << "<ul>"
-    content << "<li><h3>#{user.username.upcase}</h3></li>"
-    content << "<li>#{user.email}</li>"
-    content << "</ul>"
-    content << "</p>"
-    raw content
+  
+  def profile_user(user)
+    content_tag :span, :class => "user_show" do
+      link_to(image_tag(avatar_url(user, 70), :alt => user.username), user_path(user), :class => "avatar_show") +
+      link_to(user.username, user_path(user), :class => "name_show")
+    end
+  end
+  
+  def profile_link(user)
+    content_tag :span, :class => "user" do
+      link_to(image_tag(avatar_url(user, 60), :alt => user.username), user_path(user), :class => "avatar", :rel =>  "popover", :"data-content" => user.profile_name, :"data-original-title" => user.username) +
+      link_to(user.username, user_path(user), :class => "name")
+    end
   end
   
   def header_question(question)

@@ -12,7 +12,9 @@ class User < ActiveRecord::Base
   belongs_to :state
   has_many :answers, dependent: :destroy
   
-  
+  def profile_name
+    "#{self.username} - #{self.email}"
+  end
 
   after_initialize :set_defaults
 

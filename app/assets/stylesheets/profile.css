@@ -1,0 +1,64 @@
+/* PROFILE SIDEBAR */
+#profile {
+  margin-bottom: 25px;
+}
+#profile .avatar {
+  border: solid 2px #999;
+}
+
+#profile  dt {
+  width: 160px;
+}
+
+#profile   dd {
+  margin-left: 5px;
+}
+
+#profile   dd p:first-child {
+  margin-top: 0;
+}
+
+#profile   dd, dt {
+  padding-top: 5px;
+}
+
+/* USERS LIST */
+.users {
+  list-style: none;
+  overflow: hidden;
+}
+
+.users li {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+ul.users img {
+  padding:1px;
+  border: solid 1px #666;
+  margin: 0;
+  width: 60px;
+}
+
+.users li:nth-child(5n+5) {
+  margin-right: 0;
+}
+
+.users .name {
+  display: none;
+}
+
+/* USER SHOW */
+a.avatar_show img{
+  padding:1px;
+  border: solid 2px #666;
+  margin: 0;
+  width: 70px;
+}
+
+a.name_show{
+  margin-left:20px;
+  font-size: 20px;
+}
+
