@@ -1,25 +1,12 @@
 #profile {
-	margin-bottom: 35px;
-	margin-top: 25px;
+	margin-bottom: 25px;
 	
   .avatar {
-    border: solid 1px #999;
+    border: solid 2px #999;
   }
-
-  h1 {
-    font-size: 40px;
-    padding-top: 2px;
-    a { color: #000; }
-  }
-
+  
   dt {
-    
     width: 160px;
-		
-		span{
-			font-weight: bold;
-		}
-		
   }
 
   dd {
@@ -32,9 +19,5 @@
 
   dd, dt {
     padding-top: 5px;
-  }
-
-  .none {
-    color: #999;
   }
 }

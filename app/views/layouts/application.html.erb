@@ -19,29 +19,23 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-
-  <body id="<%= controller.controller_name %>">
-
-    <div id="wrap">
-      <%= render("shared/header") %>
-      <div id="container" class="has_sidebar">
-        <div id='container-title'>
-          <%= render("shared/main_header") %>
-        </div>
-
-        <aside>
-          <%= yield(:sidebar) %>
-        </aside>
-
-        <section role="main">
-          <%= flash_messages %>
-          <%= yield %>
-        </section>
-        
-      </div>
-      <%= render("shared/footer") %>
+  <body>
+		<section id="content">
+			<%= render("shared/header") %>
+			<div id="container" class="sidebar">
+				<div id='container-title'>
+					<%= render("shared/main_header") %>
+				</div>
+				<aside>
+					<%= yield(:sidebar) %>
+				</aside>
+				<section role="main">
+					<%= flash_messages %>
+					<%= yield %>
+				</section>
+			</div>
+			<%= render("shared/footer") %>
     </div>
-
     <%= analytics "UA-32025057-1" %>
   </body>
 </html>

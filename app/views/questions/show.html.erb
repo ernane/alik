@@ -1,20 +1,23 @@
-<div id="details">
-  <p id="requester">
-    <strong><%= @question.requester_name %></strong>
-    <%= t("questions.send", :time => l(@question.created_at, :format => :short)) %>
-  </p>
-  <div id="content">
-    <%= simple_format(@question.description) %>
-  </div>
-  <% if @question.answers.any? %>
-    <h2><%= "#{@question.answers.count} #{t(".answers", count: @question.answers.count)}" %></h2>
-  <% else %>
-    <h2>Respostas</h2>
-    <p>
-      <strong>Nenhuma resposta encontrada</strong>
-    </p>
-  <% end %>
-</div>
+<article>
+	<header class="question-show">
+		<span class="doctor">
+	    <strong><%= @question.requester_name %></strong>
+	    <%= t("questions.send", :time => l(@question.created_at, :format => :short)) %>
+	  </span>
+	</header>
+		<div class="question-description">
+			<%= simple_format(@question.description) %>
+		</div>
+		
+		<% if @question.answers.any? %>
+		<h2 class="search-answer"><%= "#{@question.answers.count} #{t(".answers", count: @question.answers.count)}" %></h2>
+		<% else %>
+		<h2 class="search-answer">Respostas</h2>
+		<p>
+			<strong>Nenhuma resposta encontrada</strong>
+		</p>
+		<% end %>
+</article>
 
 <div id="answers">
   <%= render @question.answers %>
@@ -23,47 +26,3 @@
 <% if user_signed_in? %>
   <%= render "answers/form" %>
 <% end %>
-
-<style type="text/css" media="screen">
-  #answers{
-  padding: 10px 20px 0;
-  margin-bottom:50px;
-  background-color: #F1F5F8;
-}
-  .answers{
-  padding: 10px 20px 0;
-  border-bottom: 1px dotted #B8D0DE;
-}
-  span.no-rated{
-    font-style: italic;
-    color: red;
-    float:right;
-  }
-.when{
-  font-size: .9em;
-  color: #999;
-  margin: .5em 0;
-}
-.answer-profile{
-  width: 30%;
-  margin: 4px 0 4px 0;
-  padding: 3px 6px;
-  border: 1px solid #CCC;
-  font-size: 1.0em;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  background: #EFEFEF;
-  background: -moz-linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FAFAFA), color-stop(100%, #EFEFEF));
-  background: -webkit-linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
-  background: -o-linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
-  background: -ms-linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
-  background: linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
-
-}
-.answer-avatar{
-  height: 38px;
-  width: 38px;
-}
-</style>

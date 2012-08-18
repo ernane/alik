@@ -1,18 +1,18 @@
-<div class="answers">
-  <% if answer.evaluation.nil? %>
-    <span class="no-rated">Não avaliada</span>
-  <% else %>
-		<span class="<%= answer.evaluation %>"><%= t(".#{answer.evaluation}") %></span>
-  <% end %>
 
-  <div class="answer-profile">
-    <%= link_to image_tag avatar_url(answer.user, 38), :class => "answer-avatar" %>
-    <%= answer.user.username %>
-  </div>
-  <p class="when">
-    <%= t("answer.published_at", :time => l(answer.created_at, :format => :short)) %>
-  </p>
-  
-  <%= simple_format(answer.description) %>
+<% if answer.evaluation.nil? %>
+<span class="no-rated">Não avaliada</span>
+<% else %>
+<span class="<%= answer.evaluation %>"><%= t(".#{answer.evaluation}") %></span>
+<% end %>
+
+<div class="answer-profile">
+	<%= link_to image_tag avatar_url(answer.user, 38), :class => "answer-avatar" %>
+	<%= answer.user.username %>
 </div>
+<span class="when">
+	<%= t("answer.published_at", :time => l(answer.created_at, :format => :short)) %>
+</span>
+
+<%= simple_format(answer.description) %>
+
 

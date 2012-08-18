@@ -18,4 +18,13 @@ module ApplicationHelper
     content << "</p>"
     raw content
   end
+  
+  def header_question(question)
+    content_tag :h2, :class => "question-header" do
+      [ 
+        question.requester_name,
+          "de #{question.city.name}-#{question.state.name}, perguntou:"
+      ].join(' ').html_safe
+    end
+  end
 end

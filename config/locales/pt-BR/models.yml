@@ -3,6 +3,9 @@ pt-BR:
     required: Campo Obrigatório
     
     models:
+      user_admin:
+        one: Usuário
+        other: Usuários
       user:
         one: Usuário
         other: Usuários
@@ -14,6 +17,9 @@ pt-BR:
         other: Respostas
         
     attributes:
+      user_admin:
+        email: E-mail
+        password: Senha
       answer:
         description: Descrição
       question:

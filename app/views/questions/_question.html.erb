@@ -1,31 +1,26 @@
-<li>
-  <div class='answers'>
-    <div class='count'>
-      <% if question.answers_count.zero? %>
-      <p>Nenhuma resposta</p>
-      <% else %>
-      <span><%= question.answers_count %></span>
-      <%= link_to t(".answer", count: question.answers_count), question %>
-      <% end %>
-    </div>
-    
-    <% question.answers.each do |answer|%>
-    <div class="lawyer">
-      <%= link_to image_tag(avatar_url(answer.user, 18)), user_path(answer.user), :class =>"avatar-question" %>
-      <%= link_to answer.user.username, user_path(answer.user) %>
-    </div>
-    <% end %>
-
-  </div>
-  <p class='requester'>
-    <strong><%= question.requester_name %></strong>
-    <% if question.state %>
-    <%= "de #{question.city.name}-#{question.state.name}, " %>
-    <% end %>
-    perguntou:
-  </p>
-  <h3><%= link_to question.title, question %></h3>
-  <p class='sent-at'>
-    <%= t("questions.published_at", :time => l(question.created_at, :format => :short)) %>
-  </p>
-</li>
+<article class="question-index">
+	<header class="question-header">
+		<%= header_question(question) %>
+  	<span class="question"><%= link_to question.title, question %></span>
+		
+		<div class="answers">
+			<% if question.answers_count.zero? %>
+			<span class="none_count">Nenhuma resposta</span>
+			<% else %>
+			<span class="number_count"><%= question.answers_count %></span>
+			<%= link_to t(".answer", count: question.answers_count), question %>
+			<% end %>
+			
+			<% question.answers.each do |answer|%>
+			<span class="user_answer_number">
+				<%= link_to image_tag(avatar_url(answer.user, 18)), user_path(answer.user)%>
+				<%= link_to answer.user.username, user_path(answer.user) %>
+			</span>
+			<% end %>
+		</div>
+	</header>
+	
+	<footer class="question-footer">
+		<%= t("questions.published_at", :time => l(question.created_at, :format => :short)) %>
+	</footer>
+</article>

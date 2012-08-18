@@ -6,11 +6,11 @@
 
 <h1><%= t(".container_title") %></h1>
 
-<ul id='questions'>
+<section id='questions'>
   <% @questions.each do |question| %>
     <%= render question %>
   <% end %>
-</ul>
+</section>
 
 <div class="digg_pagination">
   <%= will_paginate @questions %>

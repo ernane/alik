@@ -17,6 +17,7 @@ module Alik
     config.time_zone = "Brasilia"
     config.i18n.load_path += Dir[Rails.root.join("config/locales/**/*.yml").to_s]
     config.i18n.default_locale = :"pt-BR"
+    config.i18n.locale = :"pt-BR"
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
     config.active_record.whitelist_attributes = true
