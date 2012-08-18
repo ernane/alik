@@ -9,7 +9,11 @@ class Question < ActiveRecord::Base
   belongs_to :state
   has_many :answers, dependent: :destroy
   
-  scope :latest_four, order("created_at DESC")
+  scope :latest_four, order("created_at DESC").limit(4)
+  scope :ordered, order("created_at DESC")
+  scope :available, where(:available => true)
+  scope :with_answers, where('answers_count > 0')
+  scope :without_answers, where('answers_count < 0')
   
   def to_param
     "#{id}-#{title.parameterize}"
