@@ -1,7 +1,15 @@
 <h1>Perfil do usuário - <%= @user.username %></h1>
 
+<section class="user-profile">
 <%= render "shared/score_public" %>
-
-<section>
 	<header><%= profile_user @user %></header>
+	<dl>
+    <dt>Estado: 												<span class="result"><%= @user.state %></span></dt>
+		<dt>Cidade: 												<span class="result"><%= @user.city %></span></dt>
+		<dt>Telefone: 											<span class="result"><%= @user.phone %></span></dt>
+		<dt>Áreas de Atuação: 							<span class="result"><%= @user.fields %></span></dt>
+		<dt>Registro OAB: 									<span class="result"><%= @user.oab %></span></dt>
+		<dt>Anos de Exercício Profissional: <span class="result"><%= @user.professional %></span></dt>
+		<dt>Sobre: 													<span class="result"><%= @user.about %></span></dt>
+  </dl>
 </section>

@@ -62,3 +62,31 @@ a.name_show{
   font-size: 20px;
 }
 
+section.user-profile  dt {
+  width: 600px;
+}
+
+section.user-profile  dl {
+  margin-left:50px;
+}
+
+section.user-profile dd {
+  margin-left: 5px;
+}
+
+section.user-profile dd p:first-child {
+  margin-top: 0;
+}
+
+section.user-profile dd, dt {
+  padding-top: 5px;
+}
+
+span.none {
+  font-weight: normal;
+  color: #999;
+}
+
+span.result {
+  font-weight: normal;
+}
