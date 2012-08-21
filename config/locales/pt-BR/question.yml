@@ -4,7 +4,7 @@ pt-BR:
       container_title: "Últimas perguntas"
       title: "Home"
     search:
-      container_title: "Sua Buca"
+      container_title: "Sua Busca"
       title: "Busca"
       
     published_at: "Enviada em: %{time}"

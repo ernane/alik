@@ -4,6 +4,7 @@
 <%= render "shared/score_public" %>
 	<header><%= profile_user @user %></header>
 	<dl>
+		<dt>E-mail: 												<span class="result"><%= @user.email %></span></dt>
     <dt>Estado: 												<span class="result"><%= @user.state %></span></dt>
 		<dt>Cidade: 												<span class="result"><%= @user.city %></span></dt>
 		<dt>Telefone: 											<span class="result"><%= @user.phone %></span></dt>
