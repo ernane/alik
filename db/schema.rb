@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120811163046) do
+ActiveRecord::Schema.define(:version => 20120829013232) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -110,8 +110,8 @@ ActiveRecord::Schema.define(:version => 20120811163046) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "username"
     t.integer  "city_id"
     t.integer  "state_id"
@@ -138,8 +138,9 @@ ActiveRecord::Schema.define(:version => 20120811163046) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.boolean  "featured",               :default => false
   end
 
   add_index "users", ["city_id"], :name => "index_users_on_city_id"

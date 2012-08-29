@@ -4,6 +4,15 @@
 	<% @users.each do |user| %>
 	<li>
 		<%= profile_link user %>
+		<ul>
+			<li class="username_index"><%= user.username %></li>
+		</ul>
 	</li>
 	<% end %>
 </ul>
+
+<style type="text/css" media="screen">
+	.username_index{
+		font-size:9.5px;
+	}
+</style>

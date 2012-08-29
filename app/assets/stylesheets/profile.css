@@ -2,12 +2,17 @@
 #profile {
   margin-bottom: 25px;
 }
+.avatar{
+	height: 60px;
+	width:60px;
+}
 #profile .avatar {
   border: solid 2px #999;
 }
 
 #profile  dt {
-  width: 160px;
+  width: 460px;
+  font-size:11px;
 }
 
 #profile   dd {
