@@ -1,13 +1,20 @@
 <h2>Destaques</h2>
-<% User.featured.each do |user| %>
+<% @users = User.order("RANDOM()") %>
+<% @users.limit(2).each do |user| %>
 	<div id="profile">
 		<%= image_tag avatar_url(user, 60), :alt => user.username, :class => "avatar" %> <span class="name"><%= user.username %></span>
 		<dl>
 			<dt><span>Carteira OAB:	</span> <%= user.portifolio_of_oab %></dt>
-			<dt><span>Cidade:				</span> <%= user.city.name %></dt>
+			<dt>
+				<% if user.city.present? %>
+				<span>Cidade:				</span> <%= user.city.name %>
+				<% else %>
+				<span>Cidade:				</span>
+				<% end %>
+				</dt>
 			<dt><span>Telefone:			</span> <%= user.phone %></dt>
 			<dt><span>E-mail:				</span> <%= user.email %></dt>
-			<dt><span>Índice:				</span> <%=number_with_precision(user.alik_rate/3, precision: 1)%></dt>
+			<dt><span>Índice:				</span> <%=number_with_precision(user.alik_rate/3, precision: 1)%> - <%= user.human_alik_rate %></dt>
 		</dl>
 	</div>
 <% end %>
