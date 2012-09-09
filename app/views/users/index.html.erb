@@ -11,6 +11,10 @@
 	<% end %>
 </ul>
 
+<% content_for :sidebar do %>
+  <%= render("shared/sidebar") %>
+<% end %>
+
 <style type="text/css" media="screen">
 	.username_index{
 		font-size:9.5px;
