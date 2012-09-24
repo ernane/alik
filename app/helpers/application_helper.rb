@@ -27,7 +27,7 @@ module ApplicationHelper
     content_tag :h2, :class => "question-header" do
       [ 
         question.requester_name,
-          "de #{question.city.name}-#{question.state.name}, perguntou:"
+          " - de #{question.city.name}/#{question.state.name}, perguntou:"
       ].join(' ').html_safe
     end
   end

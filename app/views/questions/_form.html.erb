@@ -1,0 +1,51 @@
+
+<%= simple_form_for(@question) do |f| %>
+<fieldset>
+	<legend>Fieldset Name</legend>
+	<%= f.input :title %>
+	<%= f.input :requester_name %>
+	<div class="row">
+		<div class="seven columns">
+			<%= f.input :requester_email %>
+		</div>
+		<div class="five columns">
+			<%= f.input :requester_phone %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="seven columns">
+			<%= f.input :city_id do %>
+			<%= f.text_field :city_name, data: {autocomplete_source: cities_path} %>
+			<% end %>
+		</div>
+		<div class="five columns">
+			<%= f.input :state_id do %>
+			<%= f.text_field :state_name, data: {autocomplete_source: states_path} %>
+			<% end %>
+		</div>
+	</div>
+
+	<%= f.input :description, :as => :text, input_html: {:rows => "15"} %>
+
+	<%= f.button :submit,  :class => "button radius blue" %>
+	<%= link_to "Cancelar", root_path %>
+</fieldset>
+<% end %>
+
+<style type="text/css" media="screen">
+	div.controls{
+		margin-bottom:20px;
+	}
+	input.string{
+		margin:0;
+	}
+	input.ui-autocomplete-input{
+		margin:0;
+		padding:0;
+	}
+	span.help-inline{
+		color: red;
+		margin-bottom:20px;
+	}
+</style>

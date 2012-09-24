@@ -48,3 +48,5 @@ public/system
 config/database.yml
 public/assets
 config/deploy.rb
+.vagrant
+Vagrantfile

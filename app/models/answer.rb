@@ -5,6 +5,8 @@ class Answer < ActiveRecord::Base
   belongs_to :question, counter_cache: true
   belongs_to :user
   
+  attr_accessible :created_at, :hashed_code, :id, :updated_at
+  
   validates :evaluation, inclusion: { in: %w{useful useless}, allow_nil: true }
   after_create :delay_notification
   scope :useful, where(evaluation: "useful")

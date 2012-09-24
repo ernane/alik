@@ -12,15 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
-//= require twitter/bootstrap
-//= require_tree .
+//= require jquery.ui.autocomplete
+//= require foundation
+//= require jquery.maskedinput
+//= require questions
 
 jQuery(function($){
    $("#question_requester_phone").mask("(99) 9999-9999");
    $("#user_phone").mask("(99) 9999-9999");
 });
-
 $(document).ready(function(){
   setTimeout(hideFlashes, 5000);
 });

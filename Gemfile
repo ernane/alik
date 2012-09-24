@@ -8,8 +8,9 @@ gem "simple_form"
 gem "draper"
 gem "devise"
 gem "thin"
-gem "pg"
-gem "pg_search"
+#gem "pg"
+#gem "pg_search"
+gem "mysql2"
 
 # ADMIN
 gem "activeadmin"
@@ -22,11 +23,14 @@ gem "delayed_job_web"
 gem "daemons"
 
 group :assets do
-  gem "sass-rails",               "~> 3.2.3"
-  gem "coffee-rails",             "~> 3.2.1"
-  gem "uglifier",                 ">= 1.0.3"
+  gem "sass-rails"
+  gem "coffee-rails"
+  gem "uglifier"
   gem "therubyracer",             :platform => :ruby
-  gem "twitter-bootstrap-rails"
+  
+  gem 'jquery-ui-rails'
+  gem 'compass-rails'
+  gem 'zurb-foundation'
 end
 
 group :development do

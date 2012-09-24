@@ -1,5 +1,5 @@
 <h2>Destaques</h2>
-<% @users = User.order("RANDOM()") %>
+<% @users = User.order("RAND()") %>
 <% @users.limit(2).each do |user| %>
 	<div id="profile">
 		<%= image_tag avatar_url(user, 60), :alt => user.username, :class => "avatar" %> <span class="name"><%= user.username %></span>

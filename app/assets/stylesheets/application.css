@@ -1,12 +1,11 @@
 /*
+ *= require layout
  *= require_self
- *= require bootstrap_and_overrides
- *= require reset
  *= require layout
  *= require general
- *= require forms
  *= require pagination
- *= require profile
- *= require question
- *= require score
+ *= require forms
+ *= require foundation_and_overrides
+ *= require jquery.ui.dialog
+ *= require jquery.ui.autocomplete
 */

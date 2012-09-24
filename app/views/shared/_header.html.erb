@@ -1,27 +1,30 @@
-<header>
-	<div id='devise-sidebar'>
-		<% if user_signed_in? %>
-		Logado como <strong><%= current_user.username %></strong>.
-		<%= image_tag avatar_url(current_user, 32) , :class =>"image-profile" %>
-		<%= link_to 'Editar perfil', edit_user_registration_path %> | 
-		<%= link_to "Sair", destroy_user_session_path, method: :delete %>
-		<% else %>
-		<div id='sign-in'>
-			Você é advogado?
-			<%= link_to "Faça seu cadastro gratuitamente", new_user_registration_path, :class => "btn-large btn-success" %>
-		</div>
+<div class="two columns" id="logo">
+	<%= link_to image_tag("alik-logo.png"), root_path %>
+</div>
+<div class="six columns" id="menu">
+	<ul class="nav-bar">
+		<li><%= link_to "Home", root_path %></li>
+		<li><%= link_to "Quem Somos", about_path %></li>
+		<li><%= link_to "Blog", nil %></li>
+		<li><%= link_to "Contato", new_contact_path %></li>
+		<% unless user_signed_in? %>
+		<li><%= link_to "Login", new_user_session_path %></li>
 		<% end %>
-	</div>
-	<div id='logo'><%= link_to "Alik", root_path %></div>
-	<nav class="navigation">
-		<ul>
-			<li><%= link_to "Home", root_path %></li>
-			<li><%= link_to "Quem Somos", about_path %></li>
-			<li><%= link_to "Blog", nil %></li>
-			<li><%= link_to "Contato", new_contact_path %></li>
-			<% unless user_signed_in? %>
-			<li><%= link_to "Login", new_user_session_path %></li>
-			<% end %>
-		</ul>
-	</nav>
-</header>
+	</ul>
+</div>
+<div class="four columns" id="devise-menu">
+	<% if user_signed_in? %>
+	Logado como: 
+		<div href="#" class="secondary button split dropdown">
+		  <a href="#"><%= current_user.username %></a>
+		  <span></span>
+		  <ul>
+		    <li><%= link_to 'Editar perfil', edit_user_registration_path %></li>
+		    <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
+		  </ul>
+		</div>
+	<% else %>
+	Você é advogado?
+	<%= link_to "Faça seu cadastro gratuitamente", new_user_registration_path, :class => "small gloss success button radius" %>
+	<% end %>
+</div>

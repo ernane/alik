@@ -1,38 +1,17 @@
-<h1>Assessoria jurídica gratuita</h1>
-<%= form_tag search_questions_path, :method => :get do %>
-<%= text_field_tag :query, params[:query], placeholder: "Faça uma busca em nosso site", :class => "search" %>
-<%= submit_tag t("form.buttons.search"), :class => "btn btn-large btn-success" %>
-<% end %>
-<ul class="buttons-home">
-	<li><%= link_to "Fazer pergunta", "#new_question", "data-toggle" => "modal", :class => "btn btn-large" %></li>
-	<li><%= link_to "Procurar um advogado", users_path, :class => "btn btn-large" %></li>
-</ul>
-
-
-<div class="modal hide fade" id="new_question">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal">X</button>
-		<h1>Criar uma nova pergunta</h1>
+<div class="twelve columns" id="busca">
+	<h1>Assessoria jurídica gratuita</h1>
+	<div class="row collapse">
+		<div class="ten mobile-three columns">
+			<%= form_tag search_questions_path, :method => :get do %>
+			<%= text_field_tag :query, params[:query] %>
+		</div>
+		<div class="two mobile-one columns">
+			<%= submit_tag t("form.buttons.search"), :class => "postfix button expand gloss success" %>
+		</div>
+		<% end %>
 	</div>
-	<%= simple_form_for Question.new, :html => { :class => 'form-horizontal' } do |f| %>
-	<%= f.input :title, input_html: {:class => "span3"}  %>
-	<%= f.input :requester_name, input_html: {:class => "span3"}%>
-	<%= f.input :requester_email, input_html: {:class => "span3"} %>
-	<%= f.input :requester_phone, :as => :string, input_html: {:class => "span3"} %>
-
-	<%= f.input :state_id do %>
-	<%= f.collection_select :state_id, State.order(:name), :id, :name, include_blank: true %>
-	<% end %>
-
-	<%= f.input :city_id do %>
-	<%= f.grouped_collection_select :city_id, State.order(:name), :cities, :name, :id, :name, include_blank: true %>
-	<% end %>
-
-	<%= f.input :description, :as => :text, input_html: {:class => "span3"} %>
-
-	<div class="form-actions">
-		<%= f.button :submit,  :class => "btn btn-primary" %>
-		<%= link_to "Cancelar", "#", :class => "btn", :"data-dismiss" => "modal"%>
-	</div>
-	<% end %>
+	<ul class="button-group even five-up buttons-home">
+		<li><%= link_to "Fazer pergunta", new_question_path, :class => "small button secondary radius gloss" %></li>
+		<li><%= link_to "Procurar um advogado", users_path, :class => "small button secondary radius gloss" %></li>
+	</ul>
 </div>
