@@ -46,6 +46,7 @@ bin
 *.swo
 public/system
 config/database.yml
+config/deploy.rb
 public/assets
 config/deploy.rb
 .vagrant

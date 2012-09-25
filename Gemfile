@@ -26,14 +26,19 @@ group :assets do
   gem "sass-rails"
   gem "coffee-rails"
   gem "uglifier"
-  gem "therubyracer",             :platform => :ruby
+  gem "therubyracer",   :platform => :ruby
   
   gem 'jquery-ui-rails'
   gem 'compass-rails'
   gem 'zurb-foundation'
 end
 
+group :production do
+  gem "unicorn"
+end
+
 group :development do
+  gem "capistrano"
   gem "mailcatcher"
   gem "pry"          
   gem "awesome_print"
