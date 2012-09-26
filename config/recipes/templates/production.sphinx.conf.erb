@@ -1,0 +1,16 @@
+indexer
+{
+  mem_limit = 64M
+}
+
+searchd
+{
+  address = 127.0.0.1
+  port = 3312
+  log = <%= sphinx_log %>
+  query_log = <%= sphinx_query_log %>
+  read_timeout = 5
+  max_children = 30
+  pid_file = <%= sphinx_pid %>
+  max_matches = 1000
+}
