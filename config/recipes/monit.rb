@@ -11,7 +11,6 @@ namespace :monit do
     nginx
     mysql
     unicorn
-    sphinx
     syntax
     reload
   end
@@ -20,7 +19,6 @@ namespace :monit do
   task(:nginx, roles: :web)   { monit_config "nginx" }
   task(:mysql, roles: :db)    { monit_config "mysql" }
   task(:unicorn, roles: :app) { monit_config "unicorn" }
-  task(:sphinx, roles: :app)  { monit_config "sphinx" }
 
   %w[start stop restart syntax reload].each do |command|
     desc "Run Monit #{command} script"
