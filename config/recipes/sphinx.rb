@@ -1,4 +1,4 @@
-set_default(:sphinx_pid)      { "#{current_path}/tmp/pids/searchd.production.pid" }
+set_default(:sphinx_pid)      { "#{current_path}/tmp/pids/searchd.development.pid" }
 set_default(:sphinx_query_log){ "#{shared_path}/log/searchd.query.log" }
 set_default(:sphinx_log)      { "#{shared_path}/log/searchd.log" }
 
