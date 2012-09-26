@@ -5,7 +5,7 @@ set_default(:sphinx_log)      { "#{shared_path}/log/searchd.log" }
 namespace :sphinx do
   desc "Install Sphinx-Search"
   task :install, roles: :app do
-    run "#{sudo} apt-get -y sphinxsearch"
+    run "#{sudo} apt-get -y install sphinxsearch"
   end
   after "deploy:install", "sphinx:install"
 
