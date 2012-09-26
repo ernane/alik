@@ -27,11 +27,11 @@ namespace :sphinx do
   after 'deploy:finalize_update', 'sphinx:symlink_indexes'
 
 
-  desc "Symlink the database.yml file into latest release"
-  task :symlink, roles: :app do
-    run "ln -nfs #{shared_path}/config/sphinx.yml #{release_path}/config/sphinx.yml"
+  #desc "Symlink the database.yml file into latest release"
+  #task :symlink, roles: :app do
+    #run "ln -nfs #{shared_path}/config/sphinx.yml #{release_path}/config/sphinx.yml"
     #run "ln -nfs #{shared_path}/config/production.sphinx.conf #{release_path}/config/production.sphinx.conf"
-  end
-  after "deploy:finalize_update", "sphinx:symlink"
+  #end
+  #after "deploy:finalize_update", "sphinx:symlink"
   
 end
