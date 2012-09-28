@@ -1,11 +1,18 @@
 default: &defaults
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8
   pool: 5
-  username: alik
-  password:
+  username: root
+  password: 
   host: localhost
 
-production:
+development:
   <<: *defaults
-  database: alik_production
+  database: alik_development
+  
+test: &test
+  <<: *defaults
+  database: alik_test
+
+cucumber:
+  <<: *test
