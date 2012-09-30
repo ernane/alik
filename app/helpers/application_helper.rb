@@ -4,9 +4,15 @@ module ApplicationHelper
       user.avatar_url
     else
       default_url = "#{root_url}assets/guest.png"
-      gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
-      "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{CGI.escape(default_url)}"
+      gravatar_id = Digest::MD5.hexdigest(user.email.to_s)
+      "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=mm"
     end
+  end
+  
+  def gravatar(user, options = {})
+    hash = Digest::MD5.hexdigest(user.email.to_s)
+    url = "http://www.gravatar.com/avatar/#{hash}.jpg?d=mm"
+    image_tag url, options
   end
   
   def profile_user(user)

@@ -48,6 +48,7 @@ group :development, :test do
   gem "guard-cucumber"
   gem "guard-rspec"
   gem "growl"
+  gem "test_notifier"
 end
 
 group :test do

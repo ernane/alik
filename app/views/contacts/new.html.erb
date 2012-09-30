@@ -1,5 +1,9 @@
 <% title t(".title") %>
 
+<% content_for :sidebar do %>
+  <%= render("shared/sidebar") %>
+<% end %>
+
 <h1 class="contato"><%= t(".container_title") %></h1>
 
 <%= simple_form_for @contact do |f| %>
@@ -11,8 +15,4 @@
     <%= f.button :submit, :class => "btn btn-primary" %>
     <%= link_to t("general.cancel"), root_path, :class => "btn"%>
   </div>
-<% end %>
-
-<% content_for :sidebar do %>
-  <%= render("shared/sidebar") %>
 <% end %>
