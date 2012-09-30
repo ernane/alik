@@ -4,7 +4,7 @@ upstream <%= application %>_unicorn {
 
 server {
   listen 80 default deferred;
-  # server_name example.com;
+  # server_name alik.com.br www.alik.com.br assets.alik.com.br;
   root <%= current_path %>/public;
 
   if (-f $document_root/system/maintenance.html) {

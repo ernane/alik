@@ -1,18 +1,27 @@
 <% title t(".title") %>
 
 <% content_for :sidebar do %>
-  <%= render("shared/sidebar") %>
+<%= render("shared/sidebar") %>
 <% end %>
 
 <h1 class="contato"><%= t(".container_title") %></h1>
 
-<%= simple_form_for @contact do |f| %>
-  <%= f.input :name %>
-  <%= f.input :email %>
-  <%= f.input :message, :as => :text, input_html: {:rows => "15"} %>
-  
-  <div class="form-actions">
-    <%= f.button :submit, :class => "btn btn-primary" %>
-    <%= link_to t("general.cancel"), root_path, :class => "btn"%>
-  </div>
-<% end %>
+<fieldset>
+	<%= simple_form_for @contact do |f| %>
+	<div class="row">
+		<div class="six columns">
+			<%= f.input :name %>
+		</div>
+		<div class="six columns">
+			<%= f.input :email %>
+		</div>
+	</div>
+	
+	<%= f.input :message, :as => :text, input_html: {:rows => "12"} %>
+
+	<div class="form-actions">
+		<%= f.button :submit, :class => "secondary button" %> ou
+		<%= link_to t("general.cancel"), root_path, :class => "btn"%>
+	</div>
+	<% end %>
+</fieldset>
