@@ -2,7 +2,7 @@ pt-BR:
   flash:
     question:
       create:
-        notice: "Sua pergunta foi cadastrada com sucesso."
+        notice: "Sua pergunta foi cadastrada com sucesso. Agora aguarde um de nosso advogados responder sua pergunta"
     answer:
       create:
         notice: "Sua resposta foi cadastrada com sucesso."

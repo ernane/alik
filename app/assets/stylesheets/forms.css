@@ -1,16 +1,23 @@
 .button.gloss{
-	background: #5DA423 url("/assets/button-gloss.png") repeat-x 0 -34px;
+  background: #5DA423 url("/assets/button-gloss.png") repeat-x 0 -34px;
 }
 
 .blue{
-	background: #00A6FC url("/assets/button-gloss.png") repeat-x 0 -34px;
+  background: #00A6FC url("/assets/button-gloss.png") repeat-x 0 -34px;
 }
 
 .secondary.gloss{
-	background: #E9E9E9 url("/assets/button-gloss.png") repeat-x 0 -34px;
+  background: #E9E9E9 url("/assets/button-gloss.png") repeat-x 0 -34px;
 }
 
 textarea{
-	margin:0;
-	resize:none;
+  margin:0;
+  resize:none;
+}
+
+.help-block {
+  font-size: 11px;
+  color: #444;
+  display: block;
+  font-style: italic;
 }

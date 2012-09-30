@@ -1,7 +1,7 @@
 /*
- *= require layout
  *= require_self
  *= require layout
+ *= require question
  *= require general
  *= require pagination
  *= require forms

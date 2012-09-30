@@ -1,27 +1,32 @@
 <% content_for :sidebar do %>
   <%= render("shared/sidebar") %>
 <% end %>
+<h2 class="titutlo_pergunta"><%= @question.title %></h2>
+<div class="row" id="resposta_pergunta">
+  <div class="twelve columns">
+		<article>
+			<header class="question-show">
+				<span class="doctor">
+					<strong><%= @question.requester_name %></strong>
+					<%= t("questions.send", :time => l(@question.created_at, :format => :short)) %>
+				</span>
+			</header>
+			<div class="question-description">
+				<%= simple_format(@question.description) %>
+			</div>
 
-<article>
-	<header class="question-show">
-		<span class="doctor">
-	    <strong><%= @question.requester_name %></strong>
-	    <%= t("questions.send", :time => l(@question.created_at, :format => :short)) %>
-	  </span>
-	</header>
-		<div class="question-description">
-			<%= simple_format(@question.description) %>
-		</div>
-		
-		<% if @question.answers.any? %>
-		<h2 class="search-answer"><%= "#{@question.answers.count} #{t(".answers", count: @question.answers.count)}" %></h2>
-		<% else %>
-		<h2 class="search-answer">Respostas</h2>
-		<p>
-			<strong>Nenhuma resposta encontrada</strong>
-		</p>
-		<% end %>
-</article>
+			<% if @question.answers.any? %>
+			<h2 class="search-answer"><%= "#{@question.answers.count} #{t(".answers", count: @question.answers.count)}" %></h2>
+			<% else %>
+			<h2 class="search-answer">Respostas</h2>
+			<p>
+				<strong>Nenhuma resposta encontrada</strong>
+			</p>
+			<% end %>
+		</article>
+  </div>
+</div>
+
 
 <div id="answers">
   <%= render @question.answers %>
@@ -30,3 +35,29 @@
 <% if user_signed_in? %>
   <%= render "answers/form" %>
 <% end %>
+
+<style type="text/css" media="screen">
+	
+	header.question-show{
+		font-size: 0.9em;
+		font-style:italic;
+		color: #999;
+		margin-bottom:10px;
+	}
+	
+	h2.search-answer {
+		font-size: 1.5em;
+		color: #073E5B;
+		font-family: 'Imprima', Helvetica, arial, sans-serif;
+	}
+	
+	h2.titutlo_pergunta{
+		font-size: 2.2em;
+		font-family: 'Imprima', Helvetica, arial, sans-serif;
+		text-shadow: 0 2px 0 white;
+		letter-spacing: -1px;
+		color: #333;
+	}
+	
+	
+</style>

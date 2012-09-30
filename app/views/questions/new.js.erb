@@ -1,8 +1,0 @@
-$("div#dialogFrame").remove();
-$("<div/>").attr("id", "dialogFrame").append($("<%= j render file: 'questions/new.html.erb', layoutL: false %>")).dialog({
-  autoOpen: true, 
-  width: 750,
-  position: "top",
-  modal: true,
-  title: "Dialog Title"
-  });

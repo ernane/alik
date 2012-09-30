@@ -24,7 +24,7 @@
 
 // Typography Settings
 
-// $headerFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// headerFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $headerFontWeight: bold;
 // $headerFontColor: #222;
 // $bodyFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -82,7 +82,8 @@ body{
 	background: #F2F2F2;
 }
 
-.button.small.gloss.success{font-weight: normal}
+
+//.button.small.gloss.success{font-weight: normal}
 
 ul.buttons-home li{
 	margin-left: 10px;
@@ -121,4 +122,26 @@ ul, ol { list-style: none; }
   background: -o-linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
   background: -ms-linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
   background: linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
+}
+
+div.controls{
+  margin-bottom:20px;
+}
+input.string{
+  margin:0;
+}
+textarea.text{
+  margin:0;
+}
+
+input.password{
+  margin:0;
+}
+input.ui-autocomplete-input{
+  margin:0;
+  padding:0;
+}
+span.help-inline{
+  color: red;
+  margin-bottom:20px;
 }

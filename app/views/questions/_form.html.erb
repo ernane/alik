@@ -1,7 +1,6 @@
-
-<%= simple_form_for(@question) do |f| %>
 <fieldset>
-	<legend>Fieldset Name</legend>
+<%= simple_form_for(@question) do |f| %>
+
 	<%= f.input :title %>
 	<%= f.input :requester_name %>
 	<div class="row">
@@ -26,26 +25,12 @@
 		</div>
 	</div>
 
-	<%= f.input :description, :as => :text, input_html: {:rows => "15"} %>
+	<%= f.input :description, :as => :text, input_html: {:rows => "10"} %>
 
-	<%= f.button :submit,  :class => "button radius blue" %>
-	<%= link_to "Cancelar", root_path %>
+	<div class="form-actions">
+		<%= f.button :submit,  :class => "secondary button" %> ou
+		<%= link_to "Cancelar", root_path %>
+	</div>
+	<% end %>
 </fieldset>
-<% end %>
 
-<style type="text/css" media="screen">
-	div.controls{
-		margin-bottom:20px;
-	}
-	input.string{
-		margin:0;
-	}
-	input.ui-autocomplete-input{
-		margin:0;
-		padding:0;
-	}
-	span.help-inline{
-		color: red;
-		margin-bottom:20px;
-	}
-</style>
