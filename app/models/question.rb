@@ -6,8 +6,6 @@ class Question < ActiveRecord::Base
   
   attr_accessible :answers_count, :available, :created_at, :hashed_code, :id, :updated_at
   
-  
-  
   validates_presence_of :title, :description, :requester_name, :requester_email, :requester_phone, :city_id, :state_id
   belongs_to :city
   belongs_to :state
@@ -43,15 +41,12 @@ class Question < ActiveRecord::Base
     title
   end
   
-
-  # include PgSearch
-  #   pg_search_scope :search, against: [:title, :description], using: {tsearch: {dictionary: "english"}}
-  # 
-  #   def self.text_search(query)
-  #     if query.present?
-  #       search(query)
-  #     else
-  #       scoped
-  #     end
-  #   end
+  define_index do
+    indexes description
+    indexes :title, sortable: true
+    indexes answers.description, as: :answer_description
+    indexes [city.name], as: :city_name
+    indexes [state.name], as: :state_name
+  end
+  
 end
