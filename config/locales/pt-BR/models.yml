@@ -1,5 +1,12 @@
 pt-BR:
   activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid_email: "não é inválido"
+              
     required: Campo Obrigatório
     
     models:

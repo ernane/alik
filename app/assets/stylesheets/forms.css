@@ -10,14 +10,6 @@
   background: #E9E9E9 url("/assets/button-gloss.png") repeat-x 0 -34px;
 }
 
-textarea{
-  margin:0;
-  resize:none;
-}
+textarea{ margin:0; resize:none }
 
-.help-block {
-  font-size: 11px;
-  color: #444;
-  display: block;
-  font-style: italic;
-}
+.help-block { font-size: 11px; color: #444; display: block; font-style: italic }

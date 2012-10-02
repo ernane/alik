@@ -11,7 +11,9 @@ gem "thinking-sphinx"
 #gem "pg"
 #gem "pg_search"
 gem "mysql2"
-
+gem "reverse_captcha"
+gem "validators"
+gem "whenever", require: false
 # ADMIN
 gem "activeadmin"
 gem "meta_search"

@@ -3,6 +3,11 @@ pt-BR:
     question:
       create:
         notice: "Sua pergunta foi cadastrada com sucesso. Agora aguarde um de nosso advogados responder sua pergunta"
+      search:
+        alert: "A busca não está funcionando nesse momento! Tente novamente mais tarde." 
+      not_found:
+        alert: "Desculpe, mas essa operação é inválida"
+                
     answer:
       create:
         notice: "Sua resposta foi cadastrada com sucesso."
