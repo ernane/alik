@@ -14,13 +14,15 @@
 
 	<div class="row">
 		<div class="seven columns">
-			<%= f.input :city_id do %>
-			<%= f.text_field :city_name, data: {autocomplete_source: cities_path} %>
+			<%= f.input :state_id do %>
+			<%= f.collection_select :state_id, State.all, :id, :name, :selected => @question.city.present? ? @question.city.state_id : @question.state_id, :include_blank => 'Selecione um estado' %>
 			<% end %>
+			
+		
 		</div>
 		<div class="five columns">
-			<%= f.input :state_id do %>
-			<%= f.text_field :state_name, data: {autocomplete_source: states_path} %>
+			<%= f.input :city_id do %>
+			<%= f.collection_select :city_id, cities(@question.city.present? ? @question.city.state_id : @question.state_id), :id, :name, :selected => @question.city_id, :include_blank => @question.city.present? || @question.state_id.present? ? 'Selecione a cidade' : 'Selecione um estado' %>
 			<% end %>
 		</div>
 	</div>
@@ -33,4 +35,5 @@
 	</div>
 	<% end %>
 </fieldset>
+
 

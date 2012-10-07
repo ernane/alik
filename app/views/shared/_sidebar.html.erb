@@ -1,6 +1,5 @@
 <h1 class="h1_sidebar">Destaques</h1>
-<% @users = User.order("RAND()") %>
-<% @users.limit(2).each do |user| %>
+<% User.randon.each do |user| %>
 <div class="row" id="user_profile">
 	<div class="twelve columns">
 		<%= image_tag avatar_url(user, 50), :alt => user.username, :class => "avatar" %> <span class="name"><%= user.username %></span>

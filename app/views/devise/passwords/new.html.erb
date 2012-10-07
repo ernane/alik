@@ -1,14 +1,24 @@
-<h2><%= t(".title") %></h2>
+<h1 class="devise"><%= t(".title") %></h1>
 
 <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }, html: { class: "form-horizontal" }) do |f| %>
-  <%= f.error_notification %>
 
-  
-    <%= f.input :email, :required => true %>
+<div class="row">
+	<div class="eight columns offset-by-two">
+		<fieldset>
+			<%= f.input :email, :required => true %>
+		</fieldset>
+	</div>
+</div>
 
-  <div class="form-actions">
-    <%= f.submit t(".submit"), class: "btn" %>
-  </div>
+
+<div class="row">
+	<div class="nine columns offset-by-two">
+		<div class="form-actions">
+			<%= f.button :submit, t(".submit"), class: "secondary button" %> or
+			<%= link_to "Cancelar", root_path, :class => "btn"%>
+		</div>
+	</div>
+</div>
 <% end %>
 
 <%= render "devise/shared/links" %>

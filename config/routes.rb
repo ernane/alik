@@ -1,4 +1,6 @@
 Alik::Application.routes.draw do
+  match "/cities_by_state" => "cities#index"
+  
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
@@ -44,5 +46,6 @@ Alik::Application.routes.draw do
   controller :users do
     get "/usuarios",    :action => :index, :as =>:users
     get "/usuario/:id", :action => :show, :as =>:user
+    get "/users/search", :action => :search, :as => :search_users
   end
 end

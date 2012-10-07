@@ -38,6 +38,7 @@ ehthumbs.db
 Icon?
 Thumbs.db
 db/*.sqlite3
+db/sphinx/development
 log/*.log
 tmp/
 .sass-cache/

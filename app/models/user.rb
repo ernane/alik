@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   belongs_to :state
   has_many :answers, dependent: :destroy
   
-  scope :featured, where(:featured => true).limit(2)
+  scope :randon, order("RAND()").limit(2).includes(:city)
   
   def profile_name
     "#{self.username} - #{self.email}"
@@ -61,5 +61,14 @@ class User < ActiveRecord::Base
     self.professional ||= 0
     self.books_published ||= 0
     self.articles_published ||= 0
+  end
+  
+  define_index do
+    indexes email
+    indexes :username, sortable: true
+    indexes [city.name], as: :city_name
+    indexes [state.name], as: :state_name
+    
+    has state_id, created_at, updated_at
   end
 end

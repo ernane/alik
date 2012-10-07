@@ -79,3 +79,7 @@ div#busca h1{
   letter-spacing: -1px;
   color: #333;
 }
+
+#devise_form{
+  margin-bottom: 20px;
+}

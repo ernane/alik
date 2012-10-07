@@ -1,0 +1,20 @@
+<% title t(".title") %>
+
+<h1><%= t(".container_title") %></h1>
+<p>
+  Sua busca por <strong><%= params[:name].inspect %></strong>
+  retornou os seguintes resultados:
+</p>
+
+<ul id='questions'>
+  <% @users.each do |user| %>
+    <li><%= user.email %></li>
+  <% end %>
+</ul>
+
+<% if @users.size == 0 %>
+  <h2>Nenhum resultado encontrado</h2>
+<% end %>
+
+
+

@@ -1,5 +1,16 @@
 <h1>Conheça os advogados que já se cadastraram</h1>
 
+
+	<%= form_tag search_users_path, :method => :get do %>
+	<%= text_field_tag :name, params[:name] %>
+	
+	<%= select_tag "states", options_from_collection_for_select(State.all, "id", "name"), include_blank: true %>
+	
+
+	<%= submit_tag t("form.buttons.search"), :class => "button" %>
+
+<% end %>
+
 <ul class="users">
 	<% @users.each do |user| %>
 	<li>
