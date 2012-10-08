@@ -15,7 +15,7 @@ namespace :sphinx do
     task command, roles: :app do
       run "cd #{current_path} && bundle exec rake ts:#{command} RAILS_ENV=production"
     end
-    before "deploy:update_code", "sphinx:stop"
-    after "deploy:update_code", "sphinx:start"
+    #before "deploy:update_code", "sphinx:stop"
+    #after "deploy:update_code", "sphinx:start"
   end
 end
