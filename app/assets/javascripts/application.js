@@ -33,7 +33,7 @@ $(document).ready(function(){
     $("#question_city_id").html('<option value="0">Carregando...</option>');
     
     if ($(this).val()) {
-      getCitiesByState("id="+$("#user_state_id").val());
+      getCitiesByState("id="+$("#question_state_id").val());
     }else{
       
       $('#question_city_id').empty()
