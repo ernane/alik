@@ -230,7 +230,7 @@ updated_at: "2012-09-13T16:08:55-03:00"
 Question.create({
 answers_count: 2,
 available: true,
-city_id: 2319,
+city_id19,
 created_at: "2012-09-11T11:28:05-03:00",
 description: " Realizei uma compra online na sexta-feira (31/09), paguei o produto na segunda-feria (03/09) e no mesmo dia recebei a confirmação de pagamento, o produto deveria ser despachado dia seguinte após confirmação de pagamento, mandei e-mail ao site perguntando sobre o produto dia (05/09), porém me responderam alegando que o produto está com valor errado e não iriam enviar o produto e me deram apenas uma opção estornar o valor pago. Eu não quero essa opção eu quero o meu produto ou simiilar! E além de tudo isso estão \"empurrando\" eu aceitar o estorno do valor pago.\r\nO que devo fazer? A empresa está agindo de maneira certa? \r\n",
 hashed_code: "ebcccf912189cc21f94b58bc357de4539ba90049ce11c52c9dc443d06cad1760a9327f9c163dfe77",
@@ -274,3 +274,117 @@ state_id: 11,
 title: "Familiar",
 updated_at: "2012-09-20T13:17:18-03:00"
 })
+
+Question.create({
+  :id => 24,
+  :title => "caixa econômica",
+  :description => "bom dia. por trabalhar em um banco recebo vale transporte em dinheiro. preciso fazer um financiamento habitacional na caixa, porém eles querem considerar o que recebo de salário + vale transporte. Isso é ilegal certo?",
+  :requester_name => "gleidson araujo",
+  :requester_email => "gleidson.araujo@bradescoseguros.com.br",
+  :city_id => 3643,
+  :state_id => 19,
+  :requester_phone => "(21) 8290-8863",
+  :hashed_code => "b0958b761d6d87acb780e41623461ca13a1e89577f6734d4e98dac04bbaf87569124dfe68f274a57",
+  :answers_count => 1,
+  :available => true,
+  :created_at => "Mon, 24 Sep 2012 10:57:33 BRT -03:00",
+  :updated_at => "Mon, 24 Sep 2012 10:57:33 BRT -03:00" 
+
+})
+
+Question.create({
+  :id => 25,
+  :title => "Inventario",
+  :description => "Boa tarde,meu pai faleceu a12 anos e deixou minha mãe e três filhos,ocorre que a 1 ano meu irmão faleceu e depois de 9 meses minha mãe também faleceu,não tem inventario de nenhum deles,o único bem é um terreno 10x35 que já esta dividido entre os herdeiros e construído em cada um dos seus respectivos lotes,não tenho dinheiro para as despesas de inventario e meus sobrinhos não querem ajudar,minha irma esta desempregado,como posso fazer? obrigada",
+  :requester_name => "Roselaine Ruiz Rodrigues Silva do Carmo",
+  :requester_email => "roserrsc@gmail.com",
+  :city_id => 5389,
+  :state_id => 26,
+  :requester_phone => "(11) 6791-8174",
+  :hashed_code => "932ef2e0fe504b33576d6c6fca1622a56a7194f8ea3e45fc2c55875a0aaa27d076043d4bae077e53",
+  :answers_count => 1,
+  :available => true,
+  :created_at => "Mon, 24 Sep 2012 13:44:18 BRT -03:00",
+  :updated_at => "Mon, 24 Sep 2012 13:44:18 BRT -03:00"
+  })
+
+Question.create({
+  :id => 26,
+  :title => "Separação",
+  :description => "Algumas duvidas: sou casada há 13 anos no regime de separacao total de bens (os bens sao 1 apartamento e 1 clinica odontologia onde ele é o proprietário) . Hj, temos 2 filhos . Nossa relação caminha para o divorcio mas ele me ameaça dizendo q se eu quero separar eu devo sair de casa (mesmo não tendo p onde ir, exceto casa dos meus pais que é muito distante de onde moro atualmente) . Ele se nega a sair e diz que se eu o fizer, não levarei as cças pq ele não suporta ficar longe delas e me acha incapaz, burra, ciumenta... Enfim, a história é longa e não gostaria de expor tudo agora. Tenho 2 boletins de ocorrência por agressão, provas de q sai p beber e vai parar em bordel, enfim... Diante de tantas ameaças, tenho medo dele dizer a verdade e eu, ficar sem meus filhos, sem ter p onde ir... Uma orientação por favor? ",
+  :requester_name => "ale",
+  :requester_email => "alefk@globo.com",
+  :city_id => 5389,
+  :state_id => 26,
+  :requester_phone => "(11) 5573-1794",
+  :hashed_code => "b8ac24df44a73db65ca5a8f2888b302851adf844f876fd3de2edd9da3be20c8965343a27f3d96ff8",
+  :answers_count => 1,
+  :available => true,
+  :created_at => "Mon, 24 Sep 2012 14:37:35 BRT -03:00",
+  :updated_at => "Mon, 24 Sep 2012 14:37:35 BRT -03:00"
+})
+
+Question.create({
+  :id => 29,
+  :title => "Rescisão de contrato",
+  :description => "Boa tarde,\r\n\r\nTrabalhei durante 48 dias em uma empresa com salário de R$ 1.300,00, R$ 110,00 de vale transporte e R$ 253,00 de vale alimentação. \r\nNa minha contratação foi combinado que teria um período de experiência de 90 dias, porém minha carteira de trabalho não foi assinada e eu não assinei nenhum contrato. \r\nO pedido de demissão foi feito por mim e eu pedi dispensa imediata, assinei uma carta feito a punho e saí da empresa.\r\nGostaria de saber quanto tenho a receber. Eles tem direito a cobrar multa por quebra de contrato? E de descontar o aviso prévio?\r\nLembrando que, minha carteira não foi assinada.\r\nQuais são meus direitos? Vocês podem fazer cálculo do quanto tenho a receber?\r\n\r\nAguardo",
+  :requester_name => "Jéssica Carolina Augusto Raphael",
+  :requester_email => "jeh.raphael@hotmail.com",
+  :city_id => 5075,
+  :state_id => 26,
+  :requester_phone => "(19) 8238-3720",
+  :hashed_code => "02d485b4d2c77a6113271f6c75285ad1f3d7a92bfe7ba7e71b6b02fc8059975d91e0da2a2a39ca7c",
+  :answers_count => 0,
+  :available => true,
+  :created_at => "Wed, 26 Sep 2012 12:59:44 BRT -03:00",
+  :updated_at => "Wed, 26 Sep 2012 12:59:44 BRT -03:00"
+})
+
+Question.create({
+  :id => 30,
+  :title => "Contrato de experiência",
+  :description => "Boa tarde,\r\n\r\nTrabalhei durante 48 dias em uma empresa com salário de R$ 1.300,00, R$ 110,00 de vale transporte e R$ 253,00 de vale alimentação. \r\nNa minha contratação foi combinado que teria um período de experiência de 90 dias, porém minha carteira de trabalho não foi assinada e eu não assinei nenhum contrato. \r\nO pedido de demissão foi feito por mim e eu pedi dispensa imediata, assinei uma carta feito a punho e saí da empresa.\r\nGostaria de saber quanto tenho a receber. Eles tem direito a cobrar multa por quebra de contrato? E de descontar o aviso prévio?\r\nLembrando que, minha carteira não foi assinada.\r\nQuais são meus direitos? Vocês podem fazer cálculo do quanto tenho a receber?\r\n\r\nAguardo, ",
+  :requester_name => "Jéssica Carolina Augusto Raphael",
+  :requester_email => "jeh.raphael@hotmail.com",
+  :city_id => 5075,
+  :state_id => 26,
+  :requester_phone => "(19) 8238-3720",
+  :hashed_code => "083e17390b92261426748ab7bb72e6ef1f5bd403eec9872c558595fb40787c8a546ef43afb4998e9",
+  :answers_count => 1,
+  :available => true,
+  :created_at => "Wed, 26 Sep 2012 13:04:45 BRT -03:00",
+  :updated_at => "Wed, 26 Sep 2012 13:04:45 BRT -03:00"
+})
+
+Question.create({
+  :id => 31,
+  :title => "dúvida vale transporte ",
+  :description => "“Muito embora o art. 5° do Decreto 95247/87, ao regulamentar a Lei 7418/85, vede \"ao empregador substituir o Vale-Transporte por antecipação em dinheiro ou qualquer outra forma de pagamento\", o pagamento da verba em espécie não transmuda a natureza da verba para salarial. Além do art. 6º, do citado Decreto, dispor expressamente que o vale-transporte não terá natureza salarial, o mesmo regramento pode ser encontrado no art. 2º, alínea a, da Lei 7.418/85: \"a) não tem natureza salarial, nem se incorpora à remuneração para quaisquer efeitos\". Ou seja, além da taxatividade na legislação relativamente à natureza jurídica indenizatória da verba, a finalidade do benefício confirma o acerto do legislador, qual seja, visa o ressarcimento pelos gastos tidos com o deslocamento do empregado no trajeto trabalho/casa e vice/versa. O que resulta dizer, mesmo que pago em dinheiro, não representa contraprestação pelo trabalho prestado”, não devendo ser considerado como verba salarial",
+  :requester_name => "gleidson",
+  :requester_email => "gleidson.araujo@bradescoseguros.com.br",
+  :city_id => 3643,
+  :state_id => 19,
+  :requester_phone => "(21) 8290-8863",
+  :hashed_code => "989e3cf129e49c403a5ce2daa54ed3c00d1ad0565aea405282a72bf329bae9a4dbb18b4ba031b688",
+  :answers_count => 1,
+  :available => true,
+  :created_at => "Thu, 27 Sep 2012 09:21:29 BRT -03:00",
+  :updated_at => "Thu, 27 Sep 2012 09:21:29 BRT -03:00"
+})
+
+Question.create({
+  :id => 34,
+  :title => "comprei um carro usado avista em uma loja de caros usados porem ja ten 30 dia que comprei o carro e ainda nao mim mandaram o recibo assinado como combinado e tambem o carro veio sem extintor de incêndio e chave de rodas.",
+  :description => "gostaria de saber o que posso fazer pois ja perdi de vender o veiculo ,levando prejuízo cada dia mais .eles não mim ligaram para falar mais nada ..posso processar  ou o que posso fazer?tou sendo muito prejudicado por isso o recibo era pra ser mandado para mim no máximo sete dias.",
+  :requester_name => "luis fellipe",
+  :requester_email => "felipe_jucabike@yahoo.com.br",
+  :city_id => 4950,
+  :state_id => 26,
+  :requester_phone => "(19) 8812-2737",
+  :hashed_code => "573651090bd13367a33d9f69c45a317728cc4b358751aedb3e4926207d4b1c6d051c2820f1c1d000",
+  :answers_count => 1,
+  :available => true,
+  :created_at => "Fri, 28 Sep 2012 22:08:01 BRT -03:00",
+  :updated_at => "Fri, 28 Sep 2012 22:08:01 BRT -03:00"
+})
+#======================================================================================================

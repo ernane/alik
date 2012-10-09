@@ -210,3 +210,70 @@ question_id: 23,
 updated_at: "2012-09-20T21:46:08-03:00",
 user_id: 4
 })
+
+Answer.create({
+  :id => 87,
+  :user_id => 4,
+  :question_id => 24,
+  :evaluation => "useless",
+  :description => "Na realidade, não há nenhuma ilegalidade em considerar como sua remuneração o valor do salário acrescido do vale transporte. Isso porque a partir do momento em que o empregador opta por pagar o vale transporte em dinheiro,  este passa a integrar o seu salário para todos os efeitos legais, inclusive cálculo das demais verbas trabalhistas.",
+  :hashed_code => "4414e521e33f71a9304bc257970ea26c29f2af29466e113c084b1f4a319e157837fda9926e2c1a95",
+  :created_at => "Wed, 26 Sep 2012 19:48:52 BRT -03:00",
+  :updated_at => "Thu, 27 Sep 2012 09:19:21 BRT -03:00"
+})
+
+Answer.create({
+  :id => 88,
+  :user_id => 4,
+  :question_id => 25,
+  :evaluation => "useful",
+  :description => "Para solucionar este problema sem despender muito dinheiro, você pode procurar a defensoria pública para ingressar com uma ação de abertura de inventário com pedido de justiça gratuita, ficando, dessa forma, isento do pagamento de custas judiciais e emolumentos. Assim, você poderá legalizar a situação do terreno de uma forma menos cara.",
+  :hashed_code => "936f9c38cc9733ce30d7a34a586a11de51ef53901cff05826dccb76e90f13187e53c21c8b691cf8c",
+  :created_at => "Wed, 26 Sep 2012 20:01:55 BRT -03:00",
+  :updated_at => "Thu, 27 Sep 2012 11:00:43 BRT -03:00"
+})
+
+Answer.create({
+  :id => 90,
+  :user_id => 4,
+  :question_id => 30,
+  :evaluation => "useful",
+  :description => "Infelizmente, no caso acima relatado, você só tem R$-36,59 a receber.\r\nNa situação exposta, você teria direito a R$-997,80 de saldo de salário e R$-277,17 de 13o salário, o que resultaria em um total de R$-1274,97. Contudo, por ter rescindido o contrato de  experiência antecipadamente, você é obrigada a pagar uma indenização à empresa no valor de R$1136,38, valor este que, somado aos descontos da previdência social, perfaz um total de R$1238,38, reduzindo substancialmente o valor de seu crédito.",
+  :hashed_code => "9ed8701c2ec261e81b80ed59ee080e95336c86af1171560326d008f493621cb596197a869548e9bb",
+  :created_at => "Wed, 26 Sep 2012 20:27:51 BRT -03:00",
+  :updated_at => "Wed, 26 Sep 2012 20:42:36 BRT -03:00"
+})
+
+Answer.create({
+  :id => 89,
+  :user_id => 4,
+  :question_id => 26,
+  :evaluation => "useful",
+  :description => "Não há motivo para preocupação. Primeiramente, em relação à casa, mesmo vocês dois tendo casado no regime de separação total de bens, ainda há possibilidade de você ficar com o apartamento ou, pelo menos, com uma porcentagem do valor da venda, se você comprovar por meio de documentos ou testemunhas que contribuiu financeiramente para a compra do imóvel ou dos bens que o integram. No que diz respeito às crianças, as provas que você possui acerca da conduta do seu marido são suficientes para lhe garantir a guarda de seus filhos e, mesmo que assim não fosse, hoje em dia a Justiça preza pela guarda conjunta, de modo que você não poderá ser privada do convívio com as crianças.",
+  :hashed_code => "23efe7667acf5ee7e3d231b79f8ca5ffd07ddf8eb5d878d2b9a02f6941be18590bd1a37747333ec2",
+  :hashed_code => "23efe7667acf5ee7e3d231b79f8ca5ffd07ddf8eb5d878d2b9a02f6941be18590bd1a37747333ec2",
+  :created_at => "Wed, 26 Sep 2012 20:14:11 BRT -03:00",
+  :updated_at => "Wed, 26 Sep 2012 22:18:38 BRT -03:00"
+})
+
+Answer.create({
+  :id => 91,
+  :user_id => 4,
+  :question_id => 31,
+  :evaluation => nil,
+  :description => "Caro usuário,\r\n\r\nO comentário acima representa tão somente o posicionamento de um determinado jurista sobre a natureza do vale transporte quanto este é pago em espécie. Contudo, devo alertá-lo que este posicionamente é minoritário: a maioria dos juízes considera que o pagamento em dinheiro do vale transporte desvirtua a natureza do instituto, perdendo seu caráter indenizatório e adquirindo natureza salarial, o que, inclusive, é mais benéfico para o trabalhador.",
+  :hashed_code => "b59829bdad9e5388fe9d73a4b9a463d9f076aa1310e1d2935477b77ff05447bea57d77b1694801f1",
+  :created_at => "Mon, 01 Oct 2012 19:25:33 BRT -03:00",
+  :updated_at => "Mon, 01 Oct 2012 19:25:33 BRT -03:00"
+})
+
+Answer.create({
+  :id => 92,
+  :user_id => 4,
+  :question_id => 34,
+  :evaluation => nil,
+  :description => "Primeiramente, sugerimos que você tente resolver a questão de forma amigável. Procure os representantes legais da empresa que lhe venderam o veículo e exponha sua situação. Caso isso não resolva, é possível ingressar com uma ação de cobrança no judiciário e, pleitear, inclusive, danos morais e materiais, uma vez que você afirmou acima que já sofreu inúmeros prejuízos e transtornos com a falta de compromisso da empresa.",
+  :hashed_code => "1fe2ecf6b544738f0042466d822415471132c2a6e8630ce66c134422312cb42d6d2d198f0e0186c0",
+  :created_at => "Mon, 01 Oct 2012 19:29:11 BRT -03:00",
+  :updated_at => "Mon, 01 Oct 2012 19:29:11 BRT -03:00"
+})

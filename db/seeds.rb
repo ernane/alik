@@ -1,5 +1,41 @@
 # encoding: UTF-8
 
+AdminUser.delete_all
+
+AdminUser.create({
+  :id => 1,
+  :email => "admin@example.com",
+  :encrypted_password => "$2a$10$r6L62AzWpo6qK7odnBfEauQxQtHPzDX8Y4JV3f09IWfQJu/JOJJEu",
+  :reset_password_token => nil,
+  :reset_password_sent_at => nil,
+  :remember_created_at => nil,
+  :sign_in_count => 8,
+  :current_sign_in_at => "Fri, 21 Sep 2012 23:16:57 BRT -03:00",
+  :last_sign_in_at =>    "Fri, 21 Sep 2012 17:44:40 BRT -03:00",
+  :current_sign_in_ip => "187.122.244.129",                  
+  :last_sign_in_ip =>    "189.2.252.154",                    
+  :created_at =>         "Sat, 11 Aug 2012 13:56:43 BRT -03:00",
+  :updated_at =>         "Fri, 21 Sep 2012 23:16:57 BRT -03:00"
+})
+
+AdminUser.create({
+  :id => 2,
+  :email => "wvfigueiredo@uol.com.br",
+  :encrypted_password => "$2a$10$SpJCON2Rf1AbNo5pPwSuJeGLAaVjWNa3h6mfkstANOCN2p34.EsqK",
+  :reset_password_token => nil,
+  :reset_password_sent_at => nil,
+  :remember_created_at => nil,
+  :sign_in_count => 63,
+  :current_sign_in_at => "Mon, 08 Oct 2012 10:07:26 BRT -03:00",
+  :last_sign_in_at =>    "Sat, 06 Oct 2012 11:49:45 BRT -03:00",
+  :current_sign_in_ip => "189.82.83.15",                     
+  :last_sign_in_ip =>    "189.81.66.102",                    
+  :created_at =>         "Sat, 11 Aug 2012 14:00:13 BRT -03:00",
+  :updated_at =>         "Mon, 08 Oct 2012 10:07:26 BRT -03:00"
+})
+
+#======================================================================================================
+
 User.delete_all
 
 User.create({
@@ -324,7 +360,111 @@ User.create({
 
 })
 
-# encoding: UTF-8
+User.create({
+  :id => 22,
+  :email => "renatamcjg@terra.com.br",
+  :encrypted_password => "$2a$10$Bk4aTP.NPhLlzILBjpCmPeovQztfCql.jEmFWpsAVlKbubnWpMC2G",
+  :username => "renata",
+  :city_id => nil,
+  :state_id => nil,
+  :fields => "",
+  :portifolio_of_oab => "",
+  :phone => "",
+  :about => "",
+  :avatar_url => "",
+  :teaching => 0,
+  :professional => 0,
+  :books_published => 0,
+  :articles_published => 0,
+  :postgraduate => false,
+  :doctorate_in_law => false,
+  :master_of_law => false,
+  :postgraduate_in_law => false,
+  :foreign_laguage => false,
+  :terms_of_use => nil,
+  :reset_password_token => nil,
+  :reset_password_sent_at => nil,
+  :remember_created_at => nil,
+  :sign_in_count => 1,
+  :current_sign_in_at =>  "Fri, 21 Sep 2012 11:51:46 BRT -03:00",
+  :last_sign_in_at =>     "Fri, 21 Sep 2012 11:51:46 BRT -03:00",
+  :current_sign_in_ip =>  "187.75.248.119",                    
+  :last_sign_in_ip =>     "187.75.248.119",                    
+  :created_at =>          "Fri, 21 Sep 2012 11:51:46 BRT -03:00",
+  :updated_at =>          "Fri, 21 Sep 2012 11:51:46 BRT -03:00",
+  :featured => false
+})
+
+User.create({
+  :id => 28,
+  :email => "leo_freitas26@yahoo.com.br",
+  :encrypted_password => "$2a$10$VCNzSqGDE3Rx1J7mGmpZCuexgunVUovTj.XycqWo21M7cXZeQCnyi",
+  :username => "Leonardo Souza de Freitas",
+  :city_id => 678,
+  :state_id => 6,
+  :fields => "Direito tributário",
+  :portifolio_of_oab => "25332",
+  :phone => "(85) 9162-8118",
+  :about => "",
+  :avatar_url => "",
+  :teaching => 0,
+  :professional => 1,
+  :books_published => 0,
+  :articles_published => 0,
+  :postgraduate => false,
+  :doctorate_in_law => false,
+  :master_of_law => false,
+  :postgraduate_in_law => false,
+  :foreign_laguage => false,
+  :terms_of_use => nil,
+  :reset_password_token => nil,
+  :reset_password_sent_at => nil,
+  :remember_created_at => nil,
+  :sign_in_count => 1,
+  :current_sign_in_at =>   "Fri, 28 Sep 2012 11:27:07 BRT -03:00",
+  :last_sign_in_at =>      "Fri, 28 Sep 2012 11:27:07 BRT -03:00",
+  :current_sign_in_ip =>   "189.84.112.234",                    
+  :last_sign_in_ip =>      "189.84.112.234",                    
+  :created_at =>           "Fri, 28 Sep 2012 11:27:07 BRT -03:00",
+  :updated_at =>           "Fri, 28 Sep 2012 11:32:53 BRT -03:00",
+  :featured => false
+})
+
+User.create({                     
+   :id => 34,
+  :email => "cleide.valla@gmail.com",
+  :encrypted_password => "$2a$10$VAvj6YVdwxs/oEFtKdXaN.sfQmWjss0tfVE0kM7EC9zywTmzGtlqe",
+  :username => "Cleide Valla",
+  :city_id => nil,
+  :state_id => nil,
+  :fields => "",
+  :portifolio_of_oab => "",
+  :phone => "",
+  :about => "Advogada especializada em direito de família.",
+  :avatar_url => "",
+  :teaching => 0,
+  :professional => 0,
+  :books_published => 0,
+  :articles_published => 0,
+  :postgraduate => false,
+  :doctorate_in_law => false,
+  :master_of_law => false,
+  :postgraduate_in_law => false,
+  :foreign_laguage => false,
+  :terms_of_use => nil,
+  :reset_password_token => nil,
+  :reset_password_sent_at => nil,
+  :remember_created_at => nil,
+  :sign_in_count => 1,
+  :current_sign_in_at =>   "Mon, 08 Oct 2012 15:09:06 BRT -03:00",
+  :last_sign_in_at =>      "Mon, 08 Oct 2012 15:09:06 BRT -03:00",
+  :current_sign_in_ip =>   "201.81.101.237",                    
+  :last_sign_in_ip =>      "201.81.101.237",                    
+  :created_at =>           "Mon, 08 Oct 2012 15:09:05 BRT -03:00",
+  :updated_at =>           "Mon, 08 Oct 2012 15:09:06 BRT -03:00",
+  :featured => false
+})                      
+
 
 Question.delete_all
 
@@ -556,7 +696,7 @@ updated_at: "2012-09-13T16:08:55-03:00"
 Question.create({
 answers_count: 2,
 available: true,
-city_id: 2319,
+city_id: 19,
 created_at: "2012-09-11T11:28:05-03:00",
 description: " Realizei uma compra online na sexta-feira (31/09), paguei o produto na segunda-feria (03/09) e no mesmo dia recebei a confirmação de pagamento, o produto deveria ser despachado dia seguinte após confirmação de pagamento, mandei e-mail ao site perguntando sobre o produto dia (05/09), porém me responderam alegando que o produto está com valor errado e não iriam enviar o produto e me deram apenas uma opção estornar o valor pago. Eu não quero essa opção eu quero o meu produto ou simiilar! E além de tudo isso estão \"empurrando\" eu aceitar o estorno do valor pago.\r\nO que devo fazer? A empresa está agindo de maneira certa? \r\n",
 hashed_code: "ebcccf912189cc21f94b58bc357de4539ba90049ce11c52c9dc443d06cad1760a9327f9c163dfe77",
@@ -601,7 +741,120 @@ title: "Familiar",
 updated_at: "2012-09-20T13:17:18-03:00"
 })
 
-# encoding: UTF-8
+Question.create({
+  :id => 24,
+  :title => "caixa econômica",
+  :description => "bom dia. por trabalhar em um banco recebo vale transporte em dinheiro. preciso fazer um financiamento habitacional na caixa, porém eles querem considerar o que recebo de salário + vale transporte. Isso é ilegal certo?",
+  :requester_name => "gleidson araujo",
+  :requester_email => "gleidson.araujo@bradescoseguros.com.br",
+  :city_id => 3643,
+  :state_id => 19,
+  :requester_phone => "(21) 8290-8863",
+  :hashed_code => "b0958b761d6d87acb780e41623461ca13a1e89577f6734d4e98dac04bbaf87569124dfe68f274a57",
+  :answers_count => 1,
+  :available => true,
+  :created_at => "Mon, 24 Sep 2012 10:57:33 BRT -03:00",
+  :updated_at => "Mon, 24 Sep 2012 10:57:33 BRT -03:00" 
+
+})
+
+Question.create({
+  :id => 25,
+  :title => "Inventario",
+  :description => "Boa tarde,meu pai faleceu a12 anos e deixou minha mãe e três filhos,ocorre que a 1 ano meu irmão faleceu e depois de 9 meses minha mãe também faleceu,não tem inventario de nenhum deles,o único bem é um terreno 10x35 que já esta dividido entre os herdeiros e construído em cada um dos seus respectivos lotes,não tenho dinheiro para as despesas de inventario e meus sobrinhos não querem ajudar,minha irma esta desempregado,como posso fazer? obrigada",
+  :requester_name => "Roselaine Ruiz Rodrigues Silva do Carmo",
+  :requester_email => "roserrsc@gmail.com",
+  :city_id => 5389,
+  :state_id => 26,
+  :requester_phone => "(11) 6791-8174",
+  :hashed_code => "932ef2e0fe504b33576d6c6fca1622a56a7194f8ea3e45fc2c55875a0aaa27d076043d4bae077e53",
+  :answers_count => 1,
+  :available => true,
+  :created_at => "Mon, 24 Sep 2012 13:44:18 BRT -03:00",
+  :updated_at => "Mon, 24 Sep 2012 13:44:18 BRT -03:00"
+  })
+
+Question.create({
+  :id => 26,
+  :title => "Separação",
+  :description => "Algumas duvidas: sou casada há 13 anos no regime de separacao total de bens (os bens sao 1 apartamento e 1 clinica odontologia onde ele é o proprietário) . Hj, temos 2 filhos . Nossa relação caminha para o divorcio mas ele me ameaça dizendo q se eu quero separar eu devo sair de casa (mesmo não tendo p onde ir, exceto casa dos meus pais que é muito distante de onde moro atualmente) . Ele se nega a sair e diz que se eu o fizer, não levarei as cças pq ele não suporta ficar longe delas e me acha incapaz, burra, ciumenta... Enfim, a história é longa e não gostaria de expor tudo agora. Tenho 2 boletins de ocorrência por agressão, provas de q sai p beber e vai parar em bordel, enfim... Diante de tantas ameaças, tenho medo dele dizer a verdade e eu, ficar sem meus filhos, sem ter p onde ir... Uma orientação por favor? ",
+  :requester_name => "ale",
+  :requester_email => "alefk@globo.com",
+  :city_id => 5389,
+  :state_id => 26,
+  :requester_phone => "(11) 5573-1794",
+  :hashed_code => "b8ac24df44a73db65ca5a8f2888b302851adf844f876fd3de2edd9da3be20c8965343a27f3d96ff8",
+  :answers_count => 1,
+  :available => true,
+  :created_at => "Mon, 24 Sep 2012 14:37:35 BRT -03:00",
+  :updated_at => "Mon, 24 Sep 2012 14:37:35 BRT -03:00"
+})
+
+Question.create({
+  :id => 29,
+  :title => "Rescisão de contrato",
+  :description => "Boa tarde,\r\n\r\nTrabalhei durante 48 dias em uma empresa com salário de R$ 1.300,00, R$ 110,00 de vale transporte e R$ 253,00 de vale alimentação. \r\nNa minha contratação foi combinado que teria um período de experiência de 90 dias, porém minha carteira de trabalho não foi assinada e eu não assinei nenhum contrato. \r\nO pedido de demissão foi feito por mim e eu pedi dispensa imediata, assinei uma carta feito a punho e saí da empresa.\r\nGostaria de saber quanto tenho a receber. Eles tem direito a cobrar multa por quebra de contrato? E de descontar o aviso prévio?\r\nLembrando que, minha carteira não foi assinada.\r\nQuais são meus direitos? Vocês podem fazer cálculo do quanto tenho a receber?\r\n\r\nAguardo",
+  :requester_name => "Jéssica Carolina Augusto Raphael",
+  :requester_email => "jeh.raphael@hotmail.com",
+  :city_id => 5075,
+  :state_id => 26,
+  :requester_phone => "(19) 8238-3720",
+  :hashed_code => "02d485b4d2c77a6113271f6c75285ad1f3d7a92bfe7ba7e71b6b02fc8059975d91e0da2a2a39ca7c",
+  :answers_count => 0,
+  :available => true,
+  :created_at => "Wed, 26 Sep 2012 12:59:44 BRT -03:00",
+  :updated_at => "Wed, 26 Sep 2012 12:59:44 BRT -03:00"
+})
+
+Question.create({
+  :id => 30,
+  :title => "Contrato de experiência",
+  :description => "Boa tarde,\r\n\r\nTrabalhei durante 48 dias em uma empresa com salário de R$ 1.300,00, R$ 110,00 de vale transporte e R$ 253,00 de vale alimentação. \r\nNa minha contratação foi combinado que teria um período de experiência de 90 dias, porém minha carteira de trabalho não foi assinada e eu não assinei nenhum contrato. \r\nO pedido de demissão foi feito por mim e eu pedi dispensa imediata, assinei uma carta feito a punho e saí da empresa.\r\nGostaria de saber quanto tenho a receber. Eles tem direito a cobrar multa por quebra de contrato? E de descontar o aviso prévio?\r\nLembrando que, minha carteira não foi assinada.\r\nQuais são meus direitos? Vocês podem fazer cálculo do quanto tenho a receber?\r\n\r\nAguardo, ",
+  :requester_name => "Jéssica Carolina Augusto Raphael",
+  :requester_email => "jeh.raphael@hotmail.com",
+  :city_id => 5075,
+  :state_id => 26,
+  :requester_phone => "(19) 8238-3720",
+  :hashed_code => "083e17390b92261426748ab7bb72e6ef1f5bd403eec9872c558595fb40787c8a546ef43afb4998e9",
+  :answers_count => 1,
+  :available => true,
+  :created_at => "Wed, 26 Sep 2012 13:04:45 BRT -03:00",
+  :updated_at => "Wed, 26 Sep 2012 13:04:45 BRT -03:00"
+})
+
+Question.create({
+  :id => 31,
+  :title => "dúvida vale transporte ",
+  :description => "“Muito embora o art. 5° do Decreto 95247/87, ao regulamentar a Lei 7418/85, vede \"ao empregador substituir o Vale-Transporte por antecipação em dinheiro ou qualquer outra forma de pagamento\", o pagamento da verba em espécie não transmuda a natureza da verba para salarial. Além do art. 6º, do citado Decreto, dispor expressamente que o vale-transporte não terá natureza salarial, o mesmo regramento pode ser encontrado no art. 2º, alínea a, da Lei 7.418/85: \"a) não tem natureza salarial, nem se incorpora à remuneração para quaisquer efeitos\". Ou seja, além da taxatividade na legislação relativamente à natureza jurídica indenizatória da verba, a finalidade do benefício confirma o acerto do legislador, qual seja, visa o ressarcimento pelos gastos tidos com o deslocamento do empregado no trajeto trabalho/casa e vice/versa. O que resulta dizer, mesmo que pago em dinheiro, não representa contraprestação pelo trabalho prestado”, não devendo ser considerado como verba salarial",
+  :requester_name => "gleidson",
+  :requester_email => "gleidson.araujo@bradescoseguros.com.br",
+  :city_id => 3643,
+  :state_id => 19,
+  :requester_phone => "(21) 8290-8863",
+  :hashed_code => "989e3cf129e49c403a5ce2daa54ed3c00d1ad0565aea405282a72bf329bae9a4dbb18b4ba031b688",
+  :answers_count => 1,
+  :available => true,
+  :created_at => "Thu, 27 Sep 2012 09:21:29 BRT -03:00",
+  :updated_at => "Thu, 27 Sep 2012 09:21:29 BRT -03:00"
+})
+
+Question.create({
+  :id => 34,
+  :title => "comprei um carro usado avista em uma loja de caros usados porem ja ten 30 dia que comprei o carro e ainda nao mim mandaram o recibo assinado como combinado e tambem o carro veio sem extintor de incêndio e chave de rodas.",
+  :description => "gostaria de saber o que posso fazer pois ja perdi de vender o veiculo ,levando prejuízo cada dia mais .eles não mim ligaram para falar mais nada ..posso processar  ou o que posso fazer?tou sendo muito prejudicado por isso o recibo era pra ser mandado para mim no máximo sete dias.",
+  :requester_name => "luis fellipe",
+  :requester_email => "felipe_jucabike@yahoo.com.br",
+  :city_id => 4950,
+  :state_id => 26,
+  :requester_phone => "(19) 8812-2737",
+  :hashed_code => "573651090bd13367a33d9f69c45a317728cc4b358751aedb3e4926207d4b1c6d051c2820f1c1d000",
+  :answers_count => 1,
+  :available => true,
+  :created_at => "Fri, 28 Sep 2012 22:08:01 BRT -03:00",
+  :updated_at => "Fri, 28 Sep 2012 22:08:01 BRT -03:00"
+})
+#======================================================================================================
+
 
 Answer.delete_all
 
@@ -812,4 +1065,71 @@ id: 86,
 question_id: 23,
 updated_at: "2012-09-20T21:46:08-03:00",
 user_id: 4
+})
+
+Answer.create({
+  :id => 87,
+  :user_id => 4,
+  :question_id => 24,
+  :evaluation => "useless",
+  :description => "Na realidade, não há nenhuma ilegalidade em considerar como sua remuneração o valor do salário acrescido do vale transporte. Isso porque a partir do momento em que o empregador opta por pagar o vale transporte em dinheiro,  este passa a integrar o seu salário para todos os efeitos legais, inclusive cálculo das demais verbas trabalhistas.",
+  :hashed_code => "4414e521e33f71a9304bc257970ea26c29f2af29466e113c084b1f4a319e157837fda9926e2c1a95",
+  :created_at => "Wed, 26 Sep 2012 19:48:52 BRT -03:00",
+  :updated_at => "Thu, 27 Sep 2012 09:19:21 BRT -03:00"
+})
+
+Answer.create({
+  :id => 88,
+  :user_id => 4,
+  :question_id => 25,
+  :evaluation => "useful",
+  :description => "Para solucionar este problema sem despender muito dinheiro, você pode procurar a defensoria pública para ingressar com uma ação de abertura de inventário com pedido de justiça gratuita, ficando, dessa forma, isento do pagamento de custas judiciais e emolumentos. Assim, você poderá legalizar a situação do terreno de uma forma menos cara.",
+  :hashed_code => "936f9c38cc9733ce30d7a34a586a11de51ef53901cff05826dccb76e90f13187e53c21c8b691cf8c",
+  :created_at => "Wed, 26 Sep 2012 20:01:55 BRT -03:00",
+  :updated_at => "Thu, 27 Sep 2012 11:00:43 BRT -03:00"
+})
+
+Answer.create({
+  :id => 90,
+  :user_id => 4,
+  :question_id => 30,
+  :evaluation => "useful",
+  :description => "Infelizmente, no caso acima relatado, você só tem R$-36,59 a receber.\r\nNa situação exposta, você teria direito a R$-997,80 de saldo de salário e R$-277,17 de 13o salário, o que resultaria em um total de R$-1274,97. Contudo, por ter rescindido o contrato de  experiência antecipadamente, você é obrigada a pagar uma indenização à empresa no valor de R$1136,38, valor este que, somado aos descontos da previdência social, perfaz um total de R$1238,38, reduzindo substancialmente o valor de seu crédito.",
+  :hashed_code => "9ed8701c2ec261e81b80ed59ee080e95336c86af1171560326d008f493621cb596197a869548e9bb",
+  :created_at => "Wed, 26 Sep 2012 20:27:51 BRT -03:00",
+  :updated_at => "Wed, 26 Sep 2012 20:42:36 BRT -03:00"
+})
+
+Answer.create({
+  :id => 89,
+  :user_id => 4,
+  :question_id => 26,
+  :evaluation => "useful",
+  :description => "Não há motivo para preocupação. Primeiramente, em relação à casa, mesmo vocês dois tendo casado no regime de separação total de bens, ainda há possibilidade de você ficar com o apartamento ou, pelo menos, com uma porcentagem do valor da venda, se você comprovar por meio de documentos ou testemunhas que contribuiu financeiramente para a compra do imóvel ou dos bens que o integram. No que diz respeito às crianças, as provas que você possui acerca da conduta do seu marido são suficientes para lhe garantir a guarda de seus filhos e, mesmo que assim não fosse, hoje em dia a Justiça preza pela guarda conjunta, de modo que você não poderá ser privada do convívio com as crianças.",
+  :hashed_code => "23efe7667acf5ee7e3d231b79f8ca5ffd07ddf8eb5d878d2b9a02f6941be18590bd1a37747333ec2",
+  :hashed_code => "23efe7667acf5ee7e3d231b79f8ca5ffd07ddf8eb5d878d2b9a02f6941be18590bd1a37747333ec2",
+  :created_at => "Wed, 26 Sep 2012 20:14:11 BRT -03:00",
+  :updated_at => "Wed, 26 Sep 2012 22:18:38 BRT -03:00"
+})
+
+Answer.create({
+  :id => 91,
+  :user_id => 4,
+  :question_id => 31,
+  :evaluation => nil,
+  :description => "Caro usuário,\r\n\r\nO comentário acima representa tão somente o posicionamento de um determinado jurista sobre a natureza do vale transporte quanto este é pago em espécie. Contudo, devo alertá-lo que este posicionamente é minoritário: a maioria dos juízes considera que o pagamento em dinheiro do vale transporte desvirtua a natureza do instituto, perdendo seu caráter indenizatório e adquirindo natureza salarial, o que, inclusive, é mais benéfico para o trabalhador.",
+  :hashed_code => "b59829bdad9e5388fe9d73a4b9a463d9f076aa1310e1d2935477b77ff05447bea57d77b1694801f1",
+  :created_at => "Mon, 01 Oct 2012 19:25:33 BRT -03:00",
+  :updated_at => "Mon, 01 Oct 2012 19:25:33 BRT -03:00"
+})
+
+Answer.create({
+  :id => 92,
+  :user_id => 4,
+  :question_id => 34,
+  :evaluation => nil,
+  :description => "Primeiramente, sugerimos que você tente resolver a questão de forma amigável. Procure os representantes legais da empresa que lhe venderam o veículo e exponha sua situação. Caso isso não resolva, é possível ingressar com uma ação de cobrança no judiciário e, pleitear, inclusive, danos morais e materiais, uma vez que você afirmou acima que já sofreu inúmeros prejuízos e transtornos com a falta de compromisso da empresa.",
+  :hashed_code => "1fe2ecf6b544738f0042466d822415471132c2a6e8630ce66c134422312cb42d6d2d198f0e0186c0",
+  :created_at => "Mon, 01 Oct 2012 19:29:11 BRT -03:00",
+  :updated_at => "Mon, 01 Oct 2012 19:29:11 BRT -03:00"
 })
