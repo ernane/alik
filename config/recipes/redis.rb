@@ -10,8 +10,7 @@ namespace :redis do
   %w[start stop restart].each do |command|
     desc "#{command} redis-server"
     task command, roles: :app do
-      run "service redis-server #{command}"
+      run "#{sudo} service redis-server #{command}"
     end
-    #after "deploy:#{command}", "redis-server:#{command}"
   end
 end
