@@ -12,6 +12,6 @@ namespace :redis do
     task command, roles: :app do
       run "service redis-server #{command}"
     end
-    after "deploy:#{command}", "redis-server:#{command}"
+    #after "deploy:#{command}", "redis-server:#{command}"
   end
 end
