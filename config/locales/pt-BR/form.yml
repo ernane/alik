@@ -1,5 +1,7 @@
 pt-BR:
   form:
+    select:
+      country: "Selecione um Estado"
     buttons:
       search: "Fazer busca"
 

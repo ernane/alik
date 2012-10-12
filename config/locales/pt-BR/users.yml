@@ -1,0 +1,7 @@
+pt-BR:
+  users:
+    index:
+      container_title: "Conheça os advogados que já se cadastraram"
+      title: "Home"
+    search:
+      container_title: "Busca de usuários"

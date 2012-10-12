@@ -1,16 +1,37 @@
 <% title t(".title") %>
 
 <h1><%= t(".container_title") %></h1>
-<p>
-  Sua busca por <strong><%= params[:name].inspect %></strong>
-  retornou os seguintes resultados:
-</p>
 
-<ul id='questions'>
-  <% @users.each do |user| %>
-    <li><%= user.email %></li>
-  <% end %>
-</ul>
+<div class="row">
+	<div class="twelve columns" id="user-list">
+		<div class="row">
+		<% @users.each do |user| %>
+		<div class="six columns" id="profile">
+			<%= link_to image_tag(avatar_url(user, 60), :alt => user.username), user_path(user) %>
+			<span class="name_profile"><%= link_to user.username, user_path(user) %></span>
+			<div class="row">
+				<div class="eight columns" id="dados">
+					<ul>
+						<li>Email: <%= user.email %></li>
+						<% if user.city.present? %>
+							<li>Cidade: <%= user.city.name %></li>
+						<% else %>
+							<li>Cidade: <span class="none">Não Informado</span></li>
+						<% end %>
+					<ul>
+				</div>
+				<div class="four columns" id="dados">
+					<div id="score_user">
+						<span class="information_profile">Índice:</span>
+						<span class="calculo"><%= number_with_precision(user.alik_rate/3, precision: 1)%> <%= user.human_alik_rate %></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% end %>
+		</div>
+	</div>
+</div>
 
 <% if @users.size == 0 %>
   <h2>Nenhum resultado encontrado</h2>

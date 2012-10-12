@@ -67,7 +67,7 @@ class User < ActiveRecord::Base
     indexes email
     indexes :username, sortable: true
     indexes [city.name], as: :city_name
-    indexes [state.name], as: :state_name
+    indexes [state_id], as: :state_name
     
     has state_id, created_at, updated_at
   end

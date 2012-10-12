@@ -1,97 +1,54 @@
-/* PROFILE SIDEBAR */
-#profile {
-  margin-bottom: 25px;
-}
-.avatar{
-	height: 60px;
-	width:60px;
-}
-#profile .avatar {
-  border: solid 2px #999;
+#profile{
+	margin-bottom:15px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.50);
+	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.50);
+	-moz-box-shadow: 1px 2px 5px rgba(0,0,0,0.25);
 }
 
-#profile  dt {
-  width: 460px;
-  font-size:11px;
+#dados ul li{
+	font-size:11px;
 }
 
-#profile   dd {
-  margin-left: 5px;
+#dados{
+	padding-top:5px;
 }
 
-#profile   dd p:first-child {
-  margin-top: 0;
+#user-list{
+  margin-top: 20px;
 }
 
-#profile   dd, dt {
-  padding-top: 5px;
+#score_user{
+	padding: 2px 0;
+	text-align: center;
+	border: 1px solid #CCC;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background: #EFEFEF;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FAFAFA), color-stop(100%, #EFEFEF));
 }
 
-/* USERS LIST */
-.users {
-  list-style: none;
-  overflow: hidden;
+#profile img{
+	padding: 2px;
+	border: solid 2px #555;
+	width: 60px;
+	vertical-align: middle;
 }
 
-.users li {
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 10px;
+span.name_profile {
+	font-weight: bold;
+	font-size: 10px;
+	text-transform: uppercase;
 }
 
-ul.users img {
-  padding:1px;
-  border: solid 1px #666;
-  margin: 0;
-  width: 60px;
+span.information_profile {
+	font-size: 11px;
 }
 
-.users li:nth-child(5n+5) {
-  margin-right: 0;
+span.calculo {
+	font-size: 11px;
 }
 
-.users .name {
-  display: none;
-}
-
-/* USER SHOW */
-a.avatar_show img{
-  padding:1px;
-  border: solid 2px #666;
-  margin: 0;
-  width: 70px;
-}
-
-a.name_show{
-  margin-left:20px;
-  font-size: 20px;
-}
-
-section.user-profile  dt {
-  width: 600px;
-}
-
-section.user-profile  dl {
-  margin-left:50px;
-}
-
-section.user-profile dd {
-  margin-left: 5px;
-}
-
-section.user-profile dd p:first-child {
-  margin-top: 0;
-}
-
-section.user-profile dd, dt {
-  padding-top: 5px;
-}
-
-span.none {
-  font-weight: normal;
-  color: #999;
-}
-
-span.result {
-  font-weight: normal;
+span.name_profile a{
+	color:#222;
 }

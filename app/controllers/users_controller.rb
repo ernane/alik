@@ -22,6 +22,6 @@ class UsersController < ApplicationController
   end
 
   def search
-    @users = User.search(params[:name], :with => {:state_id => params[:states]})
+    @users = User.search(params[:name], params[:state_id])
   end
 end

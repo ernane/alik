@@ -1,33 +1,51 @@
-<h1>Conheça os advogados que já se cadastraram</h1>
+<h1><%= t(".container_title") %></h1>
 
+<div class="twelve columns" id="busca">
+	<div class="row collapse">
+		<div class="nine mobile-three columns">
+			<%= form_tag search_users_path, :method => :get do %>
+			<%= text_field_tag :name, params[:name] %>
 
-	<%= form_tag search_users_path, :method => :get do %>
-	<%= text_field_tag :name, params[:name] %>
-	
-	<%= select_tag "states", options_from_collection_for_select(State.all, "id", "name"), include_blank: true %>
-	
+			<%= select_tag "state_id", options_from_collection_for_select(State.all, "id", "name"), :prompt => t("form.select.country") %>
+		</div>
+		<div class="three mobile-one columns">
+			<%= submit_tag t("form.buttons.search"), :class => "postfix button expand" %>
+		</div>
+		<% end %>
+	</div>
+</div>
 
-	<%= submit_tag t("form.buttons.search"), :class => "button" %>
-
-<% end %>
-
-<ul class="users">
-	<% @users.each do |user| %>
-	<li>
-		<%= profile_link user %>
-		<ul>
-			<li class="username_index"><%= user.username %></li>
-		</ul>
-	</li>
-	<% end %>
-</ul>
+<div class="row">
+	<div class="twelve columns" id="user-list">
+		<div class="row">
+		<% @users.each do |user| %>
+		<div class="six columns" id="profile">
+			<%= link_to image_tag(avatar_url(user, 60), :alt => user.username), user_path(user) %>
+			<span class="name_profile"><%= link_to user.username, user_path(user) %></span>
+			<div class="row">
+				<div class="eight columns" id="dados">
+					<ul>
+						<li>Email: <%= user.email %></li>
+						<% if user.city.present? %>
+							<li>Cidade: <%= user.city.name %></li>
+						<% else %>
+							<li>Cidade: <span class="none">Não Informado</span></li>
+						<% end %>
+					<ul>
+				</div>
+				<div class="four columns" id="dados">
+					<div id="score_user">
+						<span class="information_profile">Índice:</span>
+						<span class="calculo"><%= number_with_precision(user.alik_rate/3, precision: 1)%> <%= user.human_alik_rate %></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% end %>
+		</div>
+	</div>
+</div>
 
 <% content_for :sidebar do %>
   <%= render("shared/sidebar") %>
 <% end %>
-
-<style type="text/css" media="screen">
-	.username_index{
-		font-size:9.5px;
-	}
-</style>
