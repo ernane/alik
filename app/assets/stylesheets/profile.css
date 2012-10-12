@@ -52,3 +52,98 @@ span.calculo {
 span.name_profile a{
 	color:#222;
 }
+
+#user-show{
+	border: solid 1px #DDD;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 12px 12px 0;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#user-show img{
+	padding: 2px;
+	border: solid 2px #555;
+	width: 70px;
+	vertical-align:middle;
+}
+
+#score-container{
+	margin-right: 10px;
+}
+#score {
+  font-size: 0.8em;
+  border: 1px solid #CCC;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: #EFEFEF;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FAFAFA), color-stop(100%, #EFEFEF));
+}
+
+#score img{
+	border: none;
+}
+#score strong {
+  color: #495C23;
+  font-size: 2em;
+}
+
+#score p {
+  margin: 0;
+}
+
+#score #average {
+  margin-left: 25px;
+}
+
+#score .alik {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#score #score-info {
+  color: #495C23;
+  font-size: 1.2em;
+}
+
+#score #counter {
+  font-size: 0.8em;
+}
+#score #counter  strong {
+  padding-left: 25px;
+  font-size: 1.4em;
+}
+#score #counter #useful {
+  background-image: url("/assets/thumbs-up.png");
+  background-repeat:no-repeat;
+}
+
+#score #counter #useless {
+  background-image: url("/assets/thumbs-down.png");
+  background-repeat:no-repeat;
+}
+
+span#indice{
+	font-weight: bold;
+}
+
+span.name_show{
+	font-weight: bold;
+	font-size: 15px;
+	text-transform: uppercase;
+}
+
+#dados-lista{
+	margin-top:30px;
+}
+
+#dados-lista ul li{
+  font-weight: bold;
+}
+
+span.result{
+  font-weight: normal;
+}

@@ -1,26 +1,29 @@
-<div id="score">
-  <div id="average">
+<div class="row">
+	<div class="twelve columns" id="score">
 
-    <div class="column alik">
-      <%=image_tag('alik-logo-small.png')%>
-      <br>índice
-    </div>
+		<div class="row">
+			<div class="twelve columns">
+				<div class="row">
+					<div class="six columns">
+						<%=image_tag('alik-logo-small.png')%>
+						<br><span id="indice">índice</span>
+					</div>
+					<div class="six columns">
+						<span id="score-info"><%= @user.human_alik_rate %></span><br>
+						<strong><%=number_with_precision(@user.alik_rate/3, precision: 1)%></strong>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <div class="column">
-      <span id="score-info">
-        <%= @user.human_alik_rate %>
-      </span><br>
+		<div class="row">
+			<div class="twelve columns">
+				<p id="counter">
+					<strong id="useful"> <%="#{@user.answers.useful.count}" %></strong> resposta(s) positiva(s)<br>
+					<strong id="useless"><%="#{@user.answers.useless.count}"%></strong> resposta(s) negativa(s)
+				</p>
+			</div>
+		</div>
 
-      <strong>
-        <%=number_with_precision(@user.alik_rate/3, precision: 1)%>
-      </strong>
-    </div>
-
-  </div>
-
-  <p id="counter">
-    <strong id="useful"> <%="#{@user.answers.useful.count}" %></strong> resposta(s) positiva(s)<br>
-    <strong id="useless"><%="#{@user.answers.useless.count}"%></strong> resposta(s) negativa(s)
-  </p>
-
+	</div>
 </div>

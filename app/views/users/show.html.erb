@@ -1,16 +1,28 @@
-<h1><%= @user.username %></h1>
+<div class="row">
+	<div class="ten columns offset-by-one" id="user-show">
+		<div class="row">
+			<div class="seven columns">
+				<%= image_tag(avatar_url(@user, 70), :alt => @user.username) %>
+				<span class="name_show"><%= @user.username %></span>
+			</div>
+			<div class="four columns" id="score-container">
+				<%= render "shared/score_public" %>
+			</div>
+		</div>
 
-<section class="user-profile">
-<%= render "shared/score_public" %>
-	<header><%= profile_user @user %></header>
-	<dl>
-		<dt>E-mail: 												<span class="result"><%= @user.email %></span></dt>
-    <dt>Estado: 												<span class="result"><%= @user.state %></span></dt>
-		<dt>Cidade: 												<span class="result"><%= @user.city %></span></dt>
-		<dt>Telefone: 											<span class="result"><%= @user.phone %></span></dt>
-		<dt>Áreas de Atuação: 							<span class="result"><%= @user.fields %></span></dt>
-		<dt>Registro OAB: 									<span class="result"><%= @user.oab %></span></dt>
-		<dt>Anos de Exercício Profissional: <span class="result"><%= @user.professional %></span></dt>
-		<dt>Sobre: 													<span class="result"><%= @user.about %></span></dt>
-  </dl>
-</section>
+		<div class="row">
+			<div class="twelve columns offset-by-one" id="dados-lista">
+				<ul>
+					<li>E-mail: 												<span class="result"><%= @user.email %></span>				</li>
+					<li>Estado: 												<span class="result"><%= @user.state %></span>				</li>
+					<li>Cidade: 												<span class="result"><%= @user.city %></span>					</li>
+					<li>Telefone: 											<span class="result"><%= @user.phone %></span>				</li>
+					<li>Áreas de Atuação: 							<span class="result"><%= @user.fields %></span>				</li>
+					<li>Registro OAB: 									<span class="result"><%= @user.oab %></span>					</li>
+					<li>Anos de Exercício Profissional: <span class="result"><%= @user.professional %></span>	</li>
+					<li>Sobre: 													<span class="result"><%= @user.about %></span>				</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
