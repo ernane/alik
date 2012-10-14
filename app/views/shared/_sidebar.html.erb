@@ -2,7 +2,7 @@
 <% User.randon.each do |user| %>
 <div class="row" id="user_profile">
 	<div class="twelve columns">
-		<%= image_tag avatar_url(user, 50), :alt => user.username, :class => "avatar" %> <span class="name"><%= user.username %></span>
+		<%= image_tag avatar_image_medium(user) %> <span class="name"><%= user.username %></span>
 		<!-- OAB -->
 		<div class="row">
 			<div class="twelve columns" id="profile_sidebar">

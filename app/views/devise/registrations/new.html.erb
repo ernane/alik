@@ -51,7 +51,7 @@
 
 				<div class="row">
 					<div class="six columns">         
-						<%= f.input :avatar_url, :hint => "Use o #{link_to "gravatar", "https://pt.gravatar.com/site/login/"} para obter sua url" %>
+						<%= f.input :image, :as => :file %>
 					</div>                            
 					<div class="six columns">         
 						<%= f.input :phone %>

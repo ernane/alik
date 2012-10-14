@@ -1,66 +1,135 @@
 <% content_for :sidebar do %>
   <%= render("shared/sidebar") %>
 <% end %>
-<h1 class="devise"><%= t(".title") %></h1>
 
-<%=render "shared/score" %>
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { class: "form-horizontal" }) do |f| %>
-<div class="tabbable">
-  <ul class="nav nav-tabs">
-    <li class="active"><%= link_to "Segurança", "#tab1", :"data-toggle" => "tab"%></li>
-    <li><%= link_to "Profissional", "#tab2", :"data-toggle" => "tab"%></li>
-    <li><%= link_to "Acadêmico", "#tab3", :"data-toggle" => "tab"%></li>
-  </ul>
-
-  <div class="tab-content">
-    <div class="tab-pane active" id="tab1">
-      <fieldset>
-        <legend>Informações de Segurança</legend>
-        <%= f.input :username, 					input_html: {:class => "span4"} %>
-        <%= f.input :email, 						input_html: {:class => "span4"} %>
-        <%= f.input :password, 					input_html: {:class => "span4"} %>
-        <%= f.input :current_password, 	input_html: {:class => "span4"} %>
-        <%= f.input :about, 						input_html: {:class => "span5"} %>
-      </fieldset>
-    </div>
-
-    <div class="tab-pane" id="tab2">
-      <fieldset>
-        <legend>Informações Profissionais</legend>
-        <%= f.input :state_id do %>
-          <%= f.collection_select :state_id, State.order(:name), :id, :name, include_blank: true %>
-        <% end %>
-        <%= f.input :city_id do %>
-          <%= f.grouped_collection_select :city_id, State.order(:name), :cities, :name, :id, :name, include_blank: true %>
-        <% end %>
-        <%= f.input :avatar_url, 					input_html: {:class => "span4"}, :hint => "Use o #{link_to "gravatar", "https://pt.gravatar.com/site/login/"} para obter sua url" %>
-        <%= f.input :portifolio_of_oab, 	input_html: {:class => "span4"} %>
-        <%= f.input :fields, 							input_html: {:class => "span4"} %>
-        <%= f.input :phone, 							input_html: {:class => "span4"}, :as => :string  %>
-        <%= f.input :teaching,            :collection => 1..10 %>
-        <%= f.input :professional,        :collection => 1..10 %>
-        <%= f.input :books_published,     :collection => 1..10 %>
-        <%= f.input :articles_published,  :collection => 1..10 %>
-      </fieldset>
-    </div>
-
-    <div class="tab-pane" id="tab3">
-      <fieldset>
-        <legend>Informações Acadêmicas e de Experiências</legend>
-        <%= f.input :postgraduate,        :as => :boolean %>
-        <%= f.input :doctorate_in_law,    :as => :boolean %>
-        <%= f.input :master_of_law,       :as => :boolean %>
-        <%= f.input :postgraduate_in_law, :as => :boolean %>
-        <%= f.input :foreign_laguage,     :as => :boolean %>
-      </fieldset>
-    </div><!-- tab3 -->
-
-  </div>
+<div class="row">
+	<div class="ten columns offset-by-one" id="user-edit">
+		<div class="row">
+			<div class="seven columns">
+				<%= image_tag avatar_image_medium(resource) %>
+				<span class="name_show"><%= resource.username %></span>
+			</div>
+			<div class="four columns" id="score-container">
+				<%=render "shared/score" %>
+			</div>
+		</div>
+	</div>
 </div>
 
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { class: "form-horizontal" }) do |f| %>
+
+<div id="devise_form">
+	<div id="accordion">
+		
+		<h3><a href="#">Informações de Segurança</a></h3>
+		<div class="content">
+			<div class="row">
+				<div class="six columns">         
+					<%= f.input :username %>
+				</div>                            
+				<div class="six columns">         
+					<%= f.input :email %>
+				</div>                            
+			</div>   
+
+			<div class="row">                                    
+				<div class="six columns">           
+					<%= f.input :password %>
+				</div>                              
+				<div class="six columns">           
+					<%= f.input :current_password %>
+				</div>
+			</div>
+			<%= f.input :about,	input_html: {:rows 	=> "10"} %>
+		</div>
+		
+		<h3><a href="#">Informações Profissionais</a></h3>
+		<div class="content">
+			<fieldset>
+				<div class="row">
+					<div class="six columns">         
+						<%= f.input :state_id do %>
+						<%= f.collection_select :state_id, State.all, :id, :name, :selected => resource.city.present? ? resource.city.state_id : resource.state_id, :include_blank => 'Selecione um estado' %>
+						<% end %>
+					</div>                            
+					<div class="six columns">         
+						<%= f.input :city_id do %>
+						<%= f.collection_select :city_id, cities(resource.city.present? ? resource.city.state_id : resource.state_id), :id, :name, :selected => resource.city_id, :include_blank => resource.city.present? || resource.state_id.present? ? 'Selecione a cidade' : 'Selecione um estado' %>
+						<% end %>
+					</div>                            
+				</div>
+
+				<div class="row">
+					<div class="six columns">         
+						<%= f.input :image, :as => :file %>
+					</div>                            
+					<div class="six columns">         
+						<%= f.input :phone %>
+					</div>                            
+				</div>
+
+				<div class="row">
+					<div class="four columns">         
+						<%= f.input :portifolio_of_oab %>
+					</div>                            
+					<div class="eight columns">         
+						<%= f.input :fields %>
+					</div>                            
+				</div>
+			</fieldset>
+			
+			<fieldset>
+				<div class="row">
+					<div class="six columns">         
+						<%= f.input :teaching,            :collection => 1..10 %>
+					</div>                            
+					<div class="six columns">         
+						<%= f.input :professional,        :collection => 1..10 %>
+					</div>                            
+				</div>
+
+				<div class="row">
+					<div class="six columns">         
+						<%= f.input :books_published,     :collection => 1..10 %>
+					</div>                            
+					<div class="six columns">         
+						<%= f.input :articles_published,  :collection => 1..10 %>
+					</div>                            
+				</div>
+			</fieldset>
+		</div>
+		
+		<h3><a href="#">Informações Acadêmicas e de Experiências</a></h3>
+		<div class="content">
+			<fieldset>
+				<div class="row">
+					<div class="three columns">         
+						<%= f.input :postgraduate        %>
+					</div>                            
+					<div class="three columns">         
+						<%= f.input :master_of_law       %>
+					</div>   
+					<div class="three columns">         
+						<%= f.input :doctorate_in_law    %>
+					</div>
+					<div class="three columns">         
+						<%= f.input :postgraduate_in_law %>
+					</div>                         
+				</div>
+			</fieldset>
+			<fieldset>
+      	<%= f.input :foreign_laguage     %>
+			</fieldset>
+		</div>
+		
+	</div>
+</div>
+
+
 <div class="form-actions">
-  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= f.button :submit, class: "secondary button" %>
   <%= link_to "Cancelar", root_path, :class => "btn"%>
 </div>
 <% end %>
+

@@ -2,7 +2,7 @@
 	<div class="ten columns offset-by-one" id="user-show">
 		<div class="row">
 			<div class="seven columns">
-				<%= image_tag(avatar_url(@user, 70), :alt => @user.username) %>
+				<%= image_tag avatar_image_medium(@user) %>
 				<span class="name_show"><%= @user.username %></span>
 			</div>
 			<div class="four columns" id="score-container">
@@ -11,7 +11,7 @@
 		</div>
 
 		<div class="row">
-			<div class="twelve columns offset-by-one" id="dados-lista">
+			<div class="eleven columns offset-by-one" id="dados-lista">
 				<ul>
 					<li>E-mail: 												<span class="result"><%= @user.email %></span>				</li>
 					<li>Estado: 												<span class="result"><%= @user.state %></span>				</li>

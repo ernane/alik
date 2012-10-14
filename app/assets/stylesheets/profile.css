@@ -63,6 +63,19 @@ span.name_profile a{
 	margin-bottom: 20px;
 }
 
+#user-edit{
+	padding: 12px 12px 0;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#user-edit img{
+	padding: 2px;
+	border: solid 2px #555;
+	width: 120px;
+	vertical-align:middle;
+}
+
 #user-show img{
 	padding: 2px;
 	border: solid 2px #555;
@@ -146,4 +159,8 @@ span.name_show{
 
 span.result{
   font-weight: normal;
+}
+
+#current_password{
+  margin-bottom: 20px;
 }

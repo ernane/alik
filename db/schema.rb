@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120829013232) do
+ActiveRecord::Schema.define(:version => 20121014224736) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -119,7 +119,6 @@ ActiveRecord::Schema.define(:version => 20120829013232) do
     t.string   "portifolio_of_oab"
     t.string   "phone"
     t.text     "about"
-    t.string   "avatar_url"
     t.integer  "teaching",               :default => 0
     t.integer  "professional",           :default => 0
     t.integer  "books_published",        :default => 0
@@ -141,6 +140,7 @@ ActiveRecord::Schema.define(:version => 20120829013232) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.boolean  "featured",               :default => false
+    t.string   "image"
   end
 
   add_index "users", ["city_id"], :name => "index_users_on_city_id"

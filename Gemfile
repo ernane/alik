@@ -3,31 +3,31 @@ source :rubygems
 gem "rails", "3.2.8"
 gem "jquery-rails"
 gem "will_paginate"
-gem "mail_form"
-gem "simple_form"
 gem "draper"
 gem "devise"
 gem "thinking-sphinx"
-#gem "pg"
-#gem "pg_search"
 gem "mysql2"
-gem "reverse_captcha"
-gem "validators"
 gem "whenever", require: false
 
+# FORM BUILD
+gem "reverse_captcha"
+gem "validators"
+gem "mail_form"
+gem "simple_form"
+
+# UPLOAD FILES
+gem 'carrierwave'
+gem 'rmagick'
+
+# BACKGROUND JOBS
 gem "sidekiq"
 gem 'sinatra', require: false
 gem 'slim'
 
-# ADMIN
+# ACTIVE ADMIN
 gem "activeadmin"
 gem "meta_search"
 gem "kaminari"
-
-# BACKGROUND JOBS
-gem "delayed_job_active_record"
-gem "delayed_job_web"
-gem "daemons"
 
 group :assets do
   gem "sass-rails"

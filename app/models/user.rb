@@ -1,11 +1,13 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   
+  mount_uploader :image, ImageUploader
+  
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :fields,
   :city_id, :state_id, :portifolio_of_oab, :phone, :about, :avatar_url, :teaching,
   :professional, :books_published, :articles_published, :postgraduate, :doctorate_in_law,
-  :master_of_law, :postgraduate_in_law, :foreign_laguage, :terms_of_use, :featured, :nickname
+  :master_of_law, :postgraduate_in_law, :foreign_laguage, :terms_of_use, :featured, :nickname, :image
   
   attr_accessible :created_at, :id, :updated_at, :encrypted_password
   attr_accessible :reset_password_token, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
