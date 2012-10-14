@@ -24,6 +24,7 @@
 # # Logs and databases #
 # ######################
 *.log
+log/searchd.development.pid
 *.sql
 *.sqlite
 #
