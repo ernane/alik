@@ -47,7 +47,7 @@ bin
 *.swp
 *.swo
 public/system
-public/uploads
+public/uploads/
 config/database.yml
 config/deploy.rb
 public/assets
