@@ -1,4 +1,4 @@
-roduction:
+production:
   delivery_method: :smtp
   smtp_settings:
     enable_startttls_auto: true
