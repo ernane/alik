@@ -14,6 +14,11 @@ gem "mysql2"
 gem "reverse_captcha"
 gem "validators"
 gem "whenever", require: false
+
+gem "sidekiq"
+gem 'sinatra', require: false
+gem 'slim'
+
 # ADMIN
 gem "activeadmin"
 gem "meta_search"

@@ -1,0 +1,10 @@
+roduction:
+  delivery_method: :smtp
+  smtp_settings:
+    enable_startttls_auto: true
+    address: smtp.gmail.com
+    port: 587
+    domain: ernanesena.com.br
+    authentication: :plain
+    user_name: "noreplay@ernanesena.com.br"
+    password: "cliente2011"

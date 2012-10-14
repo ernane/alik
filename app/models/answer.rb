@@ -8,7 +8,7 @@ class Answer < ActiveRecord::Base
   attr_accessible :created_at, :hashed_code, :id, :updated_at
   
   validates :evaluation, inclusion: { in: %w{useful useless}, allow_nil: true }
-  after_create :delay_notification
+  #after_create :delay_notification
   scope :useful, where(evaluation: "useful")
   scope :useless, where(evaluation: "useless")
   

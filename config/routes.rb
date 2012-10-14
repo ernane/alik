@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Alik::Application.routes.draw do
   match "/cities_by_state" => "cities#index"
   
@@ -6,13 +8,14 @@ Alik::Application.routes.draw do
 
   
   devise_for :users, :path => "usuarios", 
-             :path_names => { :sign_in => 'login', :sign_out => 'logout', 
-                              :password => 'secret', :confirmation => 'verification', 
-                              :unlock => 'unblock', :registration => 'register', 
-                              :sign_up => 'cmon_let_me_in' }
+             :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', 
+                              :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
+                              
+  authenticate :admin_user do
+    mount Sidekiq::Web, at: "/admin/sidekiq"
+  end
 
   root :to => "questions#index"
-  match "/delayed_job" => DelayedJobWeb, :anchor => false
 
   resources :contacts,  :path => "contato", :path_names => {:new => "enviar"}
   resources :states,    :only => :index
