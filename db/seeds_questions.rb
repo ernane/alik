@@ -1,3 +1,54 @@
+Question.create({
+  id: 35, 
+  title: "Esbulho", 
+  description: "Moro com minha filha menor em um espaço que era do meu tio avô. Ele me deu sem comprovação, pois o terreno é 'de posse'. Tenho os comprovantes de pagamento de condominio desde 2008 em meu nome. Meu ti avô faleceu e a familia dele está me processando por esbulho. Eu morava com ele desde os 6 anos de idade, hj tenho 30. Estou sem saber o que fazer", 
+  requester_name: "Vanessa", 
+  requester_email: "vanessa.leal@globo.com", 
+  city_id: 3686, 
+  state_id: 19, 
+  requester_phone: "2131859202", 
+  hashed_code: "0f91bab02715b17a86c6fccdc51b4dee3e9267771eddb2cdc9b38c99b4c79eeaf6bb786b3580d92a", 
+  answers_count: 0, 
+  available: true, 
+  created_at: "2012-10-11 01:15:22", 
+  updated_at: "2012-10-11 01:15:22"
+})
+
+Question.create({
+  d: 36, 
+  title: "emprestimo", 
+  description: "bom dia! eu emprestei dinheiro a uma pessoa e ja tem dois meses , e agora ela se recusa a me devolver, toda vez que ligo ele me enrola e desliga o tel na minha cara. quero saber o que eu posso fazer pra reaver me dinheiro, ou se nao tenho como mais receber dele. muito obrigada.", 
+  requester_name: "danielle", 
+  requester_email: "dany1m@hotmail.com", 
+  city_id: 897, 
+  state_id: 8, 
+  requester_phone: "(27) 9881-3564", 
+  hashed_code: "b8c51f3494f3db499dcc171454a70318a27e1a424d93f549f1d58217fb09aba34eee7a7623b2e7bb", 
+  answers_count: 0, 
+  available: true, 
+  created_at: "2012-10-12 09:29:56", 
+  updated_at: "2012-10-12 09:29:56"
+})
+
+Question.create({
+})
+
+Question.create({
+})
+
+Question.create({
+})
+
+Question.create({
+})
+
+Question.create({
+})
+
+Question.create({
+})
+  
+
 # encoding: UTF-8
 
 Question.delete_all
