@@ -18,7 +18,7 @@ gem 'carrierwave'
 gem 'rmagick'
 
 # BACKGROUND JOBS
-gem "sidekiq"
+gem "sidekiq", "2.3.2"
 gem 'sinatra', require: false
 gem 'slim'
 
