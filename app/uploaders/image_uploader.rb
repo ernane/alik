@@ -25,6 +25,3 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [200, 200]
   end
 end
-
-# CAPISTRANO FILES
-# set :shared_children, shared_children + %w{public/uploads}

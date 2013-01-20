@@ -25,12 +25,5 @@ module Alik
     config.assets.initialize_on_precompile = false
     config.assets.version = '1.0'
     config.active_support.escape_html_entities_in_json = true
-
-    config.generators do |g|
-      g.assets         false
-      g.stylesheets    false
-      g.helper         false
-      g.test_framework false
-    end
   end
 end

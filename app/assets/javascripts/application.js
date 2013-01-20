@@ -59,7 +59,7 @@ var hideFlashes = function() {
 
 function getCitiesByState(id) {
   
-  $.getJSON("/cities_by_state", id, function(j) {
+  $.getJSON("/cidades", id, function(j) {
     var options = '<option value="">Selecione a cidade</option>';
     $.each(j.cty, function(i, item) {
       options += '<option value="' + item.id + '">' + item.n + '</option>';

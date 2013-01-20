@@ -22,8 +22,8 @@ namespace :monit do
   task(:nginx, roles: :web)   { monit_config "nginx" }
   task(:mysql, roles: :db)    { monit_config "mysql" }
   task(:redis, roles: :web)   { monit_config "redis" }
-  task(:sphinx, roles: :web)  { monit_config "sphinx" }
-  task(:unicorn, roles: :app) { monit_config "unicorn" }
+  task(:sphinx, roles: :web)  { monit_config "sphinx"}
+  task(:unicorn, roles: :app) { monit_config "unicorn"}
   task(:cron, roles: :app)    { monit_config "cron" }
 
   %w[start stop restart syntax reload].each do |command|

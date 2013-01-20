@@ -1,2 +1,3 @@
-web: bundle exec rails server thin -p $PORT
-worker:  bundle exec rake jobs:work
+redis: redis-server /usr/local/etc/redis.conf
+sidekiq: bundle exec sidekiq -v
+web: bundle exec rails s

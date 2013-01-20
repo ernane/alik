@@ -1,13 +1,11 @@
 source :rubygems
 
-gem "rails", "3.2.8"
+gem "rails", "3.2.11"
 gem "jquery-rails"
 gem "will_paginate"
 gem "draper"
 gem "devise"
-gem "thinking-sphinx"
 gem "mysql2"
-gem "whenever", require: false
 
 # FORM BUILD
 gem "reverse_captcha"
@@ -41,30 +39,23 @@ group :assets do
 end
 
 group :production do
-  gem "unicorn"
-end
-
-group :development, :test do
-  gem "pry",            :require => false
-  gem "awesome_print",  :require => false
-  gem "rspec-rails"
-  gem "capybara"
-  
-  gem "rb-fsevent",     :require => false
-  gem "guard"
-  gem "guard-cucumber"
-  gem "guard-rspec"
-  gem "growl"
-  gem "test_notifier"
-end
-
-group :test do
-  gem "cucumber-rails", :require => false
-  gem "database_cleaner"
+  gem 'unicorn'
 end
 
 group :development do
-  gem "thin"
-  gem "capistrano"
-  gem "mailcatcher"
+  gem 'capistrano'
+  gem 'letter_opener'
+  gem 'foreman'
+end
+
+group :test, :development do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'email_spec'
+  gem 'cucumber-rails', :require => false
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl'
 end

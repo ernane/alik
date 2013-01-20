@@ -1,27 +1,24 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
-  
+
   mount_uploader :image, ImageUploader
-  
+
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :fields,
   :city_id, :state_id, :portifolio_of_oab, :phone, :about, :avatar_url, :teaching,
   :professional, :books_published, :articles_published, :postgraduate, :doctorate_in_law,
   :master_of_law, :postgraduate_in_law, :foreign_laguage, :terms_of_use, :featured, :nickname, :image
-  
-  attr_accessible :created_at, :id, :updated_at, :encrypted_password
-  attr_accessible :reset_password_token, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
-  
+
   captcha :nickname
-  
+
   validates_presence_of :username, :state_id, :city_id
 
   belongs_to :city
   belongs_to :state
   has_many :answers, dependent: :destroy
-  
+
   scope :randon, order("RAND()").limit(2).includes(:city)
-  
+
   def profile_name
     "#{self.username} - #{self.email}"
   end
@@ -63,14 +60,5 @@ class User < ActiveRecord::Base
     self.professional ||= 0
     self.books_published ||= 0
     self.articles_published ||= 0
-  end
-  
-  define_index do
-    indexes email
-    indexes :username, sortable: true
-    indexes [city.name], as: :city_name
-    indexes [state_id], as: :state_name
-    
-    has state_id, created_at, updated_at
   end
 end

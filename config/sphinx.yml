@@ -1,3 +1,0 @@
-production:
-  pid_file: /home/deployer/apps/alik/shared/pids/searchd.pid
-  searchd_file_path: /home/deployer/apps/alik/shared/db/sphinx

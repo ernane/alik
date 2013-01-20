@@ -9,8 +9,15 @@ pt-BR:
         alert: "Desculpe, mas essa operação é inválida"
                 
     answer:
+      useful:
+        notice: "Você avaliou a resposta positivamente!"
+      useless:
+        error: "Você avaliou a resposta negativamente!"
+      evaluated:
+        alert: "Esta resposta já havia sido avaliada."
       create:
         notice: "Sua resposta foi cadastrada com sucesso."
     sendmail:
       notice: "Sua mensagem foi enviada com sucesso"
       error: "Sua mensagem não pode ser entregue"
+      

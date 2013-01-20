@@ -1,18 +1,4 @@
 class UsersController < ApplicationController
-
-  rescue_from Riddle::ConnectionError do
-    redirect_to root_path, :alert => t("flash.question.search.alert")
-  end
-
-  rescue_from ActiveRecord::RecordNotFound do
-    case request.format.symbol
-    when :html
-      redirect_to root_path, :alert => t("flash.question.not_found.alert")
-    when :json
-      render :json => {:error => "Question not found"}, :status => 404
-    end
-  end
-
   def index
     @users = User.all
   end
@@ -22,6 +8,6 @@ class UsersController < ApplicationController
   end
 
   def search
-    @users = User.search(params[:name], params[:state_id])
+    @users = User.search(params[:state_id])
   end
 end

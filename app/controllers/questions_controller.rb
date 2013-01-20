@@ -1,19 +1,4 @@
 class QuestionsController < ApplicationController
-  respond_to :html, :json, :js
-  
-  rescue_from Riddle::ConnectionError do
-    redirect_to root_path, :alert => t("flash.question.search.alert")
-  end
-  
-  rescue_from ActiveRecord::RecordNotFound do
-    case request.format.symbol
-    when :html
-      redirect_to root_path, :alert => t("flash.question.not_found.alert")
-    when :json
-      render :json => {:error => "Question not found"}, :status => 404
-    end
-  end
-
   def index
     @questions = Question.latest_four.with_answers.paginate(:page => params[:page], :per_page => 5)
     @questions_filter = Question.latest_four.paginate(:page => params[:page], :per_page => 5)
@@ -30,7 +15,8 @@ class QuestionsController < ApplicationController
   end
   
   def search
-    @questions = Question.search(params[:search])
+    @search = Question.search(params[:search])
+    @questions = @search.paginate(:page => params[:page])
   end
   
   def create
