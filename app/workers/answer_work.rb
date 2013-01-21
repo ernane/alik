@@ -1,7 +1,7 @@
 class AnswerWork
   include Sidekiq::Worker
 
-  def perform(id, count)
+  def perform(id)
     answer = Answer.find(id)
     NotificationMailer.answer(answer).deliver
   end
