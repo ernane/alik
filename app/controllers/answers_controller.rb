@@ -10,7 +10,8 @@ class AnswersController < ApplicationController
     @answer = @question.answers.build(params[:answer].merge!(:user => current_user))
     if @answer.save
       flash[:notice] = t("flash.answer.create.notice")
-      AnswerWork.perform_async(@answer.id)
+      NotificationMailer.answer(@answer).deliver
+      # AnswerWork.perform_async(@answer.id)
       redirect_to @question
     else
       render :action => "new"
