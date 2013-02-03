@@ -9,7 +9,7 @@ namespace :monit do
   task :setup do
     monit_config "monitrc", "/etc/monit/monitrc"
     nginx
-    postgresql
+    mysql
     unicorn
     syntax
     reload
