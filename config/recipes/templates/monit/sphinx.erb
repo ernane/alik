@@ -1,6 +1,0 @@
-check process sphinx with pidfile /home/deployer/apps/alik/shared/pids/searchd.pid 
-  start program = "/bin/sh -c 'cd /home/deployer/apps/alik/current && bundle exec rake ts:start RAILS_ENV=production'"
-	stop program = "/bin/sh -c 'cd /home/deployer/apps/alik/current && bundle exec rake ts:stop RAILS_ENV=production'"
-	if failed host localhost port 9312 then restart
-	if 3 restarts within 5 cycles then timeout
-

@@ -9,22 +9,16 @@ namespace :monit do
   task :setup do
     monit_config "monitrc", "/etc/monit/monitrc"
     nginx
-    mysql
+    postgresql
     unicorn
-    redis
-    sphinx
-    cron
     syntax
     reload
   end
   after "deploy:setup", "monit:setup"
   
-  task(:nginx, roles: :web)   { monit_config "nginx" }
-  task(:mysql, roles: :db)    { monit_config "mysql" }
-  task(:redis, roles: :web)   { monit_config "redis" }
-  task(:sphinx, roles: :web)  { monit_config "sphinx"}
-  task(:unicorn, roles: :app) { monit_config "unicorn"}
-  task(:cron, roles: :app)    { monit_config "cron" }
+  task(:nginx, roles: :web)     { monit_config "nginx" }
+  task(:mysql, roles: :db)      { monit_config "mysql" }
+  task(:unicorn, roles: :app)   { monit_config "unicorn" }
 
   %w[start stop restart syntax reload].each do |command|
     desc "Run Monit #{command} script"

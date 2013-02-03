@@ -3,9 +3,12 @@ upstream <%= application %>_unicorn {
 }
 
 server {
-  listen 80 default deferred;
-  # server_name alik.com.br www.alik.com.br assets.alik.com.br;
+  listen 80;
+  server_name ernanesena.com.br *.ernanesena.com.br;
   root <%= current_path %>/public;
+  
+  access_log	<%= shared_path %>/log/nginx_access.log combined;
+  error_log   <%= shared_path %>/log/nginx_error.log;
 
   if (-f $document_root/system/maintenance.html) {
     return 503;

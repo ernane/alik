@@ -11,6 +11,8 @@ namespace :deploy do
   desc "Install everything onto the server"
   task :install do
     run "#{sudo} apt-get -y update"
-    run "#{sudo} apt-get -y install python-software-properties"
+    run "#{sudo} apt-get -y install python-software-properties build-essential openssl libreadline6 libreadline6-dev curl git-core \
+    zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf \
+    libc6-dev ncurses-dev automake libtool bison subversion nodejs imagemagick libmagickwand-dev"
   end
 end
