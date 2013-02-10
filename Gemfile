@@ -5,7 +5,8 @@ gem "jquery-rails"
 gem "will_paginate"
 gem "draper"
 gem "devise"
-gem "mysql2"
+gem 'sqlite3'
+# gem "mysql2"
 
 # FORM BUILD
 gem "reverse_captcha"
@@ -14,7 +15,7 @@ gem "simple_form"
 
 # UPLOAD FILES
 gem 'carrierwave'
-gem 'rmagick'
+# gem 'rmagick'
 
 # ACTIVE ADMIN
 gem "activeadmin"

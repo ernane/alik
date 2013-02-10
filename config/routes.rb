@@ -8,7 +8,7 @@ Alik::Application.routes.draw do
 
   devise_for :users
 
-  root :to => "questions#index"
+  root :to => "site#index"
 
   resources :contacts,  :path => "contato", :path_names => {:new => "enviar"}
   resources :states,    :only => :index

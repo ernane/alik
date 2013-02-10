@@ -1,4 +1,9 @@
 class SiteController < ApplicationController
+  layout 'application_new'
+
+  def index
+  end
+
   def sobre
   end
 

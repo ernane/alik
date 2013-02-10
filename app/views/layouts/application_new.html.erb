@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+<head>
+  <%= render("shared/head") %>
+</head>
+
+<body class="page page-blog page-fixed-header has-navbar-fixed-top">
+  <!-- NAVIGATION  -->
+  <%= render("shared/navigation") %>
+  <!-- NAVIGATION  -->
+
+  <!-- STATIC-BANNER -->
+  <%= render("shared/static_banner") %>
+  <!-- STATIC-BANNER -->
+
+  <div id="content">
+    <div class="container"> 
+      <%= yield %>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <%= render("shared/footer_new") %>
+  <!-- FOOTER -->
+
+  <!-- @todo: remove unused Javascript for better performance --> 
+  <%= javascript_include_tag "application_new" %>
+</body>
+</html>
