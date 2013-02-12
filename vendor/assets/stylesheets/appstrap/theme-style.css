@@ -1733,7 +1733,7 @@ blockquote small img {
 .title-divider {
   text-align: left;
   margin-bottom: 1em;
-  background: #ffffff url(../img/bg_divider.png) left center repeat-x;
+  background: #ffffff url("/assets/bg_divider.png") left center repeat-x;
   padding: 0;
 }
 .title-divider span {

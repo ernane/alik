@@ -2,6 +2,7 @@ class SiteController < ApplicationController
   layout 'application_new'
 
   def index
+    @questions = Question.paginate(:page => params[:page], :per_page => 5)
   end
 
   def sobre

@@ -1,10 +1,11 @@
 <div class="row-fluid">
-  <h2 class="title-divider"><span>Company <span class="de-em">Blog</span></span> <small>We love to talk!</small></h2>
+  <h2 class="title-divider"><span>Últimas <span class="de-em">Perguntas</span></span></h2>
 </div>
 <div class="row"> 
   <!--Blog Roll Content-->
   <div class="span9 blog-roll blog-list"> 
     
+  <% 10.times do |time| %>
     <!-- Blog post -->
     <div class="media row-fluid">
       <div class="span1 hidden-phone"> 
@@ -23,7 +24,7 @@
             <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Sun 20th Jan 2013</li>
             <li><i class="icon-user"></i> <a href="#">Alex</a></li>
           </ul>
-          <a href="blog-post.htm" class="media-object"> <img src="img/blog/ape.jpg" alt="Picture of frog by Ben Fredericson" /> </a>
+          <%= link_to image_tag("blog/ape.jpg"), nil, class: "media-object", alt: "Picture of frog by Ben Fredericson" %>
           <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis. Morbi tincidunt posuere turpis eu laoreet. Nulla facilisi. Aenean at massa leo. Vestibulum in varius arcu.</p>
           <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis</p>
           <ul class="inline links">
@@ -33,181 +34,9 @@
         </div>
       </div>
     </div>
+  <% end %>
     
-    <!-- Blog post -->
-    <div class="media row-fluid">
-      <div class="span1 hidden-phone"> 
-        <!-- Date desktop -->
-        <div class="date-wrapper"> <span class="date-m">Jan</span> <span class="date-d">10</span> </div>
-        <!-- Meta details desktop -->
-        <p class="meta muted"> <i class="icon-user"></i> <a href="#">Dave</a> </p>
-      </div>
-      <div class="span11">
-        <div class="media-body">
-          <div class="tags"><a href="#" class="tag">coding</a> / <a href="#" class="type">event</a></div>
-          <h4 class="title media-heading"><a href="blog-post.htm">Turpis odio dictumst tempor ac et!</a></h4>
-          
-          <!-- Meta details mobile -->
-          <ul class="inline meta muted visible-phone">
-            <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Thu 10th Jan 2013</li>
-            <li><i class="icon-user"></i> <a href="#">Dave</a></li>
-          </ul>
-          <a href="blog-post.htm" class="media-object"> <img src="img/blog/fly.jpg" alt="Picture of frog by Ben Fredericson" /> </a>
-          <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis. Morbi tincidunt posuere turpis eu laoreet. Nulla facilisi. Aenean at massa leo. Vestibulum in varius arcu.</p>
-          <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis</p>
-          <ul class="inline links">
-            <li><a href="blog-post.htm" class="btn btn-mini"><i class="icon-circle-arrow-right"></i> Read more</a></li>
-            <li><a href="blog-post.htm#comments" class="btn btn-mini"><i class="icon-comment"></i> 80 Comments</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Blog post -->
-    <div class="media row-fluid">
-      <div class="span1 hidden-phone"> 
-        <!-- Date desktop -->
-        <div class="date-wrapper"> <span class="date-m">Jan</span> <span class="date-d">09</span> </div>
-        <!-- Meta details desktop -->
-        <p class="meta muted"> <i class="icon-user"></i> <a href="#">Tom</a> </p>
-      </div>
-      <div class="span11">
-        <div class="media-body">
-          <div class="tags"><a href="#" class="tag">jobs</a> / <a href="#" class="type">feature</a></div>
-          <h4 class="title media-heading"><a href="blog-post.htm">amet urna integer urna enim, sit arcu pid in nec?</a></h4>
-          
-          <!-- Meta details mobile -->
-          <ul class="inline meta muted visible-phone">
-            <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Wed 9th Jan 2013</li>
-            <li><i class="icon-user"></i> <a href="#">Tom</a></li>
-          </ul>
-          <a href="blog-post.htm" class="media-object"> <img src="img/blog/frog.jpg" alt="Picture of frog by Ben Fredericson" /> </a>
-          <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis. Morbi tincidunt posuere turpis eu laoreet. Nulla facilisi. Aenean at massa leo. Vestibulum in varius arcu.</p>
-          <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis</p>
-          <ul class="inline links">
-            <li><a href="blog-post.htm" class="btn btn-mini"><i class="icon-circle-arrow-right"></i> Read more</a></li>
-            <li><a href="blog-post.htm#comments" class="btn btn-mini"><i class="icon-comment"></i> 15 Comments</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Blog post -->
-    <div class="media row-fluid">
-      <div class="span1 hidden-phone"> 
-        <!-- Date desktop -->
-        <div class="date-wrapper"> <span class="date-m">Jan</span> <span class="date-d">07</span> </div>
-        <!-- Meta details desktop -->
-        <p class="meta muted"> <i class="icon-user"></i> <a href="#">Tom</a> </p>
-      </div>
-      <div class="span11">
-        <div class="media-body">
-          <div class="tags"><a href="#" class="tag">culture</a> / <a href="#" class="type">news</a></div>
-          <h4 class="title media-heading"><a href="blog-post.htm">a nec in sed hac ultrices cursus</a></h4>
-          
-          <!-- Meta details mobile -->
-          <ul class="inline meta muted visible-phone">
-            <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Mon 7th Jan 2013</li>
-            <li><i class="icon-user"></i> <a href="#">Tom</a></li>
-          </ul>
-          <a href="blog-post.htm" class="media-object"> <img src="img/blog/ladybird.jpg" alt="Picture of frog by Ben Fredericson" /> </a>
-          <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis. Morbi tincidunt posuere turpis eu laoreet. Nulla facilisi. Aenean at massa leo. Vestibulum in varius arcu.</p>
-          <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis</p>
-          <ul class="inline links">
-            <li><a href="blog-post.htm" class="btn btn-mini"><i class="icon-circle-arrow-right"></i> Read more</a></li>
-            <li><a href="blog-post.htm#comments" class="btn btn-mini"><i class="icon-comment"></i> 91 Comments</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Blog post -->
-    <div class="media row-fluid">
-      <div class="span1 hidden-phone"> 
-        <!-- Date desktop -->
-        <div class="date-wrapper"> <span class="date-m">Jan</span> <span class="date-d">03</span> </div>
-        <!-- Meta details desktop -->
-        <p class="meta muted"> <i class="icon-user"></i> <a href="#">Alex</a> </p>
-      </div>
-      <div class="span11">
-        <div class="media-body">
-          <div class="tags"><a href="#" class="tag">culture</a> / <a href="#" class="type">podcast</a></div>
-          <h4 class="title media-heading"><a href="blog-post.htm">Urna natoque in phasellus rhoncus aliquet penatibus</a></h4>
-          
-          <!-- Meta details mobile -->
-          <ul class="inline meta muted visible-phone">
-            <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Thu 3rd Jan 2013</li>
-            <li><i class="icon-user"></i> <a href="#">Alex</a></li>
-          </ul>
-          <a href="blog-post.htm" class="media-object"> <img src="img/blog/water-pump.jpg" alt="Picture of frog by Ben Fredericson" /> </a>
-          <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis. Morbi tincidunt posuere turpis eu laoreet. Nulla facilisi. Aenean at massa leo. Vestibulum in varius arcu.</p>
-          <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis</p>
-          <ul class="inline links">
-            <li><a href="blog-post.htm" class="btn btn-mini"><i class="icon-circle-arrow-right"></i> Read more</a></li>
-            <li><a href="blog-post.htm#comments" class="btn btn-mini"><i class="icon-comment"></i> 100 Comments</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Blog post -->
-    <div class="media row-fluid">
-      <div class="span1 hidden-phone"> 
-        <!-- Date desktop -->
-        <div class="date-wrapper"> <span class="date-m">Dec</span> <span class="date-d">27</span> </div>
-        <!-- Meta details desktop -->
-        <p class="meta muted"> <i class="icon-user"></i> <a href="#">Erin</a> </p>
-      </div>
-      <div class="span11">
-        <div class="media-body">
-          <div class="tags"><a href="#" class="tag">jobs</a> / <a href="#" class="type">podcast</a></div>
-          <h4 class="title media-heading"><a href="blog-post.htm">Magna aliquet diam mauris tortor turpis vel porta</a></h4>
-          
-          <!-- Meta details mobile -->
-          <ul class="inline meta muted visible-phone">
-            <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Thu 27th Dec 2012</li>
-            <li><i class="icon-user"></i> <a href="#">Erin</a></li>
-          </ul>
-          <a href="blog-post.htm" class="media-object"> <img src="img/blog/butterfly.jpg" alt="Picture of frog by Ben Fredericson" /> </a>
-          <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis. Morbi tincidunt posuere turpis eu laoreet. Nulla facilisi. Aenean at massa leo. Vestibulum in varius arcu.</p>
-          <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis</p>
-          <ul class="inline links">
-            <li><a href="blog-post.htm" class="btn btn-mini"><i class="icon-circle-arrow-right"></i> Read more</a></li>
-            <li><a href="blog-post.htm#comments" class="btn btn-mini"><i class="icon-comment"></i> 33 Comments</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Blog post -->
-    <div class="media row-fluid">
-      <div class="span1 hidden-phone"> 
-        <!-- Date desktop -->
-        <div class="date-wrapper"> <span class="date-m">Dec</span> <span class="date-d">26</span> </div>
-        <!-- Meta details desktop -->
-        <p class="meta muted"> <i class="icon-user"></i> <a href="#">Dave</a> </p>
-      </div>
-      <div class="span11">
-        <div class="media-body">
-          <div class="tags"><a href="#" class="tag">design</a> / <a href="#" class="type">podcast</a></div>
-          <h4 class="title media-heading"><a href="blog-post.htm">a nec in sed hac ultrices cursus</a></h4>
-          
-          <!-- Meta details mobile -->
-          <ul class="inline meta muted visible-phone">
-            <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Wed 26th Dec 2012</li>
-            <li><i class="icon-user"></i> <a href="#">Dave</a></li>
-          </ul>
-          <a href="blog-post.htm" class="media-object"> <img src="img/blog/ape.jpg" alt="Picture of frog by Ben Fredericson" /> </a>
-          <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis. Morbi tincidunt posuere turpis eu laoreet. Nulla facilisi. Aenean at massa leo. Vestibulum in varius arcu.</p>
-          <p>Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis</p>
-          <ul class="inline links">
-            <li><a href="blog-post.htm" class="btn btn-mini"><i class="icon-circle-arrow-right"></i> Read more</a></li>
-            <li><a href="blog-post.htm#comments" class="btn btn-mini"><i class="icon-comment"></i> 41 Comments</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <small>Blog photos by <a href="http://www.flickr.com/photos/xjrlokix/">Ben Fredericson</a></small>
+  <small>Blog photos by <a href="http://www.flickr.com/photos/xjrlokix/">Ben Fredericson</a></small>
     <div class="pagination pagination-centered">
       <button type="button" class="btn btn-block" data-loading-text="Loading...">Load More</button>
     </div>
