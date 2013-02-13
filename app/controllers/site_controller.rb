@@ -2,7 +2,7 @@ class SiteController < ApplicationController
   layout 'application_new'
 
   def index
-    @questions = Question.paginate(:page => params[:page], :per_page => 5)
+    @questions = QuestionDecorator.decorate(Question.latest_four.with_answers.paginate(:page => params[:page], :per_page => 10))
   end
 
   def sobre

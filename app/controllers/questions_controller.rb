@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  layout "application_new"
   def index
     @questions = Question.latest_four.with_answers.paginate(:page => params[:page], :per_page => 5)
     @questions_filter = Question.latest_four.paginate(:page => params[:page], :per_page => 5)

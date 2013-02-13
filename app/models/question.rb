@@ -2,7 +2,7 @@ class Question < ActiveRecord::Base
   acts_as_hashed
   attr_accessible :title, :description, :requester_name, :requester_email, :requester_phone, :city_id, :state_id, :state_name, :city_name
 
-  validates_presence_of :title, :description, :requester_name, :requester_email, :requester_phone, :city_id, :state_id
+  validates_presence_of :title, :description, :requester_name, :requester_email, :requester_phone, :state_id
   belongs_to :city
   belongs_to :state
   has_many :answers, dependent: :destroy

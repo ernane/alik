@@ -3,10 +3,10 @@ source :rubygems
 gem "rails", "3.2.11"
 gem "jquery-rails"
 gem "will_paginate"
-gem "draper"
+# gem "draper"
 gem "devise"
 gem 'sqlite3'
-# gem "mysql2"
+gem "mysql2"
 
 # FORM BUILD
 gem "reverse_captcha"
@@ -21,6 +21,8 @@ gem 'carrierwave'
 gem "activeadmin"
 gem "meta_search"
 gem "kaminari"
+
+gem 'draper', '~> 1.0'
 
 group :assets do
   gem "sass-rails"

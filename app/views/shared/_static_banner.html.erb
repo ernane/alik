@@ -18,14 +18,11 @@
   <div class="container">
     <div class="row-fluid">
       <div class="upsell"> 
-        <small class="muted">99.9% Uptime <span class="spacer">//</span>
-         Free upgrade assistence <span class="spacer">//</span> 
-         24/7 Support 
-          <span class="spacer">//</span> 
-          Plans from $19.99/month <span class="spacer">//</span> 
-        </small> 
-        <a href="pricing.htm" class="btn btn-primary">Start your Free Trial Today! <i class="icon-arrow-right"></i></a> 
-        <a href="pricing.htm" class="btn btn-primary">Start your Free Trial Today! <i class="icon-arrow-right"></i></a> 
+        <small class="muted">Você é advogado?
+        </small>
+        <%= link_to "Faça seu cadastro gratuitamente", nil, class: "btn btn-success" %>
+         <small class="muted">ou você deseja que algum de nossos advogados responda suas perguntas?</small>
+        <%= link_to "Faça sua pergunta para nossos advogados", new_question_path, class: "btn btn-success" %>
       </div>
     </div>
   </div>
