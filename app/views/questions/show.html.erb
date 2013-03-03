@@ -1,63 +1,60 @@
-<% content_for :sidebar do %>
-  <%= render("shared/sidebar") %>
-<% end %>
-<h2 class="titutlo_pergunta"><%= @question.title %></h2>
-<div class="row" id="resposta_pergunta">
-  <div class="twelve columns">
-		<article>
-			<header class="question-show">
-				<span class="doctor">
-					<strong><%= @question.requester_name %></strong>
-					<%= t("questions.send", :time => l(@question.created_at, :format => :short)) %>
-				</span>
-			</header>
-			<div class="question-description">
-				<%= simple_format(@question.description) %>
-			</div>
+<div class="row-fluid">
+  <h2 class="title-divider"><span>Company <span class="de-em">Blog</span></span> <small><a href="blog.htm"><i class="icon-arrow-left"></i> Back to Blog</a></small></h2>
+</div>
+<div class="row">
+  <!--Main Content-->
+  <div class="span9 blog-post">
+		<!-- Blog post -->
+		<div class="media row-fluid">
+		  <div class="span1 hidden-phone">
+		    <!-- Date desktop -->
+		    <div class="date-wrapper">
+		    	<span class="date-m"><%= @question_new.month %></span>
+		    	<span class="date-d"><%= @question_new.day %></span>
+		    </div>
+		  </div>
+		  <div class="span11">
+		    <div class="media-body">
+		      <!-- <div class="tags"><a href="#" class="tag">coding</a> / <a href="#" class="type">feature</a></div> -->
+		      <ul class="inline links">
+		        <li><p class="meta muted"> <i class="icon-user"></i> <%= @question_new.name %></p></li>
+		        <li><p class="meta muted"> <i class="icon-home"></i> <%= @question_new.addresss %></p></li>
+		        <li><p class="meta muted"> <i class="icon-calendar"></i> <%= @question_new.created_at_short %></p></li>
+		      </ul>
+		      <h3 class="title media-heading"><%= @question_new.linked_title %></h3>
+		      <%= @question_new.description_format %>
+		    </div>
+		  </div>
+		</div>
 
-			<% if @question.answers.any? %>
-			<h2 class="search-answer"><%= "#{@question.answers.count} #{t(".answers", count: @question.answers.count)}" %></h2>
-			<% else %>
-			<h2 class="search-answer">Respostas</h2>
-			<p>
-				<strong>Nenhuma resposta encontrada</strong>
-			</p>
-			<% end %>
-		</article>
+		  <!--Comments-->
+		  <div class="comments" id="comments">
+		    <%= @question_new.answers_title %>
+		    <ul class="media-list">
+					<%= render @answers %>
+		    </ul>
+		    <div class="comment-form">
+		      <form id="comment-form">
+		        <fieldset>
+		          <legend>Add Comment</legend>
+		          <input type="text" class="input-block-level" placeholder="Name">
+		          <br />
+		          <input type="text" class="input-block-level" placeholder="Email">
+		          <br />
+		          <textarea rows="8" class="input-block-level" placeholder="Comment"></textarea>
+		          <label class="checkbox">
+		            <input type="checkbox">
+		            Subscribe to updates </label>
+		          <button type="submit" class="btn btn-primary">Submit</button>
+		        </fieldset>
+		      </form>
+		    </div>
+		  </div>
+		</div>
+		<%= render "sidebar" %>
   </div>
 </div>
 
+<%= render "answers/form" %>
 
-<div id="answers">
-  <%= render @question.answers %>
-</div>
 
-<% if user_signed_in? %>
-  <%= render "answers/form" %>
-<% end %>
-
-<style type="text/css" media="screen">
-	
-	header.question-show{
-		font-size: 0.9em;
-		font-style:italic;
-		color: #999;
-		margin-bottom:10px;
-	}
-	
-	h2.search-answer {
-		font-size: 1.5em;
-		color: #073E5B;
-		font-family: 'Imprima', Helvetica, arial, sans-serif;
-	}
-	
-	h2.titutlo_pergunta{
-		font-size: 2.2em;
-		font-family: 'Imprima', Helvetica, arial, sans-serif;
-		text-shadow: 0 2px 0 white;
-		letter-spacing: -1px;
-		color: #333;
-	}
-	
-	
-</style>

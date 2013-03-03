@@ -1,7 +1,5 @@
-class QuestionDecorator < Draper::Decorator
-  delegate_all
-
-  decorates_association :answers
+class QuestionsDecorator < Draper::CollectionDecorator
+  delegate :created_at, :current_page, :total_pages, :limit_value, :title, :id, :description
 
   def month
     I18n.localize(source.created_at, format: "%b")

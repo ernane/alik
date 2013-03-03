@@ -1,17 +1,17 @@
 <div class="row-fluid">
   <h2 class="title-divider"><span>Últimas <span class="de-em">Perguntas</span></span></h2>
 </div>
-<div class="row"> 
+<div class="row">
   <!--Blog Roll Content-->
   <div class="span9 blog-roll blog-list">
   <% @questions.each do |question| %>
     <!-- Blog post -->
     <div class="media row-fluid">
-      <div class="span1 hidden-phone"> 
+      <div class="span1 hidden-phone">
         <!-- Date desktop -->
-        <div class="date-wrapper"> 
-          <span class="date-m"><%= question.month %></span> 
-          <span class="date-d"><%= question.day %></span> 
+        <div class="date-wrapper">
+          <span class="date-m"><%= question.month %></span>
+          <span class="date-d"><%= question.day %></span>
         </div>
       </div>
       <div class="span11">
