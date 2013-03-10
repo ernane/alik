@@ -1,9 +1,10 @@
 class SiteController < ApplicationController
-  layout 'application_new'
-
   def index
-    @question = Question.latest_four.with_answers.paginate(page: params[:page], per_page:  10)
-    @questions = QuestionsDecorator.decorate(@question)
+    if user_signed_in?
+      @questions = QuestionsDecorator.decorate(QuestionFilter.lasted_without_answers(params))
+    else
+      @questions = QuestionsDecorator.decorate(QuestionFilter.lasted_with_answers(params))
+    end
   end
 
   def sobre

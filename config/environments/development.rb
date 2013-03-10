@@ -35,12 +35,6 @@ Alik::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  # config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-      :api_key  => "key-6re3we677c0dughtdi5i9acm9ybcfcn5",
-      :api_host => "alik.mailgun.org"
-  }
 end

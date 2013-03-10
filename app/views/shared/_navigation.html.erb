@@ -1,93 +1,67 @@
 <div id="navigation" class="wrapper">
-  <div class="navbar navbar-fixed-top"> 
-    
-    <!--Hidden Header Region-->
-    <div class="header-hidden">
-      <div class="header-hidden-inner container">
-        <div class="row-fluid">
-          <div class="span8">
-            <h3><%= t("navigation.about.title") %></h3>
-            <p><%= t("navigation.about.description") %></p>
-            <%= link_to t("navigation.about.find_more"), nil, class: "btn btn-mini btn-primary" %>
-          </div>
-          <div class="span4"> 
-            <!--@todo: replace with company contact details-->
-            <h3><%= t("navigation.about.contact_us") %></h3>
-            <address>
-            <p><abbr title="Phone"><i class="icon-phone"></i></abbr> 019999 9999999</p>
-            <p><abbr title="Email"><i class="icon-envelope"></i></abbr> contato@alik.com.br</p>
-            <!-- <p><abbr title="Address"><i class="icon-home"></i></abbr> Sunshine House, Sunville. SUN12 8LU.</p> -->
-            </address>
-          </div>
-        </div>
-      </div>
-    </div>
-    
+  <div class="navbar navbar-fixed-top">
+
     <!--Header & Branding region-->
     <div class="header">
       <div class="header-inner container">
         <div class="row-fluid">
-          <div class="span6"> 
-            <!--branding/logo--> 
-            <a class="brand" href="index.htm" title="Home">
-            <h1></span>Alik<span></h1>
-            </a>
+          <div class="span6">
+            <!--branding/logo-->
+            <%= link_to root_path, class: "brand", title: "Home" do %>
+              <h1></span>Alik<span></h1>
+            <% end %>
             <div class="slogan">
             	Conselhos de Especialistas Quando Você Mais Precisa
             </div>
           </div>
-          
+
           <!--header rightside-->
           <div class="span6">
-            <div id="header-hidden-link"> <a href="#" class="show-hide" title="Click me you'll get a surprise" data-target=".header-hidden"><i></i>Open</a> </div>
-            
             <!--social media icons-->
-            <div class="social-media pull-right"> 
-              <!--@todo: replace with company social media details--> 
-              <a href="#"><i class="icon-twitter"></i></a> <a href="#"><i class="icon-facebook"></i></a> <a href="#"><i class="icon-linkedin"></i></a> <a href="#"><i class="icon-google-plus"></i></a> </div>
+            <div class="social-media pull-right">
+              <!--@todo: replace with company social media details-->
+              <a href="#"><i class="icon-twitter"></i></a>
+              <a href="#"><i class="icon-facebook"></i></a>
+              <a href="#"><i class="icon-linkedin"></i></a>
+              <a href="#"><i class="icon-google-plus"></i></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="container">
-      <div class="navbar-inner"> 
-        
-        <!--mobile collapse menu button--> 
-        <a class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> 
-        
+      <div class="navbar-inner">
+
+        <!--mobile collapse menu button-->
+        <a class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+
         <!--user menu-->
         <ul class="nav user-menu pull-right">
-          <li><a href="signup.htm" class="btn btn-primary signup">Sign Up</a></li>
-          <li class="dropdown"> <a href="login.htm" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">Login</a>
-            <div class="dropdown-menu" role="menu" aria-labelledby="login-drop">
-              <form action="login.htm" class="form-inline" id="login-form-drop" role="menuitem">
-                <div class="input-append">
-                  <input type="text" class="input-small email" placeholder="Email">
-                  <input type="password" class="input-small password" placeholder="Password">
-                  <input type="button" class="btn btn-primary login" value="Login">
-                </div>
-              </form>
-              <span class="divider" role="menuitem"></span> <small role="menuitem">Not a member? <a href="#" class="signup">Sign up now!</a></small> <small role="menuitem"><a href="#">Forgotten password?</a></small> </div>
-          </li>
+          <%= render 'devise/menu/login_items' %>
         </ul>
-        
+
         <!--everything within this div is collapsed on mobile-->
-        <div class="nav-collapse collapse"> 
-          
+        <div class="nav-collapse collapse">
+
           <!--main navigation-->
           <ul class="nav" id="main-menu">
             <li class="home-link"><a href="index.htm"><i class="icon-home hidden-phone"></i><span class="visible-phone">Home</span></a></li>
-            <li class="dropdown"><a href="features.htm" class="dropdown-toggle menu-item" id="features-drop" data-toggle="dropdown">Features +</a> 
+            <li class="dropdown"><a href="features.htm" class="dropdown-toggle menu-item" id="features-drop" data-toggle="dropdown">Features +</a>
               <!-- Dropdown Menu -->
               <ul class="dropdown-menu mega-menu" role="menu" aria-labelledby="features-drop">
                 <li class="mega-menu-wrapper" role="menuitem"> <span class="menu-title">Mega Menu with links & text items</span>
                   <ul class="row-fluid" role="menu">
-                    <li class="span4" role="menuitem"> 
+                    <li class="span4" role="menuitem">
                     	<%= link_to image_tag("features/feature-1.png"), nil %>
                     	<%= link_to "Mobile Friendly", nil, class: "menu-item", tabindex: "-1" %>
-                    	<span>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio!</span> 
+                    	<span>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio!</span>
                     </li>
-                    <li class="span4" role="menuitem"> 
+                    <li class="span4" role="menuitem">
                     	<%= link_to image_tag("features/feature-2.png"), nil %>
                     	<%= link_to "24/7 Support", nil, class: "menu-item", tabindex: "-1" %>
                     	<span>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio!</span> </li>
@@ -101,7 +75,7 @@
             </li>
             <li><a href="pricing.htm" class="menu-item">Pricing</a></li>
             <li><a href="customers.htm" class="menu-item">Customers</a></li>
-            <li class="dropdown"> <a href="about.htm" class="dropdown-toggle" id="about-drop" data-toggle="dropdown">About +</a> 
+            <li class="dropdown"> <a href="about.htm" class="dropdown-toggle" id="about-drop" data-toggle="dropdown">About +</a>
               <!-- Dropdown Menu -->
               <ul class="dropdown-menu" role="menu" aria-labelledby="about-drop">
                 <li role="menuitem"><a href="about.htm" tabindex="-1" class="menu-item">About Us</a></li>
@@ -109,7 +83,7 @@
                 <li role="menuitem"><a href="contact.htm" tabindex="-1" class="menu-item">Contact</a></li>
               </ul>
             </li>
-            <li class="dropdown"> <a href="blog.htm" class="dropdown-toggle" id="blog-drop" data-toggle="dropdown">Blog +</a> 
+            <li class="dropdown"> <a href="blog.htm" class="dropdown-toggle" id="blog-drop" data-toggle="dropdown">Blog +</a>
               <!-- Dropdown Menu -->
               <ul class="dropdown-menu pull-left" role="menu" aria-labelledby="blog-drop">
                 <li role="menuitem"><a href="blog.htm" tabindex="-1" class="menu-item">Right Sidebar</a></li>
@@ -117,7 +91,7 @@
                 <li role="menuitem"><a href="blog-post.htm" tabindex="-1" class="menu-item">Blog Post</a></li>
               </ul>
             </li>
-            <li class="dropdown active"><a href="pages.htm" class="dropdown-toggle" id="pages-drop" data-toggle="dropdown">More +</a> 
+            <li class="dropdown active"><a href="pages.htm" class="dropdown-toggle" id="pages-drop" data-toggle="dropdown">More +</a>
               <!-- Dropdown Menu -->
               <ul class="dropdown-menu pull-left" role="menu" aria-labelledby="pages-drop">
                 <li role="menuitem"><a href="login.htm" tabindex="-1" class="menu-item">Login</a></li>
@@ -131,7 +105,7 @@
             </li>
           </ul>
         </div>
-        <!--/.nav-collapse --> 
+        <!--/.nav-collapse -->
       </div>
     </div>
   </div>

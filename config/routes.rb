@@ -10,12 +10,11 @@ Alik::Application.routes.draw do
 
   root :to => "site#index"
 
-  resources :contacts,  :path => "contato", :path_names => {:new => "enviar"}
-  resources :states,    :only => :index
-  resources :cities,    :only => :index
+  resources :contacts, path: "contato", path_names: { new: "enviar" }
+  resources :users, path: "usuarios", only: [:index, :show]
 
-  resources :questions, :path => "perguntas", :except => [:destroy, :edit], :path_names => {:new => "criar"} do
-    get 'pagina/:page', :action => :index, :on => :collection
+  resources :questions, path: "perguntas", except: [:destroy, :edit], path_names: { new: "criar" } do
+    get 'pagina/:page', action: :index, on: :collection
     resources :answers do
       member do
         get :useful
@@ -24,20 +23,7 @@ Alik::Application.routes.draw do
     end
   end
 
-  resources :answers, path: 'respostas', only: [:new, :create], path_names: {new: 'nova'} do
-    member do
-      get :useful
-      get :useless
-    end
-  end
-
   controller :questions do
     get "/questions/search",:action => :search, :as => :search_questions
-  end
-
-  controller :users do
-    get "/usuarios",    :action => :index, :as =>:users
-    get "/usuario/:id", :action => :show, :as =>:user
-    get "/users/search", :action => :search, :as => :search_users
   end
 end

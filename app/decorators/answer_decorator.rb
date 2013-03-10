@@ -5,6 +5,26 @@ class AnswerDecorator < Draper::Decorator
     h.link_to source.user.username, h.user_path(source.user)
   end
 
+  def evaluation_content_tag_i
+    if source.evaluation.nil?
+      h.content_tag :i, nil, class: "icon-asterisk"
+    elsif source.evaluation == "useful"
+      h.content_tag :i, nil, class: "icon-thumbs-up"
+    else
+      h.content_tag :i, nil, class: "icon-thumbs-down"
+    end
+  end
+
+  def evaluation
+    if source.evaluation.nil?
+      "Nao avaliada"
+    elsif source.evaluation == "useful"
+      "Resposta util"
+    else
+      "Nao ajudou"
+    end
+  end
+
   def description_format
     h.simple_format source.description
   end

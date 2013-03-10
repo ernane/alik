@@ -1,60 +1,46 @@
 <div class="row-fluid">
-  <h2 class="title-divider"><span>Company <span class="de-em">Blog</span></span> <small><a href="blog.htm"><i class="icon-arrow-left"></i> Back to Blog</a></small></h2>
+	<h2 class="title-divider"><span>Company <span class="de-em">Blog</span></span> <small><a href="blog.htm"><i class="icon-arrow-left"></i> Back to Blog</a></small></h2>
 </div>
 <div class="row">
-  <!--Main Content-->
-  <div class="span9 blog-post">
+	<!--Main Content-->
+	<div class="span9 blog-post">
 		<!-- Blog post -->
 		<div class="media row-fluid">
-		  <div class="span1 hidden-phone">
-		    <!-- Date desktop -->
-		    <div class="date-wrapper">
-		    	<span class="date-m"><%= @question_new.month %></span>
-		    	<span class="date-d"><%= @question_new.day %></span>
-		    </div>
-		  </div>
-		  <div class="span11">
-		    <div class="media-body">
-		      <!-- <div class="tags"><a href="#" class="tag">coding</a> / <a href="#" class="type">feature</a></div> -->
-		      <ul class="inline links">
-		        <li><p class="meta muted"> <i class="icon-user"></i> <%= @question_new.name %></p></li>
-		        <li><p class="meta muted"> <i class="icon-home"></i> <%= @question_new.addresss %></p></li>
-		        <li><p class="meta muted"> <i class="icon-calendar"></i> <%= @question_new.created_at_short %></p></li>
-		      </ul>
-		      <h3 class="title media-heading"><%= @question_new.linked_title %></h3>
-		      <%= @question_new.description_format %>
-		    </div>
-		  </div>
+			<div class="span1 hidden-phone">
+				<!-- Date desktop -->
+				<div class="date-wrapper">
+					<span class="date-m"><%= @question.month %></span>
+					<span class="date-d"><%= @question.day %></span>
+				</div>
+			</div>
+			<div class="span11">
+				<div class="media-body">
+					<!-- <div class="tags"><a href="#" class="tag">coding</a> / <a href="#" class="type">feature</a></div> -->
+					<ul class="inline links">
+						<li><p class="meta muted"> <i class="icon-user"></i> <%= @question.name %></p></li>
+						<li><p class="meta muted"> <i class="icon-home"></i> <%= @question.addresss %></p></li>
+						<li><p class="meta muted"> <i class="icon-calendar"></i> <%= @question.created_at_short %></p></li>
+					</ul>
+					<h3 class="title media-heading"><%= @question.linked_title %></h3>
+					<%= @question.description_format %>
+				</div>
+			</div>
 		</div>
 
-		  <!--Comments-->
-		  <div class="comments" id="comments">
-		    <%= @question_new.answers_title %>
-		    <ul class="media-list">
-					<%= render @answers %>
-		    </ul>
-		    <div class="comment-form">
-		      <form id="comment-form">
-		        <fieldset>
-		          <legend>Add Comment</legend>
-		          <input type="text" class="input-block-level" placeholder="Name">
-		          <br />
-		          <input type="text" class="input-block-level" placeholder="Email">
-		          <br />
-		          <textarea rows="8" class="input-block-level" placeholder="Comment"></textarea>
-		          <label class="checkbox">
-		            <input type="checkbox">
-		            Subscribe to updates </label>
-		          <button type="submit" class="btn btn-primary">Submit</button>
-		        </fieldset>
-		      </form>
-		    </div>
-		  </div>
+		<!--Comments-->
+		<div class="comments" id="comments">
+			<%= @question.answers_title %>
+			<ul class="media-list">
+				<%= render @answers %>
+			</ul>
+			<div class="comment-form">
+				<%= render "answers/form" if user_signed_in? %>
+			</div>
 		</div>
-		<%= render "sidebar" %>
-  </div>
+	</div>
+	<%= render "sidebar" %>
 </div>
 
-<%= render "answers/form" %>
+
 
 

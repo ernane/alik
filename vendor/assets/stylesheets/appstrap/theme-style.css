@@ -2,7 +2,7 @@
  *
  * Custom theme code styles
  * Written by Themelize.me (http://themelize.me)
- * 
+ *
  *******************************************************/
 .clearfix {
   *zoom: 1;
@@ -209,7 +209,7 @@ a:focus {
   border-radius: 3px;
   border: 0;
   border-bottom: 3px solid #55a79a;
-  background-image: url("assets/bg_noise-2.png");
+  /*background-image: url("assets/bg_noise-2.png");*/
   background-position: left top;
   background-repeat: repeat;
   -webkit-box-shadow: 1px 1px 10px rgba(36, 36, 36, 0.6);
@@ -839,7 +839,7 @@ a:focus {
   background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
-  border-bottom: 1px solid rgba(36, 36, 36, 0.2); 
+  border-bottom: 1px solid rgba(36, 36, 36, 0.2);
   border-top: none;
   -webkit-transition: all 0.4s ease-out;
   -moz-transition: all 0.4s ease-out;
@@ -848,7 +848,7 @@ a:focus {
   color: #242424;*/
 }
 #highlighted .inner {
-  background: url("assets/bg_diamond.png") left bottom repeat-x;
+  background: url("/assets/bg_diamond.png") left bottom repeat-x;
 }
 #highlighted ul.nav-pills {
   margin: 0;
@@ -2134,7 +2134,7 @@ a:hover .icon-inverse-80 {
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     *background-color: rgba(62, 62, 62, 0.8);
     /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-  
+
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
     -webkit-border-radius: 1px;
     -moz-border-radius: 1px;
@@ -2296,10 +2296,10 @@ a:hover .icon-inverse-80 {
   }
 }
 @media (min-width: 980px) {
-  
+
 }
 @media (min-width: 1200px) {
-  
+
 }
 @media (max-width: 979px) {
   #navigation {

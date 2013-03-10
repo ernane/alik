@@ -1,19 +1,20 @@
 class QuestionsController < ApplicationController
-  layout "application_new"
   def index
-    @questions = Question.latest_four.with_answers.paginate(:page => params[:page], :per_page => 5)
-    @questions_filter = Question.latest_four.paginate(:page => params[:page], :per_page => 5)
+    if user_signed_in?
+      @questions = QuestionsDecorator.decorate(QuestionFilter.lasted_without_answers(params))
+    else
+      @questions = QuestionsDecorator.decorate(QuestionFilter.lasted_with_answers(params))
+    end
   end
 
   def new
     @question = Question.new
-    respond_with @question
   end
 
   def show
-    @answer = Answer.new
-    @question_new = QuestionDecorator.decorate(Question.find(params[:id]))
-    @answers = AnswerDecorator.decorate(@question_new.answers)
+    @question = QuestionDecorator.decorate(find_question(params[:id]))
+    @answer   = Answer.new
+    @answers  = AnswerDecorator.decorate(@question.answers)
   end
 
   def search
@@ -28,5 +29,11 @@ class QuestionsController < ApplicationController
     else
       render :new
     end
+  end
+
+  private
+
+  def find_question(question_id)
+    Question.find(question_id)
   end
 end
