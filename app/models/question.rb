@@ -5,8 +5,8 @@ class Question < ActiveRecord::Base
   validates_presence_of :title, :description, :requester_name, :requester_email, :requester_phone, :state_id
   belongs_to :city
   belongs_to :state
-  has_many :answers, dependent: :destroy
-  has_many :users, through: :answers
+  has_many :answers,  dependent: :destroy
+  has_many :users,    through:   :answers
 
   scope :lasted_with_answers, -> {
       where('answers_count > 0').order("created_at DESC").includes([:city, :state, :users])

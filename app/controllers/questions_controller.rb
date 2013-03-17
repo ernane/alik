@@ -12,14 +12,13 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = QuestionDecorator.decorate(find_question(params[:id]))
     @answer   = Answer.new
+    @question = QuestionDecorator.decorate(find_question(params[:id]))
     @answers  = AnswerDecorator.decorate(@question.answers)
   end
 
   def search
-    @search = Question.search(params[:search])
-    @questions = @search.paginate(:page => params[:page])
+    @questions = Question.search(params[:search])
   end
 
   def create

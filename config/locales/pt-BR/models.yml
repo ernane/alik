@@ -6,9 +6,9 @@ pt-BR:
           attributes:
             email:
               invalid_email: "não é inválido"
-              
+
     required: Campo Obrigatório
-    
+
     models:
       user_admin:
         one: Usuário
@@ -22,7 +22,7 @@ pt-BR:
       answer:
         one: Resposta
         other: Respostas
-        
+
     attributes:
       user_admin:
         email: E-mail
@@ -37,6 +37,8 @@ pt-BR:
         requester_phone: Telefone
         state_id: Estado
         city_id: Cidade
+        city: Cidade
+        state: Estado
       user:
         featured: Destaque
         username: Nome
@@ -60,6 +62,6 @@ pt-BR:
         terms_of_use: Termos de Uso
         fields: Áreas de atuação
         about: Sobre mim
-        
-        
-        
+
+
+

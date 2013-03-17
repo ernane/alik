@@ -9,7 +9,6 @@ class AnswersController < ApplicationController
   def create
     @answer = @question.answers.build(params[:answer].merge!(:user => current_user))
     notification_answer = NotificationAnswer.new(@answer)
-
     if notification_answer.complete
       flash[:notice] = t("flash.answer.create.notice")
       redirect_to @question

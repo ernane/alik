@@ -1,11 +1,16 @@
 module LayoutHelper
-  def favicon
-    "<link rel=\"shortcut icon\" href=\"/favicon.png\" />".html_safe
+  def flash_class(level)
+    case level
+    when :notice then "alert alert-success"
+    when :success then "alert alert-success"
+    when :error then "alert alert-error"
+    when :alert then "alert alert-error"
+    end
   end
-  
+
   def flash_messages
-    flash.collect do |name, msg|
-      content_tag :div, msg, id: "flash_#{name}"
+    flash.collect do |key, value|
+      content_tag :div, value, class: "#{flash_class(key)}"
     end.join.html_safe
   end
 
@@ -34,5 +39,4 @@ module LayoutHelper
 
     html.html_safe
   end
-
 end

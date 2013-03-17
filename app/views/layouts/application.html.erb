@@ -15,12 +15,13 @@
 
   <div id="content">
     <div class="container">
+      <%= flash_messages %>
       <%= yield %>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <%= render("shared/footer_new") %>
+  <%= render("shared/footer") %>
   <!-- FOOTER -->
 
   <!-- @todo: remove unused Javascript for better performance -->
