@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 gem 'jquery-rails'
-gem 'will_paginate'
 gem 'devise'
 gem 'mysql2', '~> 0.3.12b5'
 
@@ -14,6 +13,7 @@ gem 'simple_form'
 gem 'carrierwave'
 gem 'rmagick'
 
+gem 'kaminari'
 gem 'rails_admin'
 gem 'thinking-sphinx'
 gem 'draper'

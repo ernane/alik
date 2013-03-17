@@ -10,9 +10,9 @@ pt-BR:
     required: Campo Obrigatório
 
     models:
-      user_admin:
-        one: Usuário
-        other: Usuários
+      super_admin:
+        one: "Super Administrador"
+        other: "Super Administradores"
       user:
         one: Usuário
         other: Usuários
@@ -22,6 +22,12 @@ pt-BR:
       answer:
         one: Resposta
         other: Respostas
+      state:
+        one: "Estado"
+        other: "Estados"
+      city:
+        one: "Cidade"
+        other: "Cidades"
 
     attributes:
       user_admin:
@@ -29,6 +35,11 @@ pt-BR:
         password: Senha
       answer:
         description: Descrição
+        question: "Pergunta"
+        question_id: "Pergunta"
+        user_id: "Usuário"
+        user: "Usuário"
+        evaluation: "Avaliação"
       question:
         title: Título
         description: Descrição
