@@ -56,58 +56,9 @@
                 <span class="visible-phone">Home</span>
               <% end %>
             </li>
-            <li class="dropdown"><a href="features.htm" class="dropdown-toggle menu-item" id="features-drop" data-toggle="dropdown">Features +</a>
-              <!-- Dropdown Menu -->
-              <ul class="dropdown-menu mega-menu" role="menu" aria-labelledby="features-drop">
-                <li class="mega-menu-wrapper" role="menuitem"> <span class="menu-title">Mega Menu with links & text items</span>
-                  <ul class="row-fluid" role="menu">
-                    <li class="span4" role="menuitem">
-                    	<%= link_to image_tag("features/feature-1.png"), nil %>
-                    	<%= link_to "Mobile Friendly", nil, class: "menu-item", tabindex: "-1" %>
-                    	<span>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio!</span>
-                    </li>
-                    <li class="span4" role="menuitem">
-                    	<%= link_to image_tag("features/feature-2.png"), nil %>
-                    	<%= link_to "24/7 Support", nil, class: "menu-item", tabindex: "-1" %>
-                    	<span>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio!</span> </li>
-                    <li class="span4" role="menuitem">
-                    	<%= link_to image_tag("features/feature-4.png"), nil %>
-                    	<%= link_to "99% Uptime", nil, class: "menu-item", tabindex: "-1" %>
-                    	<span>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio!</span> </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="pricing.htm" class="menu-item">Pricing</a></li>
-            <li><a href="customers.htm" class="menu-item">Customers</a></li>
-            <li class="dropdown"> <a href="about.htm" class="dropdown-toggle" id="about-drop" data-toggle="dropdown">About +</a>
-              <!-- Dropdown Menu -->
-              <ul class="dropdown-menu" role="menu" aria-labelledby="about-drop">
-                <li role="menuitem"><a href="about.htm" tabindex="-1" class="menu-item">About Us</a></li>
-                <li role="menuitem"><a href="team.htm" tabindex="-1" class="menu-item">Our Team</a></li>
-                <li role="menuitem"><a href="contact.htm" tabindex="-1" class="menu-item">Contact</a></li>
-              </ul>
-            </li>
-            <li class="dropdown"> <a href="blog.htm" class="dropdown-toggle" id="blog-drop" data-toggle="dropdown">Blog +</a>
-              <!-- Dropdown Menu -->
-              <ul class="dropdown-menu pull-left" role="menu" aria-labelledby="blog-drop">
-                <li role="menuitem"><a href="blog.htm" tabindex="-1" class="menu-item">Right Sidebar</a></li>
-                <li role="menuitem"><a href="blog-leftbar.htm" tabindex="-1" class="menu-item">Left Sidebar</a></li>
-                <li role="menuitem"><a href="blog-post.htm" tabindex="-1" class="menu-item">Blog Post</a></li>
-              </ul>
-            </li>
-            <li class="dropdown active"><a href="pages.htm" class="dropdown-toggle" id="pages-drop" data-toggle="dropdown">More +</a>
-              <!-- Dropdown Menu -->
-              <ul class="dropdown-menu pull-left" role="menu" aria-labelledby="pages-drop">
-                <li role="menuitem"><a href="login.htm" tabindex="-1" class="menu-item">Login</a></li>
-                <li role="menuitem"><a href="signup.htm" tabindex="-1" class="menu-item">Sign Up</a></li>
-                <li role="menuitem"><a href="starter.htm" tabindex="-1" class="menu-item">Starter Snippets</a></li>
-                <li role="menuitem"><a href="index-static.htm" tabindex="-1" class="menu-item">Homepage Static Banner</a></li>
-                <li role="menuitem"><a href="fixed-header.htm" tabindex="-1" class="menu-item">Fixed Header</a></li>
-                <li role="menuitem"><a href="colours.htm" tabindex="-1" class="menu-item">Theme Colours</a></li>
-                <li role="menuitem"><a href="elements.htm" tabindex="-1" class="menu-item">Theme Elements</a></li>
-              </ul>
-            </li>
+            <li><%= link_to "Quem Somos", root_path %></li>
+            <li><%= link_to "Blog", root_path %></li>
+            <li><%= link_to "Contato", root_path %></li>
           </ul>
         </div>
         <!--/.nav-collapse -->

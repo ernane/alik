@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'devise'
 gem 'mysql2', '~> 0.3.12b5'
@@ -9,7 +9,6 @@ gem 'reverse_captcha'
 gem 'mail_form'
 gem 'simple_form'
 
-# UPLOAD FILES
 gem 'carrierwave'
 gem 'rmagick'
 
