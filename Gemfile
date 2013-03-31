@@ -13,7 +13,7 @@ gem "mail_form"
 gem "simple_form"
 
 # UPLOAD FILES
-# gem 'carrierwave'
+gem 'carrierwave'
 # gem 'rmagick'
 
 # ACTIVE ADMIN
