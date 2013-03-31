@@ -1,27 +1,15 @@
-<% title t(".title") %>
 
-<% content_for :sidebar do %>
-<%= render("shared/sidebar") %>
-<% end %>
-
-<h1 class="contato"><%= t(".container_title") %></h1>
-
-<fieldset>
-	<%= simple_form_for @contact do |f| %>
-	<div class="row">
-		<div class="six columns">
-			<%= f.input :name %>
-		</div>
-		<div class="six columns">
-			<%= f.input :email %>
-		</div>
+<div class="row">
+	<div class="span12">
+		<%= simple_form_for(@contact, html: { class: 'form-login form-wrapper form-medium' }) do |f| %>
+		<h3 class="title-divider"><span>Login</span> </h3>
+		<%= f.input :name, 	input_html: { class: "input-block-level" }%>
+		<%= f.input :email, input_html: { class: "input-block-level" } %>
+		<%= f.input :message, :as => :text, input_html: {rows:  "12", class: "input-block-level"} %>
+			<div class="form-actions">
+				<%= f.button :submit, "Enviar sua mensagem", class: "secondary button" %> ou
+				<%= link_to t("general.cancel"), root_path, :class => "btn"%>
+			</div>
+		<% end %>
 	</div>
-	
-	<%= f.input :message, :as => :text, input_html: {:rows => "12"} %>
-
-	<div class="form-actions">
-		<%= f.button :submit, :class => "secondary button" %> ou
-		<%= link_to t("general.cancel"), root_path, :class => "btn"%>
-	</div>
-	<% end %>
-</fieldset>
+</div>

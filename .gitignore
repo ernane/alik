@@ -55,3 +55,4 @@ public/assets
 config/deploy.rb
 .vagrant
 Vagrantfile
+log/development.sphinx.pid
