@@ -1,12 +1,9 @@
 /*
  *= require_self
- *= require layout
- *= require question
- *= require general
- *= require profile
- *= require pagination
- *= require forms
- *= require foundation_and_overrides
- *= require jquery.ui.accordion
- *= require jquery.ui.autocomplete
+ *= require appstrap/bootstrap
+ *= require appstrap/responsive
+ *= require appstrap/flexslider
+ *= require appstrap/theme-style.css
+ *= require appstrap/custom-alik
+ *= require appstrap/custom-style
 */

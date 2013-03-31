@@ -27,10 +27,4 @@ module ApplicationHelper
       default_url = "#{root_url}assets/guest.png"
     end
   end
-
-  def header_question(question)
-    content_tag :h2, :class => "question-header" do
-      [ question.requester_name, " - de #{question.city.name}/#{question.state.name}, perguntou:"].join(' ').html_safe
-    end
-  end
 end

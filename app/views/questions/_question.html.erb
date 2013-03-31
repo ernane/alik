@@ -1,31 +1,25 @@
-<div class="row">
-	<div class="seven columns" id="teste1">
-		<article class="question-index">
-			<header>
-				<%= header_question(question) %>
-				<span class="question"><%= link_to question.title, question, :class => "link" %></span>
-			</header>
-			<footer class="question-footer">
-				<%= t("questions.published_at", :time => l(question.created_at, :format => :short)) %>
-			</footer>
-		</article>
-	</div>
-	<div class="five columns" id="teste2">
-		<div class="count">
-			<% if question.answers_count.zero? %>
-			<span class="none_count">Nenhuma resposta</span>
-			<% else %>
-			<span class="number_count"><%= question.answers_count %></span>
-			<%= link_to t(".answer", count: question.answers_count), question %>
-			<% end %>
+<!-- Blog post -->
+<div class="media row-fluid">
+	<div class="span1 hidden-phone">
+		<!-- Date desktop -->
+		<div class="date-wrapper">
+			<span class="date-m"><%= question.month %></span>
+			<span class="date-d"><%= question.day %></span>
 		</div>
-		<div class="answers">
-			<% question.answers.each do |answer|%>
-			<span class="user_answer_number">
-				<%= link_to image_tag(avatar_image_thumb(answer.user)), user_path(answer.user)%>
-				<%= link_to answer.user.username, user_path(answer.user) %>
-			</span>
-			<% end %>
+	</div>
+	<div class="span11">
+		<div class="media-body">
+			<ul class="inline links">
+				<li><p class="meta muted"> <i class="icon-user"></i> <%= question.name %></p></li>
+				<li><p class="meta muted"> <i class="icon-home"></i> <%= question.addresss %></p></li>
+				<li><p class="meta muted"> <i class="icon-calendar"></i> <%= question.created_at_short %></p></li>
+			</ul>
+			<h4 class="title media-heading"><%= question.linked_title %></h4>
+			<%= question.description_truncate %>
+			<ul class="inline links">
+				<li><%= question.linked_read_more %></li>
+				<li><%= question.linked_answers_count %></li>
+			</ul>
 		</div>
 	</div>
 </div>

@@ -1,17 +1,16 @@
 class AnswersController < ApplicationController
   before_filter :authenticate_user!, only: :create
-  before_filter :find_project, only: [:new, :create]
+  before_filter :find_question, only: [:new, :create]
 
   def new
-    @answer = @questions.answers.build
+    @answer = @question.answers.build
   end
 
   def create
     @answer = @question.answers.build(params[:answer].merge!(:user => current_user))
-    if @answer.save
+    notification_answer = NotificationAnswer.new(@answer)
+    if notification_answer.complete
       flash[:notice] = t("flash.answer.create.notice")
-      NotificationMailer.answer(@answer).deliver
-      # AnswerWork.perform_async(@answer.id)
       redirect_to @question
     else
       render :action => "new"
@@ -21,6 +20,7 @@ class AnswersController < ApplicationController
   def useful
     evaluate_as("useful")
   end
+
   def useless
     evaluate_as("useless")
   end
@@ -39,7 +39,7 @@ class AnswersController < ApplicationController
     redirect_to @answer.question
   end
 
-  def find_project
+  def find_question
     @question = Question.find(params[:question_id])
   end
 end

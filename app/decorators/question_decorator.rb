@@ -1,0 +1,79 @@
+class QuestionDecorator < Draper::Decorator
+  delegate_all
+
+  decorates_association :answers
+
+  def month
+    I18n.localize(source.created_at, format: "%b")
+  end
+
+  def day
+    I18n.localize(source.created_at, format: "%d")
+  end
+
+  def created_at_short
+    I18n.localize(source.created_at, format: :short)
+  end
+
+  def name
+    source.requester_name
+  end
+
+  def linked_title
+    h.link_to source.title, source
+  end
+
+  def linked_answers_count
+    h.link_to source, class: "btn btn-mini" do
+      h.content_tag :i, I18n.t("questions.question.answer", count: source.answers_count), class: "icon-comment"
+    end
+  end
+
+  def answers_title
+    if source.answers.any?
+      h.content_tag :h3, I18n.t("questions.question.answer", count: @source.answers.count)
+    else
+      h.content_tag :h3, "Nenhuma resposta encontrada"
+    end
+  end
+
+  def addresss
+    "#{city_name} / #{state_name}"
+  end
+
+  def description_truncate
+    h.simple_format h.truncate(source.description, length:  500)
+  end
+
+  def description_format
+    h.simple_format source.description
+  end
+
+  def linked_read_more
+    h.link_to source, class: "btn btn-mini" do
+      h.content_tag :i, I18n.t("general.read_more"), class: "icon-circle-arrow-right"
+    end
+  end
+
+  private
+
+  def handle_none(value)
+    if value.present?
+      yield
+    else
+      I18n.t("general.uninformed")
+    end
+  end
+
+  def state_name
+    handle_none source.state do
+      source.state.name
+    end
+  end
+
+  def city_name
+    handle_none source.city do
+      source.city.name
+    end
+  end
+end

@@ -1,73 +1,19 @@
-<div class="row" id="resposta">
-	<div class="twelve columns" id="container_resposta">
-		<article class="content_resposta">
-
-			<div class="row">
-				<div class="nine columns">
-					<div class="answer-profile">
-						<%= link_to image_tag avatar_image_medium(answer.user), :class => "avatar" %> <span class="name"><%= answer.user.username %></span>
-					</div>
-				</div>
-				<div class="three columns">
-					<% if answer.evaluation.nil? %>
-					<span class="no-rated">Não avaliada</span>
-					<% else %>
-					<span class="<%= answer.evaluation %>"><%= t(".#{answer.evaluation}") %></span>
-					<% end %>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="twelve columns" id="when">
-					<span class="when">
-						<%= t("answer.published_at", :time => l(answer.created_at, :format => :short)) %>
-					</span>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="twelve columns">
-					<%= simple_format(answer.description) %>
-				</div>
-			</div>
-
-		</article>
-	</div>
-</div>
-
-<style type="text/css" media="screen">
-#resposta{
-	margin-bottom: 10px;
-}
-#when{
-	margin: 5px 0;
-}
-article.content_resposta{ background-color: #F1F5F8; padding:20px 20px}
-
-.answer-profile img{
-	padding: 2px;
-	border: solid 2px #999;
-	width: 50px;
-	vertical-align:middle;
-}
-span.when{
-	font-size: 0.9em;
-	font-style: italic;
-	color: #999;
-}
-
-span.useful {
-	padding: 0 0 4px 20px;
-	font-weight: bold;
-	background-image: url("/assets/success.png");
-	background-repeat: no-repeat;
-}
-
-span.useless {
-	padding: 0 0 4px 20px;
-	font-weight: bold;
-	background-image: url("/assets/warning.png");
-	background-repeat: no-repeat;
-}
-</style>
-
+<li class="media row-fluid">
+	<%= answer.linked_user_image %>
+  <div class="span11 media-body">
+    <ul class="inline meta muted">
+      <li>
+      	<i class="icon-calendar"></i>
+      	<%= answer.published_at %>
+      </li>
+      <li><i class="icon-user"></i>
+        <%= answer.linked_username %>
+      </li>
+      <li>
+        <%= answer.evaluation_content_tag_i %>
+        <%= answer.evaluation %>
+      </li>
+    </ul>
+    <%= answer.description_format %>
+  </div>
+</li>

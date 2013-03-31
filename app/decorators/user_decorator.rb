@@ -1,5 +1,5 @@
 # encoding: UTF-8
-class UserDecorator < Draper::Base
+class UserDecorator < Draper::Decorator
   decorates :user
   
   def articles

@@ -1,126 +1,52 @@
-<% content_for :sidebar do %>
-  <%= render("shared/sidebar") %>
-<% end %>
-
-<h1 class="devise"><%= t(".title") %></h1>
-
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-<%= devise_error_messages! %>
-<%= f.captcha %>
-
-<div id="devise_form">
-	<div id="accordion">
-		
-		<h3><a href="#">Informações de Segurança</a></h3>
-		<div class="content">
-			<div class="row">
-				<div class="six columns">         
-					<%= f.input :username %>
-				</div>                            
-				<div class="six columns">         
-					<%= f.input :email %>
-				</div>                            
-			</div>   
-
-			<div class="row">                                    
-				<div class="six columns">           
-					<%= f.input :password %>
-				</div>                              
-				<div class="six columns">           
-					<%= f.input :password_confirmation %>
-				</div>
-			</div>
-			<%= f.input :about,	input_html: {:rows 	=> "10"} %>
-		</div>
-		
-		<h3><a href="#">Informações Profissionais</a></h3>
-		<div class="content">
-			<fieldset>
-				<div class="row">
-					<div class="six columns">         
+<div class="row">
+	<div class="span12">
+		<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { class: 'form-login form-wrapper' }) do |f| %>
+		<%= devise_error_messages! %>
+		<%= f.captcha %>
+			<div class="tabbable tabs-left">
+			  <ul id="myTab2" class="nav nav-tabs">
+			    <li class="active"><a href="#vtab1" data-toggle="tab">Informações de Segurança</a></li>
+			    <li><a href="#vtab2" data-toggle="tab">Informações Profissionais</a></li>
+			    <li><a href="#vtab3" data-toggle="tab">Informações Acadêmicas e Experiências</a></li>
+			  </ul>
+			  <div id="myTab2Content" class="tab-content">
+			    <div class="tab-pane fade in active" id="vtab1">
+			      <%= f.input :username, 							input_html: { class: "input-block-level" }%>
+			      <%= f.input :email, 								input_html: { class: "input-block-level" } %>
+			      <%= f.input :password, 							input_html: { class: "input-block-level" } %>
+			      <%= f.input :password_confirmation, input_html: { class: "input-block-level" } %>
+			      <%= f.input :about,									input_html: {rows: "10", class: "input-block-level" } %>
+			    </div>
+			    <div class="tab-pane fade" id="vtab2">
 						<%= f.input :state_id do %>
 						<%= f.collection_select :state_id, State.all, :id, :name, :selected => resource.city.present? ? resource.city.state_id : resource.state_id, :include_blank => 'Selecione um estado' %>
 						<% end %>
-					</div>                            
-					<div class="six columns">         
 						<%= f.input :city_id do %>
 						<%= f.collection_select :city_id, cities(resource.city.present? ? resource.city.state_id : resource.state_id), :id, :name, :selected => resource.city_id, :include_blank => resource.city.present? || resource.state_id.present? ? 'Selecione a cidade' : 'Selecione um estado' %>
 						<% end %>
-					</div>                            
-				</div>
-
-				<div class="row">
-					<div class="six columns">         
-						<%= f.input :image, :as => :file %>
-					</div>                            
-					<div class="six columns">         
-						<%= f.input :phone %>
-					</div>                            
-				</div>
-
-				<div class="row">
-					<div class="four columns">         
-						<%= f.input :portifolio_of_oab %>
-					</div>                            
-					<div class="eight columns">         
-						<%= f.input :fields %>
-					</div>                            
-				</div>
-			</fieldset>
-			
-			<fieldset>
-				<div class="row">
-					<div class="six columns">         
-						<%= f.input :teaching,            :collection => 1..10 %>
-					</div>                            
-					<div class="six columns">         
-						<%= f.input :professional,        :collection => 1..10 %>
-					</div>                            
-				</div>
-
-				<div class="row">
-					<div class="six columns">         
-						<%= f.input :books_published,     :collection => 1..10 %>
-					</div>                            
-					<div class="six columns">         
-						<%= f.input :articles_published,  :collection => 1..10 %>
-					</div>                            
-				</div>
-			</fieldset>
-		</div>
-		
-		<h3><a href="#">Informações Acadêmicas e de Experiências</a></h3>
-		<div class="content">
-			<fieldset>
-				<div class="row">
-					<div class="three columns">         
-						<%= f.input :postgraduate        %>
-					</div>                            
-					<div class="three columns">         
-						<%= f.input :master_of_law       %>
-					</div>   
-					<div class="three columns">         
-						<%= f.input :doctorate_in_law    %>
-					</div>
-					<div class="three columns">         
-						<%= f.input :postgraduate_in_law %>
-					</div>                         
-				</div>
-			</fieldset>
-			<fieldset>
-      	<%= f.input :foreign_laguage     %>
-			</fieldset>
-		</div>
-		
+						<%= f.input :image, 							:as => :file %>
+						<%= f.input :phone, 							input_html: { class: "input-block-level" }%>
+						<%= f.input :portifolio_of_oab, 	input_html: { class: "input-block-level" } %>
+						<%= f.input :fields, 							input_html: { class: "input-block-level" } %>
+						<%= f.input :teaching,            as: :integer, input_html: { class: "input-block-level" } %>
+						<%= f.input :professional,        as: :integer, input_html: { class: "input-block-level" } %>
+						<%= f.input :books_published,     as: :integer, input_html: { class: "input-block-level" } %>
+						<%= f.input :articles_published,  as: :integer, input_html: { class: "input-block-level" } %>
+			    </div>
+			    <div class="tab-pane fade" id="vtab3">
+			      <%= f.input :postgraduate				 %>
+			      <%= f.input :master_of_law       %>
+			      <%= f.input :doctorate_in_law    %>
+			      <%= f.input :postgraduate_in_law %>
+			      <%= f.input :foreign_laguage     %>
+			    </div>
+			  </div>
+			  <div class="form-actions">
+			    <%= f.button :submit, t(".submit"), class: "secondary button" %> or
+			    <%= link_to "Cancelar", root_path, :class => "btn"%>
+			  </div>
+			</div>
+		<% end %>
+		<%= render "devise/shared/links" %>
 	</div>
 </div>
-
-
-<div class="form-actions">
-  <%= f.button :submit, t(".submit"), class: "secondary button" %> or
-  <%= link_to "Cancelar", root_path, :class => "btn"%>
-</div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-

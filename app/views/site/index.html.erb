@@ -1,0 +1,39 @@
+<div class="row-fluid">
+  <h2 class="title-divider"><span>Últimas <span class="de-em">Perguntas</span></span></h2>
+</div>
+<div class="row">
+  <!--Blog Roll Content-->
+  <div class="span9 blog-roll blog-list">
+  <% @questions.each do |question| %>
+    <!-- Blog post -->
+    <div class="media row-fluid">
+      <div class="span1 hidden-phone">
+        <!-- Date desktop -->
+        <div class="date-wrapper">
+          <span class="date-m"><%= question.month %></span>
+          <span class="date-d"><%= question.day %></span>
+        </div>
+      </div>
+      <div class="span11">
+        <div class="media-body">
+          <ul class="inline links">
+            <li><p class="meta muted"> <i class="icon-user"></i> <%= question.name %></p></li>
+            <li><p class="meta muted"> <i class="icon-home"></i> <%= question.addresss %></p></li>
+            <li><p class="meta muted"> <i class="icon-calendar"></i> <%= question.created_at_short %></p></li>
+          </ul>
+          <h4 class="title media-heading"><%= question.linked_title %></h4>
+          <%= question.description_truncate %>
+          <ul class="inline links">
+            <li><%= question.linked_read_more %></li>
+            <li><%= question.linked_answers_count %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+    <div class="flickr_pagination">
+      <%= paginate @questions %>
+    </div>
+  </div>
+  <%= render "sidebar" %>
+</div>

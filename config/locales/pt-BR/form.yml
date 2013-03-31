@@ -27,8 +27,18 @@ pt-BR:
       mark: '*'
     error_notification:
       default_message: "Por favor verifique os campos no formulário"
+
+    placeholders:
+      question:
+        title: "Título"
+        requester_name: "Nome"
+        requester_email: "E-mail"
+        requester_phone: "Telefone"
+
     hints:
-      defaults:
-      #  name: 'Campo Obrigatório'
-      #  email: 'Campo Obrigatório'
+      question:
+        title: "Descreva um título para sua pergunta."
+        requester_name: "Informe seu nome."
+        requester_email: "Informe seu e-mail"
+        requester_phone: "Informe seu telefone"
 

@@ -16,7 +16,7 @@ pt-BR:
         other: advogados responderam
     question:
       answer:
-        one: Resposta
-        other: Respostas
+        one: " %{count} Resposta"
+        other: " %{count} Respostas"
 
 

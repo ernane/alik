@@ -1,25 +1,12 @@
-<% title t(".title") %>
-
-<h1><%= t(".container_title") %></h1>
-<p>
-  Sua busca por <strong><%= params[:search].values %></strong>
-  retornou os seguintes resultados:
-</p>
-
-<ul id='questions'>
-  <% @questions.each do |question| %>
-    <%= render question %>
-  <% end %>
-</ul>
-
-<% if @questions.size == 0 %>
-  <h2>Nenhum resultado encontrado</h2>
-<% end %>
-
-<div class="digg_pagination">
-  <%= will_paginate @questions %>
+<div class="row-fluid">
+  <h2 class="title-divider"><span>Últimas <span class="de-em">Perguntas</span></span></h2>
 </div>
-
-<% content_for :sidebar do %>
-  <%= render("shared/sidebar") %>
-<% end %>
+<div class="row">
+  <!--Blog Roll Content-->
+  <div class="span9 blog-roll blog-list">
+    <% @questions.each do |question| %>
+      <%= question.title %>
+    <% end %>
+  </div>
+  <%= render "sidebar" %>
+</div>

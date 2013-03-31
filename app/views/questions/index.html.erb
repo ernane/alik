@@ -1,24 +1,15 @@
-<% title t(".title") %>
-
-<% content_for :sidebar do %>
-  <%= render("shared/sidebar") %>
-<% end %>
-
-<h1><%= t(".container_title") %></h1>
-
-<section id='questions'>
-	<% if user_signed_in? %>
-		<% @questions_filter.each do |question| %>
-			<%= render question %>
-		<% end %>
-	<% else %>
-		<% @questions.each do |question| %>
-			<%= render question %>
-		<% end %>
-	<% end %>
-</section>
-
-<div class="digg_pagination">
-  <%= will_paginate @questions %>
+<div class="row-fluid">
+  <h2 class="title-divider"><span>Últimas <span class="de-em">Perguntas</span></span></h2>
 </div>
-
+<div class="row">
+  <!--Blog Roll Content-->
+  <div class="span9 blog-roll blog-list">
+  	<% @questions.each do |question| %>
+			<%= render question %>
+  	<% end %>
+   <div class="flickr_pagination">
+     <%= paginate @questions %>
+   </div>
+  </div>
+  <%= render "sidebar" %>
+</div>
