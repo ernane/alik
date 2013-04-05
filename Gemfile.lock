@@ -33,6 +33,8 @@ GEM
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.3.1.0)
       sass (~> 3.2)
+    bootstrap-wysihtml5-rails (0.3.1.19)
+      railties (>= 3.0)
     builder (3.0.4)
     capistrano (2.14.2)
       highline
@@ -71,6 +73,7 @@ GEM
     font-awesome-sass-rails (3.0.2.2)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
+    friendly_id (4.0.9)
     haml (4.0.1)
       tilt
     highline (1.6.16)
@@ -164,6 +167,7 @@ GEM
     request_store (1.0.5)
     reverse_captcha (0.0.1)
     riddle (1.5.5)
+    rmagick (2.13.2)
     safe_yaml (0.9.0)
     sass (3.2.7)
     sass-rails (3.2.6)
@@ -207,6 +211,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-wysihtml5-rails
   capistrano
   carrierwave
   coffee-script
@@ -214,6 +219,7 @@ DEPENDENCIES
   delayed_job_active_record
   devise
   draper
+  friendly_id
   jquery-rails
   kaminari
   letter_opener
@@ -222,6 +228,7 @@ DEPENDENCIES
   rails (= 3.2.13)
   rails_admin
   reverse_captcha
+  rmagick
   sass-rails
   simple_form
   therubyracer

@@ -1,0 +1,15 @@
+<div class="row-fluid">
+  <h2 class="title-divider"><span>Últimas <span class="de-em">Perguntas</span></span></h2>
+</div>
+<div class="row">
+  <!--Blog Roll Content-->
+  <div class="span9 blog-roll blog-list">
+    <% @articles.each do |article| %>
+      <%= render article %>
+    <% end %>
+   <div class="flickr_pagination">
+     <%= paginate @articles %>
+   </div>
+  </div>
+  <%= render "sidebar" %>
+</div>

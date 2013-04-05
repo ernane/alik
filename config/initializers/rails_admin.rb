@@ -28,7 +28,7 @@ RailsAdmin.config do |config|
   # config.excluded_models = ['Answer', 'City', 'Question', 'State', 'SuperAdmin', 'User']
 
   # Include specific models (exclude the others):
-  config.included_models = ['Answer', 'Question', 'SuperAdmin', 'User']
+  config.included_models = ['Answer', 'Question', 'SuperAdmin', 'User', 'Article']
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
@@ -59,6 +59,36 @@ RailsAdmin.config do |config|
       field :question_id
       field :evaluation
       field :description
+    end
+  end
+
+  config.model 'SuperAdmin' do
+    object_label_method :email
+
+    configure :articles, :has_many_association
+  end
+
+  config.model 'Article' do
+    configure :super_admin, :belongs_to_association
+
+    edit do
+      field :name
+      field :super_admin
+      field :published_at do
+        date_format :short
+      end
+      field :content, :text do
+        bootstrap_wysihtml5 true
+      end
+    end
+
+    list do
+      field :id
+      field :super_admin
+      field :content
+      field :published_at do
+        strftime_format "%d/%m/%Y"
+      end
     end
   end
 

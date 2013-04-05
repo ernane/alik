@@ -1,12 +1,4 @@
 class SiteController < ApplicationController
-  def index
-    if user_signed_in?
-      @questions = QuestionsDecorator.decorate(QuestionFilter.lasted_without_answers(params))
-    else
-      @questions = QuestionsDecorator.decorate(QuestionFilter.lasted_with_answers(params))
-    end
-  end
-
   def sobre
   end
 

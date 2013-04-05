@@ -10,10 +10,12 @@ gem 'mail_form'
 gem 'simple_form'
 
 gem 'carrierwave'
-# gem 'rmagick'
+gem 'rmagick'
 
 gem 'kaminari'
 gem 'rails_admin'
+gem 'friendly_id'
+gem 'bootstrap-wysihtml5-rails'
 gem 'thinking-sphinx'
 gem 'draper'
 gem 'daemons'

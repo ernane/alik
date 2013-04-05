@@ -28,6 +28,9 @@ pt-BR:
       city:
         one: "Cidade"
         other: "Cidades"
+      article:
+        one: "Artigo"
+        other: "Artigos"
 
     attributes:
       user_admin:
@@ -40,6 +43,12 @@ pt-BR:
         user_id: "Usuário"
         user: "Usuário"
         evaluation: "Avaliação"
+      article:
+        name: "Nome"
+        content: "Conteúdo"
+        published_at: "Publicado em"
+        super_admin_id: "Author"
+        super_admin: "Author"
       question:
         title: Título
         description: Descrição

@@ -1,0 +1,23 @@
+<!-- Blog post -->
+<div class="media row-fluid">
+  <div class="span1 hidden-phone">
+    <!-- Date desktop -->
+    <div class="date-wrapper">
+      <span class="date-m"><%= article.month %></span>
+      <span class="date-d"><%= article.day %></span>
+    </div>
+  </div>
+  <div class="span11">
+    <div class="media-body">
+      <ul class="inline links">
+        <li><p class="meta muted"> <i class="icon-user"></i> <%= article.author_name %></p></li>
+        <li><p class="meta muted"> <i class="icon-calendar"></i> <%= article.created_at_short %></p></li>
+      </ul>
+      <h4 class="title media-heading"><%= article.linked_title %></h4>
+      <%= article.content_truncate %>
+      <ul class="inline links">
+        <li><%= article.linked_read_more %></li>
+      </ul>
+    </div>
+  </div>
+</div>

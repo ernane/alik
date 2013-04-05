@@ -8,14 +8,20 @@ Alik::Application.routes.draw do
 
   devise_for :users
 
-  root :to => "questions#index"
+  root to: "questions#index"
 
-  resources :contacts, path: "contato", path_names: { new: "enviar" }
-  resources :users, path: "usuarios", only: [:index, :show]
+  resources :contacts, path: "contato",  path_names: { new: "enviar" }
+  resources :users,    path: "usuarios", only: [:index, :show]
+
+  namespace :blog do
+    resources :articles, path: "artigos", only: [:index, :show] do
+      get 'page/:page', action: :index, on: :collection
+    end
+  end
 
   controller :questions do
-      get "/questions/search",:action => :search, :as => :search_questions
-    end
+    get "/questions/search",:action => :search, :as => :search_questions
+  end
 
   resources :questions, path: "perguntas", except: [:destroy, :edit], path_names: { new: "criar" } do
     get 'page/:page', action: :index, on: :collection

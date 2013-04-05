@@ -1,0 +1,47 @@
+<div class="row-fluid">
+  <h2 class="title-divider">
+    <span>Alik <span class="de-em">Blog</span></span>
+    <small>
+      <a href="/blog/artigos/"><i class="icon-arrow-left"></i> Todos Artigos</a>
+    </small>
+  </h2>
+</div>
+
+<div class="row">
+  <!--Main Content-->
+  <div class="span9 blog-post">
+    <!-- Blog post -->
+    <div class="media row-fluid">
+      <div class="span1 hidden-phone">
+        <!-- Date desktop -->
+        <div class="date-wrapper">
+          <span class="date-m"><%= @article.month %></span>
+          <span class="date-d"><%= @article.day %></span>
+        </div>
+      </div>
+      <div class="span11">
+        <div class="media-body">
+          <!-- <div class="tags"><a href="#" class="tag">coding</a> / <a href="#" class="type">feature</a></div> -->
+          <ul class="inline links">
+            <li><p class="meta muted"> <i class="icon-user"></i> <%= @article.author_name %></p></li>
+            <li><p class="meta muted"> <i class="icon-calendar"></i> <%= @article.created_at_short %></p></li>
+          </ul>
+          <h3 class="title media-heading"><%= @article.linked_title %></h3>
+          <%= @article.content_format %>
+        </div>
+      </div>
+    </div>
+
+    <!--Comments-->
+    <!-- <div class="comments" id="comments">
+      <%#= @article.answers_title %>
+      <ul class="media-list">
+        <%#= render @answers %>
+      </ul>
+      <div class="comment-form">
+        <%#= render "answers/form" if user_signed_in? %>
+      </div>
+    </div> -->
+  </div>
+  <%= render "sidebar" %>
+</div>
