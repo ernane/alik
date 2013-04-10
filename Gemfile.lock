@@ -163,6 +163,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (2.2.2)
     ref (1.0.4)
     remotipart (1.0.5)
     request_store (1.0.5)
@@ -228,6 +229,7 @@ DEPENDENCIES
   mysql2 (~> 0.3.12b5)
   rails (= 3.2.13)
   rails_admin
+  redcarpet
   reverse_captcha
   rmagick
   sass-rails
