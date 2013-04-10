@@ -78,12 +78,13 @@ RailsAdmin.config do |config|
         date_format :short
       end
       field :content, :text do
-        bootstrap_wysihtml5 true
+        ckeditor true
       end
     end
 
     list do
       field :id
+      field :name
       field :super_admin
       field :content
       field :published_at do

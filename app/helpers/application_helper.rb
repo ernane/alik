@@ -3,6 +3,19 @@ module ApplicationHelper
     City.where("state_id = ?", state)
   end
 
+  def markdown(text)
+    renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: true)
+    options = {
+        autolink: true,
+        no_intra_emphasis: true,
+        fenced_code_blocks: true,
+        lax_html_blocks: true,
+        strikethrough: true,
+        superscript: true
+      }
+    Redcarpet::Markdown.new(renderer, options).render(text).html_safe
+  end
+
   def avatar_image(user)
     default_url = "#{root_url}assets/guest.png"
     if user.image.present?

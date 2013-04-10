@@ -22,11 +22,11 @@ class ArticlesDecorator < Draper::CollectionDecorator
   end
 
   def content_truncate
-    h.simple_format h.truncate(source.content, length:  500)
+    h.markdown h.truncate(source.content, length:  500)
   end
 
   def content_format
-    h.simple_format source.content
+    h.markdown source.content
   end
 
   def linked_read_more
