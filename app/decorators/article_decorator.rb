@@ -35,7 +35,7 @@ class ArticleDecorator < Draper::Decorator
     if source.comments.any?
       h.content_tag :h3, I18n.t("articles.article.comment", count: @source.comments.count)
     else
-      h.content_tag :h3, "Nenhum Comentário!"
+      h.content_tag :h3, I18n.t("articles.article.comment.any", count: @source.comments.count)
     end
   end
 

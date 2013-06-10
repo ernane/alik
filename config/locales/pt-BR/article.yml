@@ -2,5 +2,6 @@ pt-BR:
   articles:
     article:
       comment:
+        any: "Nenhum Comentário"
         one: " %{count} Comentário"
         other: " %{count} Comentários"
