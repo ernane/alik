@@ -5,5 +5,7 @@ class Blog::ArticlesController < ApplicationController
 
   def show
     @article = ArticleDecorator.decorate(Article.find(params[:id]))
+    @comment = Comment.new
+    @comments  = CommentDecorator.decorate(@article.comments)
   end
 end

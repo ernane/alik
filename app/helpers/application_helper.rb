@@ -25,6 +25,12 @@ module ApplicationHelper
     end
   end
 
+  def gravatar(email, options = {})
+    hash = Digest::MD5.hexdigest(email.to_s)
+    url = "http://www.gravatar.com/avatar/#{hash}.jpg?d=mm"
+    image_tag url, options
+  end
+
   def avatar_image_thumb(user)
     if user.image.present?
       user.image_url(:thumb)

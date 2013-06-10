@@ -1,0 +1,14 @@
+<% title t(".title") %>
+
+<%= simple_form_for [:blog, @article, @comment] do |f| %>
+  <h3 class="title-divider"><span>Novo Comentário</span></h3>
+
+  <%= f.input :name,               input_html: { class: "input-block-level", rows: "10" }, label: false, placeholder: "Seu Nome" %>
+  <%= f.input :email,              input_html: { class: "input-block-level", rows: "10" }, label: false, placeholder: "Seu Email" %>
+  <%= f.input :content, as: :text, input_html: { class: "input-block-level", rows: "10" }, label: false, placeholder: "Deixe o seu comentário." %>
+
+  <div class="form-actions">
+    <%= f.button :submit,  :class => "secondary button" %> ou
+    <%= link_to "Cancelar", root_path %>
+  </div>
+<% end %>

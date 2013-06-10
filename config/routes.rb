@@ -16,6 +16,7 @@ Alik::Application.routes.draw do
   namespace :blog do
     resources :articles, path: "artigos", only: [:index, :show] do
       get 'page/:page', action: :index, on: :collection
+      resources :comments
     end
   end
 

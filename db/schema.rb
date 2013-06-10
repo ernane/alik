@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130405020424) do
+ActiveRecord::Schema.define(:version => 20130609150858) do
 
   create_table "answers", :force => true do |t|
     t.integer  "user_id"
@@ -27,13 +27,14 @@ ActiveRecord::Schema.define(:version => 20130405020424) do
   add_index "answers", ["user_id"], :name => "index_answers_on_user_id"
 
   create_table "articles", :force => true do |t|
-    t.string   "name",           :null => false
-    t.text     "content",        :null => false
+    t.string   "name",                          :null => false
+    t.text     "content",                       :null => false
     t.date     "published_at"
     t.integer  "super_admin_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "slug"
+    t.integer  "comments_count", :default => 0
   end
 
   add_index "articles", ["slug"], :name => "index_articles_on_slug"
@@ -47,6 +48,17 @@ ActiveRecord::Schema.define(:version => 20130405020424) do
   end
 
   add_index "cities", ["state_id"], :name => "index_cities_on_state_id"
+
+  create_table "comments", :force => true do |t|
+    t.text     "content"
+    t.string   "name"
+    t.string   "email"
+    t.integer  "article_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "comments", ["article_id"], :name => "index_comments_on_article_id"
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0

@@ -1,6 +1,8 @@
 class ArticleDecorator < Draper::Decorator
   delegate_all
 
+  decorates_association :comments
+
   def month
     I18n.localize(source.published_at, format: "%b")
   end
@@ -27,6 +29,14 @@ class ArticleDecorator < Draper::Decorator
 
   def content_format
     h.markdown source.content
+  end
+
+  def comments_title
+    if source.comments.any?
+      h.content_tag :h3, I18n.t("articles.article.comment", count: @source.comments.count)
+    else
+      h.content_tag :h3, "Nenhum Comentário!"
+    end
   end
 
   def linked_read_more

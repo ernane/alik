@@ -33,15 +33,15 @@
     </div>
 
     <!--Comments-->
-    <!-- <div class="comments" id="comments">
-      <%#= @article.answers_title %>
+    <div class="comments" id="comments">
+      <%= @article.comments_title %>
       <ul class="media-list">
-        <%#= render @answers %>
+        <%= render @comments %>
       </ul>
       <div class="comment-form">
-        <%#= render "answers/form" if user_signed_in? %>
+        <%= render "blog/comments/form" %>
       </div>
-    </div> -->
+    </div>
   </div>
   <%= render "sidebar" %>
 </div>

@@ -13,6 +13,9 @@ pt-BR:
       super_admin:
         one: "Super Administrador"
         other: "Super Administradores"
+      comment:
+        one: "Comentário"
+        other: "Comentários"
       user:
         one: Usuário
         other: Usuários

@@ -1,0 +1,6 @@
+pt-BR:
+  articles:
+    article:
+      comment:
+        one: " %{count} Comentário"
+        other: " %{count} Comentários"

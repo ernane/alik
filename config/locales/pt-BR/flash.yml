@@ -4,10 +4,10 @@ pt-BR:
       create:
         notice: "Sua pergunta foi cadastrada com sucesso. Agora aguarde um de nosso advogados responder sua pergunta"
       search:
-        alert: "A busca não está funcionando nesse momento! Tente novamente mais tarde." 
+        alert: "A busca não está funcionando nesse momento! Tente novamente mais tarde."
       not_found:
         alert: "Desculpe, mas essa operação é inválida"
-                
+
     answer:
       useful:
         notice: "Você avaliou a resposta positivamente!"
@@ -20,4 +20,9 @@ pt-BR:
     sendmail:
       notice: "Sua mensagem foi enviada com sucesso"
       error: "Sua mensagem não pode ser entregue"
-      
+
+    comment:
+      create:
+        notice: "Seu comentário foi criado com sucesso"
+        error: "Seu comentário não pode ser cadastrado, por favor verifique os campos de preenchimento!"
+

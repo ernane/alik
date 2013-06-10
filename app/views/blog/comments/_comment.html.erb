@@ -1,0 +1,15 @@
+<li class="media row-fluid">
+  <%= comment.gravatar %>
+  <div class="span11 media-body">
+    <ul class="inline meta muted">
+      <li>
+        <i class="icon-calendar"></i>
+        <%= comment.created %>
+      </li>
+      <li><i class="icon-user"></i>
+        <%= comment.name %>
+      </li>
+    </ul>
+    <%= comment.content_format %>
+  </div>
+</li>

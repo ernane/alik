@@ -2,6 +2,7 @@ class Article < ActiveRecord::Base
   extend FriendlyId
 
   belongs_to :super_admin
+  has_many :comments
 
   attr_accessible :super_admin_id, :content, :name, :published_at
 
