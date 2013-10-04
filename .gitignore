@@ -56,3 +56,5 @@ config/deploy.rb
 .vagrant
 Vagrantfile
 log/development.sphinx.pid
+puppet/
+alik_production.sql
